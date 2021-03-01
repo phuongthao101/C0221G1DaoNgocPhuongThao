@@ -1,0 +1,23 @@
+BEGIN
+   INPUT N <100
+   IF N >= 75 
+      DISPLAY " LOAI A"
+   ELSE 
+      IF 60<= N < 75
+          DISPLAY " LOAI B"
+      ELSE 
+          IF 45<= N < 60
+             DISPLAY " LOAI C"
+  	 ELSE 
+             IF 35<= N < 45
+                 DISPLAY " LOAI D"
+
+             ELSE 
+                 IF < 35
+                DISPLAY " LOAI E"
+                 END IF
+             END IF
+          END IF
+      END IF
+    END IF
+END 
