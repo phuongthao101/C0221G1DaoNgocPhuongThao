@@ -1,0 +1,8 @@
+
+
+ Begin
+   Input Math 
+   Input Physics 
+   Average = ( Math + Physics + Chemistry ) / 3
+   Dislay Average 
+ End
