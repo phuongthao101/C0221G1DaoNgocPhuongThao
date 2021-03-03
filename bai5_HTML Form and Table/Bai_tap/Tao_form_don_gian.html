@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tạo form đơn giản</title>
+    <style>
+
+        h1 {color: white;background-color:red}
+        .blue {color: blue}
+        .red {color: red}
+        h2 {color: blue; background-color: #7fffd4
+        }
+
+    </style>
+</head>
+
+<body>
+
+<form style="width:30%; background-color: white">
+    <h1>SỞ THÍCH CỦA BẠN</h1><br>
+
+    <label class="blue">Họ và tên</label>
+    <input type="text" name="yourname">
+    <br>
+    <br>
+    <label class="blue">Email</label>
+    <input type="email" name="email"><br>
+    <label class="blue">Sở thích</label><br>
+    <input type="checkbox" name="hobby" value="Thể thao" > <label class="red">Thể thao</label>
+    <input type="checkbox" name="hobby" value="Thể thao" ><label class="red">Lướt web</label>
+    <input type="checkbox" name="hobby" value="Du lịch" >  <label class="red"> Du lịch</label>
+    <br>
+    <input type="checkbox" name="hobby" value="Âm nhạc" > <label class="red"> Âm nhạc</label>
+    <input type="checkbox" name="hobby" value="Chơi game" > <label class="red">Điện ảnh</label>
+    <br>
+    <input type="checkbox" name="hobby" value="Đọc sách" > Đọc sách <label class="red">Đọc sách</label><br>
+<br>
+    <input type="reset" value="Gửi thông tin">
+    <input type="submit" value="Nhập lại" >
+<br><br>
+
+</form>
+       <form style="width:30%; background-color: #deb887">
+
+     <h2>ĐĂNG KÝ HỌC VIÊN</h2>
+    <label>Họ và tên</label>
+    <input type="text" name="name"><br><br>
+    <label>Ngày sinh</label>
+    <input type="date" name="date"> <br><br>
+    <label>Giới tính</label>
+
+    <input type="radio"name="gender">Nam
+    <input type="radio"name="gender">Nữ
+    <br><br>
+    <label>Địa chỉ</label>
+    <input tyle="text" name="address"><br><br>
+    <br>
+    <br>
+    <label>Lớp</label>
+
+    <select>
+        <option value=""> Chọn lớp</option>
+           <option value="Grade A"> A</option>
+           <opton value="Grade B>">B</opton>
+    </select>
+    <br><br>
+
+    <label>Email</label>
+
+    <input type="email" name="email"><br><br>
+    <label> Điện thoại</label>
+
+    <input type="munber" name="phone"><br><br>
+    <input type="Submit" name="submit" value="Đăng ký">
+    <input type="Submit" name="submit" value="Nhập lại">
+</form>
+
+
+</body>
+</html>
