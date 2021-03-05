@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <h1>Caculator</h1> <br>
+    <input type="number" name="number" id="dulieu1">
+    <input type="number" name="number" id="dulieu2">
+<p id="result"></p>
+    <br>
+    <br>
+    <input type="button" name="button" onclick="cong()" value="Addition(+)" id="cong">
+    <input type="button" name="button" onclick="tru()" value="Subtration(-)" id=" tru">
+    <input type="button" name="button" onclick="nhan()" value="Multiplition(*)" id="nhan">
+    <input type="button" name="button" onclick="chia()" value="Division(/)" id="chia">
+
+
+<script>
+    function cong(){
+        let dulieu1 = parseInt(document.getElementById("dulieu1").value);
+        let dulieu2 = parseInt(document.getElementById("dulieu2").value);
+        let result = dulieu1 + dulieu2;
+        document.getElementById("result").innerText = result;
+
+    }
+    function tru(){
+        let dulieu1 = parseInt(document.getElementById("dulieu1").value);
+        let dulieu2 = parseInt(document.getElementById("dulieu2").value);
+        let result = dulieu1 - dulieu2;
+        document.getElementById("result").innerText = result;
+    }
+    function nhan(){
+        let dulieu1 = parseInt(document.getElementById("dulieu1").value);
+        let dulieu2 = parseInt(document.getElementById("dulieu2").value);
+        let result = dulieu1 * dulieu2;
+        document.getElementById("result").innerText = result;
+    }
+    function chia(){
+        let dulieu1 = parseInt(document.getElementById("dulieu1").value);
+        let dulieu2 = parseInt(document.getElementById("dulieu2").value);
+        let result = dulieu1 / dulieu2;
+        document.getElementById("result").innerText = result;
+    }
+
+</script>
+</body>
+</html>
