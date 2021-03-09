@@ -1,15 +1,22 @@
  BEGIN
-   INPUT N
-   INPUT a1,a2,a3....ai
+   
+   INPUT N: ( a1,a2,a3....ai)
  Max = a1
  i =2
-    IF ai> N 
-       DISPLAY "MAX"
-    ELSE
-        WHITE ( ai > Max )
-        DO
-        DISPLAY " MAX"
-       i=i+1
-        END DO
-    END IF
+   WHILE ai>=N
+   DO  
+         DISPLAY "MAX"
+       
+      IF ai> Max
+          MAX =ai
+      END IF
+         i=i+1
+
+
+  END DO
 END
+
+
+
+
+ 

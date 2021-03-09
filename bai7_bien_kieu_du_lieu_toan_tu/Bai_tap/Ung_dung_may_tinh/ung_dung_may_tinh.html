@@ -19,29 +19,28 @@
 
 
 <script>
+    let duLieu1 = document.getElementById("duLieu1");
+    let duLieu2 =document.getElementById("duLieu2");
     function cong(){
-        let dulieu1 = parseInt(document.getElementById("dulieu1").value);
-        let dulieu2 = parseInt(document.getElementById("dulieu2").value);
-        let result = dulieu1 + dulieu2;
+
+        let result = parseInt(dulieu1.value)+parseInt(duLieu2.value) ;
+
         document.getElementById("result").innerText = result;
 
     }
     function tru(){
-        let dulieu1 = parseInt(document.getElementById("dulieu1").value);
-        let dulieu2 = parseInt(document.getElementById("dulieu2").value);
-        let result = dulieu1 - dulieu2;
+        let result = parseInt(dulieu1.value)-parseInt(duLieu2.value) ;
+
         document.getElementById("result").innerText = result;
     }
     function nhan(){
-        let dulieu1 = parseInt(document.getElementById("dulieu1").value);
-        let dulieu2 = parseInt(document.getElementById("dulieu2").value);
-        let result = dulieu1 * dulieu2;
+
+        let result = parseInt(duLieu1.value)*parseInt(duLieu2.value) ;
         document.getElementById("result").innerText = result;
     }
     function chia(){
-        let dulieu1 = parseInt(document.getElementById("dulieu1").value);
-        let dulieu2 = parseInt(document.getElementById("dulieu2").value);
-        let result = dulieu1 / dulieu2;
+        let result = parseInt(duLieu1.value)/parseInt(duLieu2.value) ;
+
         document.getElementById("result").innerText = result;
     }
 

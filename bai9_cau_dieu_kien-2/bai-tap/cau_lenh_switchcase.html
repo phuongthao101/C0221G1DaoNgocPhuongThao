@@ -8,13 +8,13 @@
 
 
         <input type="number" id="number" name="number" value="1">
-        <input type="button" onclick="clickme()" value=" Tính số ngày">
+        <input type="button" onclick="clickMe()" value=" Tính số ngày">
 
 
 
 
     <script>
-        function clickme(){
+        function clickMe(){
         let month = parseInt(document.getElementById('number').value);
         switch(month){
             case 1:
@@ -31,7 +31,7 @@
                 document.write("Tháng 2 có 28 hoặc 29 ngày");
             break;
 
-            case 4,6,9,11:
+            case 4:
             case 6:
             case 9:
             case 11:

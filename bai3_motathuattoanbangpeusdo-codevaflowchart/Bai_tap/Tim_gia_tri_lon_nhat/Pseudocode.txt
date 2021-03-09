@@ -1,12 +1,11 @@
 BEGIN
   INPUT a,b,c 
-    IF a > c
-         DISPLAY " a=Max"
-       ELSE
-         IF b>c 
-           DISPLAY" b=Max"
-         ELSE 
-           DISPLAY " c=Max"  
-         END IF
+  Max = a
+    IF b> max
+         DISPLAY " b=Max"
+    ELSE
+         IF c > max
+           DISPLAY" c=Max"
+         
     END IF
  END   

@@ -7,8 +7,12 @@
 <body>
 <script>
     let income = prompt(' Nhập vào doanh số bán hàng: ');
-    let money= income * 5/100;
-    alert (' Số hoa hồng nhận được : ' + money);
+    if (income<= 500){
+        alert('Hoa hồng nhận được : ' + income *(5/100));
+
+    }else {
+        alert('Hoa hồng nhận được: '+ income*10/100);
+    }
 
 
 </script>
