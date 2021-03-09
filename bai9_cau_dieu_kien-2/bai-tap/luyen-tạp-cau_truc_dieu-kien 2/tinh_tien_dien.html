@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+
+        let a=prompt('Nhập vào số chữ điện');
+        if (a<=100){
+            alert('Tiền điện : '+ a*1000);
+        } else if (a<=150){
+            alert('Tiền điện: ' + 100*1000+2000*(a-100));
+
+        }else if(a<=200){
+            alert('Tiền điện: ' + 100*1000+2000*50+2500*(a-150));
+        }
+        else if (a>200){
+            alert('Tiền điện: ' + 100*1000+2000*50+2500*50+3000*(a-200));
+        }
+
+    </script>
+</body>
+</html>
