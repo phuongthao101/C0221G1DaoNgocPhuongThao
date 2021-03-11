@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    let a = 1;
+    let b = 1;
+    let tong = 0;
+    for (let i = 0; i < 20; i++) {
+        let sum = a + b;
+        a = b;
+        b = sum;
+        tong += b;
+
+    }
+    document.write('Tổng của các số = ' + tong);
+
+
+</script>
+</body>
+</html>

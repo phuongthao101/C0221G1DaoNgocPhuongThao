@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="button" onclick="play()" value="Chơi" id=" play">
+
+<script>
+    let khoangDoan = parseInt(prompt('Nhập vào khoảng đoán 0-> '));
+    let soDoan = parseInt(prompt('Nhập vào số bạn đoán: '));
+    if (khoangDoan){
+        ranDom = (Math.floor(Math.random() * khoangDoan));
+    }
+
+        if (soDoan == ranDom) {
+            alert('Chúc mừng bạn!');
+
+        } else {
+            while (soDoan != ranDom) {
+                alert('Bạn đã đoán sai, số đúng là ' + ranDom);
+                soDoan = parseInt(prompt('Nhập vào số bạn đoán: '))
+
+            }
+        }
+        alert('Chúc mừng bạn')
+
+
+
+</script>
+</body>
+</html>

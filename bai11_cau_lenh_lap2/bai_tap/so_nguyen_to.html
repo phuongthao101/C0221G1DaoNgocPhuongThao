@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>so_nguyen_to</title>
+</head>
+<body>
+    <script>
+
+        let number = prompt('Nhập vào số lương: ');
+        let count = 0 ;
+        let n = 2;
+        let ketQua = true;
+        while( count< number ) {
+            ketQua = true;
+            for (let i = 2; i< n; i++){
+                if (n%i ===0){
+                    ketQua = false;
+                    break;
+                }
+            }
+            if (ketQua){
+                alert(n);
+                count++
+            }
+            n++;
+        }
+    </script>
+</body>
+</html>

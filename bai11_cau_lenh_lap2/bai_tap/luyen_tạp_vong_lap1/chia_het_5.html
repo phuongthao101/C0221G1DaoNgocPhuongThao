@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+
+    let a = 0;
+    let b = 1;
+
+
+    for (let i = 0; i < 20; i++) {
+        let sum = a + b;
+        a = b;
+        b = sum;
+
+        if (sum % 5 == 0) {
+            document.write(sum);
+            break;
+        }
+    }
+
+
+</script>
+</body>
+</html>
