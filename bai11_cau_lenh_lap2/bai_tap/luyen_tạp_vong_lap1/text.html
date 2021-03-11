@@ -7,21 +7,48 @@
 <body>
 <script>
 
-    let phamvi = Number(prompt("Trò chơi đoán số từ 0 - "))
-    let nhapso = Number(prompt("Nhập vào số muốn đoán"))
-    let soRamdom
-    if(phamvi){
-        soRamdom = Math.floor(Math.random()*phamvi)
-        if(soRamdom == nhapso){
-            alert("Bạn đã đoán đung")
-        }else{
-            while (soRamdom != nhapso){
-                alert("Bạn đoán sai số đúng là "+soRamdom)
-                nhapso = Number(prompt("Nhập vào số muốn đoán"))
-            }
-            alert("Bạn đoán đúng")
+    //let stars = Number(prompt("Nhập số dòng hiển thị sao VD 5:"))
+    for (let i = 0; i<5; i++){
+        for (let j=0;j<=i;j++){
+            let sao = "*"
+            document.write(sao)
         }
+        document.write("<br>")
     }
+
+    document.write("<br><br>")
+
+    for (let i = 5; i>0; i--){
+        for (let j=0;j<i;j++){
+            let sao = "*"
+            document.write(sao)
+        }
+        document.write("<br>")
+    }
+
+    document.write("<br><br>")
+
+    document.write("<div style='width: 50px' align='right'>")
+    for (let i = 0; i<5; i++){
+        for (let j=0;j<=i;j++){
+            let sao = "*"
+
+            document.write(sao)
+            //
+        }
+        document.write("<br>")
+    }
+    document.write("</div><br><br>")
+
+    document.write("<div style='width: 50px' align='right'>")
+    for (let i = 5; i>0; i--){
+        for (let j=0;j<i;j++){
+            let sao = "*"
+            document.write(sao)
+        }
+        document.write("<br>")
+    }
+    document.write("</div>")
     }
 
 </script>
