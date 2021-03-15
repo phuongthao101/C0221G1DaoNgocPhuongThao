@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tạo bảng số nguyên 10 phần tử</title>
+</head>
+<body>
+<script>
+
+    let array = [];
+
+    for (let i = 0; i < 10; i++) {
+        array[i] = parseInt(prompt('Nhập vào mảng : '));
+
+    }
+    document.write(' Mảng = ' + array + ' , ' + '<br>');
+    let count = 0;
+    for (let i = 0; i < array.length; i++) {
+        if (array[i] > 10) {
+            count = 0;
+            document.write(' Số lớn hơn 10 là:  ' + array[i]+ '<br>' );
+
+        } else {
+            count++;
+        }
+
+    }
+
+
+</script>
+</body>
+</html>

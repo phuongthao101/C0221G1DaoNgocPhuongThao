@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Từ diển</title>
+</head>
+<body>
+ <input type="text" id=tiengAnh>
+<input type="button" onclick="dich()" value="Dịch">
+<br><br>
+
+<p id="tieng_viet" />
+
+
+<script>
+
+    let tiengAnh = document.getElementById('tiengAnh');
+    let mangTA = ["how", "old", "are", "you", "i", "am", "fine", "thanks"];
+    let mangTV = ["làm sao", "cũ, già", "là", "bạn", "tôi", "là", "khỏe", "cảm ơn"];
+    document.write("Chỉ có thể dịch được các từ ["+mangTA.join(" ")+"]");
+    let count = 0;
+
+    function dich() {
+        for (let i = 0; i < mangTA.length; i++) {
+            if (mangTA[i] == tiengAnh.value) {
+                count = 0;
+                document.getElementById("tieng_viet").innerHTML = mangTV[i];
+                break;
+            }else{
+                count++
+            }
+        }
+        if(count != 0){
+            alert("Không có dữ liệu")
+        }
+    }
+
+
+</script>
+</body>
+</html>

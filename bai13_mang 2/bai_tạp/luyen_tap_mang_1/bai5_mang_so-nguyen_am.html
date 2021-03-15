@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mảng số nguyên âm</title>
+</head>
+<body>
+<script>
+
+    let mangso = [];
+    let count = 0;
+
+    for (let i = 0; i < 4; i++) {
+        mangso[i] = parseInt(prompt("Nhập số vào mảng"));
+    }
+    document.write("Mảng là = [" + mangso + "]<br>");
+    for (let i = 0; i < mangso.length; i++) {
+        if (mangso [i] < 0) {
+            count = 0;
+            document.write(' Số nguyên âm trong mảng : ' + mangso[i] )
+            document.write('<br>')
+
+        } else {
+            count++;
+        }
+    }
+
+</script>
+</body>
+</html>

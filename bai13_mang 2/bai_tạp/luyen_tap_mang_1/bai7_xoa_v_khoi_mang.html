@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>xóa v khỏi mảng</title>
+</head>
+<body>
+<script>
+    let arr = [] ;
+    let count = 0 ;
+    let v = prompt("Nhập số v cần tìm ") ;
+    for (let i =0 ; i < 5 ; i ++) {
+        arr[i]= prompt("Nhập phần tử của chuỗi") ;
+        if (v.indexOf(arr[i]) != -1 ){
+            count ++ ;
+        }
+    }if ( count > 0 ) {
+
+    }else {
+        alert("V is not in the array");
+
+    }
+</script>
+</body>
+</html>

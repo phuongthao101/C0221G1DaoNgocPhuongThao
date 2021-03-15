@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>giá trị lớn nhất trong mảng và vị trí của phần tử </title>
+</head>
+<body>
+<script>
+
+    let mangso = [];
+    let max = 0;
+    let viTri = 0;
+
+    for (let i = 0; i < 10; i++) {
+        mangso[i] = parseInt(prompt("Nhập số vào mảng"));
+    }
+    document.write("Mảng là = [" + mangso + "]<br>");
+
+    for (let i = 0; i < mangso.length; i++) {
+        if (mangso [i] > max) {
+            max = mangso[i];
+            viTri = i;
+        }
+    } document.write('Phần tử lớn nhất là :' + max +'<br>'+ 'tại vị trí : ' + viTri)
+
+
+
+
+</script>
+</body>
+</html>

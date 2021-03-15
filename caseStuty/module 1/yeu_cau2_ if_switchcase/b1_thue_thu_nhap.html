@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính thuế thu nhập cá nhân</title>
+</head>
+<body>
+ <script>
+
+     let salary = parseInt(prompt(' Nhập vào lương nvien: '));
+     switch (salary) {
+         case 15:
+             document.write('thuế thu nhập: '+salary*(20/100) + 'Triệu');
+             break;
+         case 7:
+         case 8:
+         case 9:
+         case 10:
+         case 11:
+         case 12:
+         case 13:
+         case 14:
+
+             document.write('Thuế thu nhập: '+salary*(10/100) + 'Triệu');
+             break;
+         case 1:
+         case 2:
+         case 3:
+         case 4:
+         case 5:
+         case 6:
+             document.write('Thuế thu nhập: '+salary*(5/100)+ ' Triệu');
+             break;
+     }
+ </script>
+</body>
+</html>
