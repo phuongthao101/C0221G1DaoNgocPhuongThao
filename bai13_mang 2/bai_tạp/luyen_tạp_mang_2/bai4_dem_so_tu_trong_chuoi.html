@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>đếm số từ trong chuỗi</title>
+</head>
+<body>
+<script>
+
+    let arr = [];
+    count = 0;
+    for (let i = 0; i < 5; i++) {
+        arr[i] = prompt('Nhập vào 1 chuỗi: ')
+    }
+    for (let i = 0; i < arr.length; i++) {
+        if (isNaN(arr[i])) {
+            count++;
+        }
+    }
+    document.write('Số lượng ký tự trong chuỗi là: ' + count)
+</script>
+</body>
+</html>

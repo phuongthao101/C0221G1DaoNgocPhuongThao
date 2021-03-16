@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>so sánh 2 chuỗi</title>
+</head>
+<body>
+
+<script>
+
+    let arr1 = prompt('Nhâp chuỗi 1: ');
+    let arr2 = prompt('Nhập chuỗi 2: ');
+
+    if (arr1.length != arr2.length) {
+        document.write('2 chuỗi không bằng nhau')
+    } else {
+        for (let i = 0; i < arr1.length; i++) {
+            for (let j = 0; j < arr2.length; j++) {
+                if (arr1[i] == arr2[j]) {
+                    document.write('Các phần tử trong 2 chuỗi giống nhau')
+                } else {
+                    document.write('Các phần tử trong 2 chuỗi ko giống nhau')
+                }
+            }
+        }
+
+    }
+
+
+</script>
+</body>
+</html>
