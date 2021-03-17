@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai5</title>
+</head>
+<body>
+<script>
+
+    let arr1 = ['Polaris', 'Aldebaran', 'Deneb', 'Vega', 'Altair', 'Dubhe', 'Regulus'];
+    let arr2 = ['Ursa', 'Minor', 'Tarurus', 'Cygnus', 'Lyra', 'Aquila', 'Ursa', 'Major', 'Leo'];
+
+    let input = prompt("Nhập tên sao : ");
+    let result = arr1.indexOf(input);
+    if (result !== -1) {
+        document.write(arr2[result]);
+    } else {
+        document.write('Not found');
+    }
+
+    // hàm indexof : kiểm tra một phần tử có thuộc mảng hay ko
+</script>
+</body>
+</html>
