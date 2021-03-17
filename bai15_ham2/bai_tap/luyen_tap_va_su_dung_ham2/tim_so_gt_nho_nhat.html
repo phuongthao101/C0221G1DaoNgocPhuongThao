@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tìm số nguyên có giá trị nhỏ nhất</title>
+</head>
+<body>
+<script>
+
+    function tinhGTNN(a, b, c) {
+        let min = a;
+        if (a < b) {
+            if (a < c) {
+                min = a;
+            }
+        } else if (b < c) {
+            min = b;
+
+        } else {
+            min = c;
+
+        }return min;
+    }
+    let a =  parseInt(prompt(' nhap a'));
+    let b =  parseInt(prompt('nhap b'));
+    let c =  parseInt(prompt('nhap c'));
+
+    alert(tinhGTNN(a,b,c))
+
+</script>
+</body>
+</html>
