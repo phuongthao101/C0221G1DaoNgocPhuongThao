@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>mô tả lớp hình chữ nhật</title>
+</head>
+<body>
+<script>
+
+    class HinhChuNhat {
+        constructor(dai, rong) {
+            this.ChieuDai = dai;
+            this.ChieuRong = rong;
+        }
+
+        setChieuDai(dai) {
+            this.ChieuDai = dai;
+        }
+
+        setChieuRong(rong) {
+            this.Chieurong = rong;
+
+        }
+
+        getChieuDai() {
+            return this.ChieuDai;
+        }
+
+        getChieuRong() {
+            return this.ChieuRong;
+
+        }
+
+        getDienTich() {
+            return (this.ChieuDai * this.ChieuRong);
+        }
+
+        getChuVi() {
+            return (this.ChieuDai + this.ChieuRong) * 2;
+        }
+
+    }
+
+    let hinhChuNhat = new HinhChuNhat(15, 25);
+
+    let chieu_dai = hinhChuNhat.getChieuDai();
+    let chieu_rong = hinhChuNhat.getChieuRong();
+
+    let chu_vi = hinhChuNhat.getChuVi();
+    let dien_tich = hinhChuNhat.getDienTich();
+
+    document.write("Chiều dài = " + chieu_dai + "<br>Chiều rộng = " + chieu_rong + "<br>");
+
+    document.write("Chu vi của hình chữ nhật là " + chu_vi + "<br> Diện tích của hình chữ nhật là " + dien_tich);
+
+    document.write("<br><canvas id=\"canvasId\" width=chieu_dai height=chieu_rong style=\"border:1px solid #c3c3c3;\"></canvas>");
+
+    let context = document.getElementById("canvasId").getContext("2d")
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>temperature</title>
+</head>
+<body>
+<script>
+
+    class Temperature {
+        constructor(doC) {
+            this.DoC = doC;
+        }
+        setDoC (doC){
+            this.DoC = doC;
+        }
+        getDoC(){
+            return this.DoC;
+        }
+        getDoF(){
+           return  (this.DoC *1.8) + 32;
+        }
+        getKenvin(){
+            return  this.DoC + 273.15;
+        }
+
+    }
+    let nhietDo = new Temperature(25);
+
+    // let do_C = nhietDo.getDoC();
+    // let do_F =nhietDo.getDoF();
+    // let do_K =nhietDo.getKenvin();
+
+    document.write('Độ F=' + nhietDo.getDoF()+'<br>');
+    document.write('Độ K =' + nhietDo.getKenvin());
+
+
+</script>
+</body>
+</html>

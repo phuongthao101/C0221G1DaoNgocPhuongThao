@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>xây dựng lớp date</title>
+</head>
+<body>
+<script>
+
+    class Date {
+    constructor (day, month, year) {
+        this._day = day;
+        this._month = month;
+        this._year = year;
+    }
+        get day() {
+            return this._day;
+        }
+
+        set day(value) {
+            this._day = value;
+        }
+
+        get month() {
+            return this._month;
+        }
+
+        set month(value) {
+            this._month = value;
+        }
+
+        get year() {
+            return this._year;
+        }
+
+        set year(value) {
+            this._year = value;
+        }
+    }
+
+    let a = new Date(10,1,94);
+    alert(a.day + " thang" + a.month + " nam" + a.year );
+    a.day=5;
+    a.month=5;
+    a.year=89;
+    alert("Ngày"+a.day+"Tháng "+ a.month +"Năm"+ a.year)
+
+</script>
+</body>
+</html>
