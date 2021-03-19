@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>mô phỏng adam và eva</title>
+</head>
+<body>
+<input type="button" name="eat" value=" ADAM_EAT" onclick="adameating()">
+
+<p id="apple1"></p>
+<p id="adam"></p>
+
+<table>
+
+</table>
+<script>
+
+    class Apple {
+        constructor(weight) {
+            this.weight = weight;
+        }
+
+        getWeight() {
+            return this.weight;
+        }
+
+        decrease() {
+            if (this.weight > 0) {
+                this.weight--;
+            }
+        }
+
+        check() {
+            if (this.weight > 0) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+    }
+
+    class Human {
+        constructor(name, gender, weight) {
+            this.name = name;
+            this.gender = gender;
+            this.weight = weight;
+        }
+
+        getWeight() {
+            return this.weight;
+        }
+
+        say(message) {
+            return 'hello';
+        }
+
+        eat(apple) {
+            console.log(apple.getWeight());
+            if (apple.getWeight() > 0) {
+                apple.decrease();
+                this.weight++;
+            }
+        }
+    }
+
+    let adam = new Human('Adam', 'nam', 75);
+    let eva = new Human('Eva', 'nữ ', 55);
+    let apple = new Apple(10);
+
+    console.log(' Adam say : ' + adam.say());
+    document.getElementById('apple1').innerText = "Apple weight: " + apple.weight;
+    document.getElementById('adam').innerText = "Adam weight: " + adam.weight;
+
+    if (apple.check()) {
+        function adameating() {
+            adam.eat(apple);
+            document.getElementById('apple1').innerText = "Adam weight : " + adam.weight;
+            document.getElementById('adam').innerText = "Apple weight : " + apple.weight;
+
+        }
+
+    }
+
+
+</script>
+</body>
+</html>
