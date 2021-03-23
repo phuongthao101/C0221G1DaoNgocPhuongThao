@@ -7,8 +7,27 @@
 <body>
 <script>
 
-    let array=[];
-    for(let i= )
+    let str = prompt("nhập vào chuỗi");
+    let mangHoa = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    let mangThuong = 'abcdefghijklmnopqrstuvwxyz';
+    let result = [];
+    for(let x=0; x<str.length; x++)
+    {
+        if(mangHoa.indexOf(str[x]) !== -1)
+        {
+            result.push(str[x].toLowerCase());
+        }
+        else if(mangThuong.indexOf(str[x]) !== -1)
+        {
+            result.push(str[x].toUpperCase());
+        }
+        else
+        {
+            result.push(str[x]);
+        }
+    }
+    document.write(result.join(""));
+
 </script>
 </body>
 </html>

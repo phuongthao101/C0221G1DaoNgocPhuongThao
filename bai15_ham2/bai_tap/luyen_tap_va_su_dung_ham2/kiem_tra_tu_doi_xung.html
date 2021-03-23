@@ -2,9 +2,28 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Kiểm tra từ đói xúng</title>
 </head>
 <body>
-$END$
+
+<script>
+    let message = prompt("Nhap chuoi").split("");
+    function kiemTra(arr) {
+        let n = arr.length ;
+        for (let i =0 ; i < n/2; i ++){
+            if (arr[i] != arr[ n-1 -i]){
+                return false ;
+                break;
+            }
+        }
+        return true;
+    }
+    kiemTra(message) ;
+    alert(kiemTra(message));
+
+    //split : các ký tự sẽ chuyển thành chuỗi, phân cách bằng dấu trong ('')
+
+
+</script>
 </body>
 </html>

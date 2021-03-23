@@ -13,11 +13,14 @@
         arr[i] = prompt('Nhập vào 1 chuỗi: ')
     }
     for (let i = 0; i < arr.length; i++) {
-        if (isNaN(arr[i])) {
+        if (isNaN(arr[i])===true) {
             count++;
         }
     }
     document.write('Số lượng ký tự trong chuỗi là: ' + count)
+
+    // isNaN:xác đinh phần tử trong mảng có phải ký tự chữ hay ko
+    // có thể dùng cách : nếu phần tử %2 = 0 hoặc ptu %2 = 1 => ký tự là số
 </script>
 </body>
 </html>

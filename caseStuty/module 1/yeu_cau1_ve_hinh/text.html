@@ -1,26 +1,90 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Phát triển ứng dụng nhỏ mô phỏng câu chuyện Adam và Eva</title>
 </head>
 <body>
-<script>
+<table border="1" width="80%" align="center">
+    <tr>
+        <td>Name</td>
+        <td align="center">Apple</td>
+        <td align="center">Adam</td>
+        <td align="center">Eva</td>
+    </tr>
+    <tr>
+        <td>Weight</td>
+        <td align="center" id="apple"></td>
+        <td align="center" id="adam"></td>
+        <td align="center" id="eva"></td>
+    </tr>
+    <tr>
+        <td>Action</td>
+        <td align="center" id="message"></td>
+        <td align="center" onclick="eatingApple('adam');"><button>Eat</button></td>
+        <td align="center" onclick="eatingApple('eva');"><button>Eat</button></td>
+    </tr>
+</table>
 
-    int m = h, n = h;
-    for (int i = 1; i <= h; i++)
-    {
-        for (int j = 1; j <= 2 * h - 1; j++)
-        {
-            if (j == m || j == n || i== h)
-                printf("*");
-            else
-                printf(" ");
+<script>
+    class Apple {
+        constructor(weight) {
+            this.weight = weight;
         }
-        m--;
-        n++;
-        printf("\n");
+
+        getWeight() {
+            return this.weight;
+        }
+
+        decrease() {
+            if (this.weight > 0) {
+                this.weight--;
+            }
+        }
+
+        isEmpty() {
+            return this.weight === 0;
+        }
     }
+    class Human {
+        constructor(name, gender, weight) {
+            this.name = name;
+            this.gender = gender;
+            this.weight = weight;
+        }
+
+        getWeight() {
+            return this.weight;
+        }
+
+        say(message) {
+            return 'hello';
+        }
+
+        eat(apple) {
+            console.log(apple.getWeight());
+            if (apple.getWeight() > 0) {
+                apple.decrease();
+                this.weight++;
+            }
+        }
+        checkApple() {
+            return apple.isEmpty();
+        }
+    }
+
+    let adam = new Human('Adam', 'nam', 75);
+    let eva = new Human('Eva', 'nữ ', 55);
+    let apple = new Apple(10);
+
+    console.log(' Adam say : ' + adam.say());
+
+    function eatingApple(adam) {
+        adam.eat(apple);
+        document.write(adam.getWeight());
     }
 </script>
 </body>

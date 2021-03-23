@@ -2,9 +2,56 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>ứng dụng quản lý sử dụng hàm</title>
 </head>
+
 <body>
-$END$
+<h1> Add new product </h1>
+<p>
+    <input type="text" id="enter">
+    <button id="add" onclick="add(enter)">Add</button>
+</p>
+<p id="display">display all product </p>
+<script>
+    let a = ["Sony Xperia", "Nokia 6", "Iphone 11 Pro", "Samsung Galaxy", "Oppo", "Ubuntu phone"];
+
+    function display() {
+        let tableString = "<table border='1'>";
+        for (let i = 0; i < a.length; i++) {
+            tableString += "<tr>";
+            tableString += "<td>" + a[i] + "</td>";
+            tableString += "<td><input type='button' onclick='edit(" + i + ")' value='Edit'></td>";
+            tableString += "<td><input type='button' onclick='del3te(" + i + ")' value='Delete'></td>";
+            tableString += "</tr>";
+        }
+        tableString += "</table>";
+
+        document.getElementById("display").innerHTML = tableString;
+    }
+
+    function add() {
+        let str = document.getElementById("enter").value;
+        a.push(str);
+        display();
+    }
+
+    function edit(i) {
+        let b = prompt('enter:');
+        a[i] = b;
+        console.log('1');
+        display()
+    }
+// xóa 1 giá trị thuộc mảng
+    function del3te(i) {
+        a.splice(i, 1);
+        display();
+    }
+
+    display();
+    add();
+    edit(i);
+    del3te(i)
+    
+</script>
 </body>
 </html>

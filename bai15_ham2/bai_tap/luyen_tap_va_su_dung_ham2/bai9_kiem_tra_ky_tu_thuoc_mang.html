@@ -2,9 +2,33 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>kiểm tra ký tự thuộc mảng</title>
 </head>
 <body>
-$END$
+<script>
+    let array = [];
+    let input = prompt('Nhập ký tự cần kiểm tra');
+    for (let i = 0; i < 5; i++) {
+        array[i] = prompt('Nhập vào mảng : ');
+    }
+
+    function kiemTra(array, input) {
+        let count = 0;
+        for (let i = 0; i < array.length; i++) {
+            if (array[i] === input) {
+                count++;
+            }
+        }
+
+        return count === 0 ? -1 : count;
+    }
+    alert(kiemTra(array, input));
+    // toán tử 3 ngôi: nếu count =0 thì ko thuộc in ra -1, nếu ngược lại thì = count
+    // kiểm tra hàm với với tham số là 1 số và 1 mảng
+    // lưu ý phần trả về kết quả đếm số ký tự là count++
+
+
+
+</script>
 </body>
 </html>
