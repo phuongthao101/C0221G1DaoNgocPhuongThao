@@ -22,10 +22,10 @@
         let tongTien = 0;
         let nhap = prompt("Vui lòng chọn món : ");
         do {
-            let sl = prompt("Nhập số lượng món " + menu[nhap-1]);
-            document.write("Tên món:" + menu[nhap] +"<br>"+ " Giá : " + gia[nhap] +"<br>"+ " số lượng : " + sl
+            let sl = prompt("Nhập số lượng món ");
+            document.write("Tên món:" + menu[nhap-1] +"<br>"+ " Giá : " + gia[nhap-1] +"<br>"+ " số lượng : " + sl
                 +"<br>");
-            tongTien += gia[nhap] * sl;
+            tongTien += gia[nhap-1] * sl;
             nhap = prompt("Vui lòng chọn món : ");
         } while (nhap !=="ok");
         document.write("tổng tiền phải trả là :" + tongTien)

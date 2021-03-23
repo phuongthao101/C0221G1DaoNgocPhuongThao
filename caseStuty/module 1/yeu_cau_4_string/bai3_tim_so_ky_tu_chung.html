@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tìm số ký tự chung trong chuỗi</title>
+</head>
+<body>
+<script>
+    let a1=prompt('enter a1:');
+    let a2=prompt('enter a2:');
+    let word='qwertyuiopasdfghjklzxcvbnm'.split('');
+    let b=[];
+    let count=0;
+    for (let i=0; i<word.length; i++){
+        if (a1.indexOf(word[i])!==-1){
+            if (a2.indexOf(word[i])!==-1){
+                count++;
+                b.push(word[i]);
+            }
+        }
+    }
+    alert(count+'\n'+b);
+
+</script>
+</body>
+</html>

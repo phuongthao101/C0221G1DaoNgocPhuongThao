@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="569eaceb-e846-4ec5-b8be-4969eada65fe" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/yeu_cau3_mang_va_loop/menu2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/yeu_cau_4_string/bai2_dem_so_ky_tu_khac_nhau.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/yeu_cau_4_string/bai3_tim_so_ky_tu_chung.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/yeu_cau_5_mảng/Bai1_tong_cac_so-chan.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/yeu_cau_5_mảng/Bai2_dem_so_ngto_mang_2_chieu.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/yeu_cau_5_mảng/Bai3_gia_tri_nho_nhat_mang_2_chieu.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../demo/list student/list student.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeu_cau3_mang_va_loop/bai5_menu.html" beforeDir="false" afterPath="$PROJECT_DIR$/yeu_cau3_mang_va_loop/bai5_menu.html" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectId" id="1q8vhn7ri0TIN56oyklt6sfCFFL" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="569eaceb-e846-4ec5-b8be-4969eada65fe" name="Default Changelist" comment="" />
+      <created>1616474152331</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1616474152331</updated>
+      <workItem from="1616474153464" duration="8556000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+</project>

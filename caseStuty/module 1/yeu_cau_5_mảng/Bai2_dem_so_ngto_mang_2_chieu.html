@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>liệt kê các số nguyên tố trong mảng 2 chiều, đếm các số nguyên tố</title>
+</head>
+<body>
+<script>
+
+    let n = prompt("Nhập phần tử mảng lớn");
+    let m = prompt("Nhập phần tử các mảng nhỏ ");
+    let arr = [];
+    for (let i = 0; i < n; i++) {
+        arr[i] = [];
+        for (let j = 0; j < m; j++) {
+            arr[i][j] = prompt("nhập phần tử của các mảng nhỏ");
+        }
+    }
+// tìm số nguyên tố
+    function timSonguyento(num) {
+        if (num < 2) {
+            return  false;
+        } else {
+            for (let i = 2; i < num - 1; i++) {
+                if (num % i == 0) {
+                    return  false;
+                    break;
+                }
+            }
+        }
+        return true;
+    }
+
+    let newarr=[];
+    for(let i=0; i<arr.length; i++){
+        for(let j =0; j<arr[i].length; j++){
+            if(timSonguyento(arr[i][j])){
+                newarr.push(parseInt(arr[i][j]));
+            }
+
+        }
+    }
+    document.write(newarr +"Đếm số nto: "+ newarr.length)
+
+</script>
+</body>
+</html>
