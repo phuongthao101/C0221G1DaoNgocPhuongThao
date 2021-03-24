@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Xổ số Codegym</title>
+</head>
+
+<body>
+<table id='winlotery'></table>
+<table id='lotery'></table>
+<input type="button" onclick="buyLottery()" value="Buy">
+<input type="button" onclick="resultLottery()" value="Result ">
+<script>
+    class Player {
+        constructor() {
+            this.lottery = [];
+        }
+
+        buyLottery() {
+            if (this.lottery.length === 4) {
+                alert('Bạn đã nhập quá số lượng vé')
+            } else {
+                let order = prompt(' Bạn chọn 2 lựa chon: \n' + '1.Bạn muốn lựa chọn số\n' + '2.Hệ thông chọn ngẫu nhiên');
+                let array = [];
+                switch (order) {
+                    case "1":
+                        let lottery = prompt(' Bạn chọn 6 số');
+                        array = lottery.split(' ');
+                    case "2":
+                        for (let i = 0; i < 6; i++) {
+                            let num = Math.floor(Math.random() * 100); // chọn số ngẫu nhiên
+                            array.push(num);
+                        }
+                        break;
+                        default:
+                            alert('Bạn đã nhập sai')
+                }
+                this.lottery.push(array);// truyền mảng vừa tìm vào giá trị của lottery
+            }
+        }
+        viewLottery(){
+
+        }
+    }
+    class Lottery {
+        constructor() {
+            this.
+        }
+    }
+
+</script>
+</body>
+</html>

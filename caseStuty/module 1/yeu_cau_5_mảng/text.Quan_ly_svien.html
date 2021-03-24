@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>quản lý sinh viên</title>
+</head>
+<body>
+<h1> Quản lý sinh viên</h1>
+<p id="ketQua"></p>
+<input type="button" onclick="add()" value="Thêm học viên">
+
+<script>
+
+    class Student {
+        constructor(id, name, age) {
+            this.Id = id;
+            this.Name = name;
+            this.Age = age;
+        }
+
+        getId() {
+            return this.Id;
+        }
+
+        getName() {
+            return this.Name;
+        }
+
+        getAge() {
+            return this.Age;
+        }
+
+        setAge(id) {
+            this.Id = id;
+
+        }
+
+        setAge(name) {
+            this.Name = name
+
+        }
+
+        setAge(age) {
+            this.Age = age
+
+        }
+        toString() {
+            return "1. id = " + this.Id + "\n 2. name = " + this.Name + "\n3. age = " + this.Age;
+        }
+
+    }
+
+    let listStudent = [];
+    let stu1 = new Student(2, 'Nguyễn A', 23);
+    let stu2 = new Student(5, 'Nguyễn B', 25);
+    let stu3 = new Student(6, 'Nguyễn C', 18);
+    listStudent.push(stu1, stu2, stu3);
+    display(listStudent);
+
+    function display(list) {
+        let tableString = '<table border ="1">\n ' +
+            '<tr>\n' +
+            '        <th>STT</th>\n' +
+            '        <th>ID</th>\n' +
+            '        <th>Tên</th>\n' +
+            '        <th>Tuổi</th>\n' +
+            '        <th>Sửa</th>\n' +
+            '        <th>Xóa</th>\n' +
+            '        \n' +
+            '    </tr>';
+        for (let i = 0; i < list.length; i++) {
+            tableString += ' <tr>\n' +
+                '        <td>' + (i + 1) + '</td>\n' +
+                '        <td>' + list[i].getId() + '</th>\n' +
+                '        <td>' + list[i].getName() + '</td>\n' +
+                '        <td>' + list[i].getAge() + '</td>\n' +
+                '        <td><input type="button" onclick="edit(' + i + ')" value="Sửa"></td>\n' +
+                '        <td><input type="button" onclick="deleteStudent(' + i + ')" value="Xóa"></td>\n' +
+                '    </tr>'
+        }
+        tableString += ' </table>';
+
+        document.getElementById("ketQua").innerHTML = tableString;
+
+    }
+
+    function add() {
+
+        let id = prompt('Nhập id');
+        let name = prompt('Nhập tên');
+        let age = prompt('Nhập tuổi');
+        let student = new Student(id, name, age);
+        listStudent.push(student);
+        display(listStudent)
+    }
+
+    function deleteStudent(index) {
+        let confirmStudent = confirm(' Bạn có muốn xóa' + listStudent[index].getName());
+        if (confirmStudent) {
+            listStudent.splice(index, 1)
+        }
+        display(listStudent)
+    }
+
+    function edit(index) {
+        let studentEdit = listStudent[index];
+        let check= true;
+        do{
+            let choose = prompt(' Chọn thuộc tính cần sửa\n'+ studentEdit.toString()+"\n 4.Exit");
+            switch (choose ) {
+                case "1":
+                    let newId = prompt('Nhập id mới');
+                    studentEdit.setId(newId);
+                    break;
+                case "2":
+                    let newName = prompt('Nhập tên mới');
+                    studentEdit.setName(newName);
+                    break;
+                case "3":
+                    let newAge = prompt('Nhập tuổi mới');
+                    studentEdit.setAge(newAge);
+                    break;
+                    default:
+                        check = false;
+            }
+
+        }while(check);
+        display(listStudent);
+    }
+
+
+</script>
+</body>
+</html>

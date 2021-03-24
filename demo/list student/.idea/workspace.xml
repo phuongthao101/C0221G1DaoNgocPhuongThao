@@ -1,13 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="569eaceb-e846-4ec5-b8be-4969eada65fe" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/yeu_cau_5_OOP/Xo_so.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yeu_cau_5_OOP/xo-so_again.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yeu_cau_5_mảng/text.Quan_ly_svien.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yeu_cau3_mang_va_loop/Bai2_ tim_ptu_trong b_nhung_ko _thuoc_a.html" beforeDir="false" afterPath="$PROJECT_DIR$/yeu_cau3_mang_va_loop/Bai2_ tim_ptu_trong b_nhung_ko _thuoc_a.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../demo/list student/list student.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../demo/list student/list student.html" afterDir="false" />
+    <list default="true" id="e0df4cb9-0f3f-45e8-b7c0-9fa1b75eae61" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../../caseStuty/module 1/yeu_cau_4_string/bai2_dem_so_ky_tu_khac_nhau.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/list student.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,7 +20,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
-  <component name="ProjectId" id="1q8vhn7ri0TIN56oyklt6sfCFFL" />
+  <component name="ProjectId" id="1q8riZyvijBv7UhwLuOQZv3CZAL" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -35,7 +31,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../demo/list student/list student.html" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../caseStuty/module 1" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -48,13 +44,12 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="569eaceb-e846-4ec5-b8be-4969eada65fe" name="Default Changelist" comment="" />
-      <created>1616474152331</created>
+      <changelist id="e0df4cb9-0f3f-45e8-b7c0-9fa1b75eae61" name="Default Changelist" comment="" />
+      <created>1616472185661</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1616474152331</updated>
-      <workItem from="1616474153464" duration="14278000" />
-      <workItem from="1616548899093" duration="10026000" />
+      <updated>1616472185661</updated>
+      <workItem from="1616472187022" duration="705000" />
     </task>
     <servers />
   </component>
@@ -62,9 +57,9 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="556" y="168" key="FileChooserDialogImpl" timestamp="1616569028487">
+    <state x="556" y="168" key="FileChooserDialogImpl" timestamp="1616474149950">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="556" y="168" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1616569028487" />
+    <state x="556" y="168" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1616474149950" />
   </component>
 </project>
