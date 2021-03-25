@@ -7,25 +7,24 @@
 <body>
 <script>
 
-    let mangso = [];
+    let array = [];
     let max = 0;
-    let tongTb = 0;
 
-    for (let i = 0; i < 10; i++) {
+    for (let i = 0; i < 5; i++) {
         mangso[i] = parseInt(prompt("Nhập số vào mảng"));
     }
-    document.write("Mảng là = [" + mangso + "]<br>");
+    document.write("Mảng là = [" + array + "]<br>");
 
-    for (let i = 0; i < mangso.length; i++) {
-        if (mangso [i] > max) {
-            max = mangso[i];
+    let sum = 0 ;
+    for (let i=0 ; i < arr.length ; i ++ ){
+        sum = sum + arr[i];
+        if ( arr[i ] > max ) {
+            max = arr[ i] ;
+            index = i ;
         }
-        tongTb = mangso[i];
-    }
-    tongTb = tongTb / mangso.length;
-
-    document.write("Phần tử lớn nhất trong mảng là " + max + " tại vị trí :" + vitri );
-    document.write("Tổng trung bình của các số là " + tongTb);
+    } let tcb = sum / arr.length ;
+    console.log("Số đó là : " + max + " index " + index );
+    console.log("Trung bình là " + tcb );
 
 </script>
 </body>

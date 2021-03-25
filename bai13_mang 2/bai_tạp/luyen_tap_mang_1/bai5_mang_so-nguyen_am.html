@@ -14,16 +14,16 @@
         mangso[i] = parseInt(prompt("Nhập số vào mảng"));
     }
     document.write("Mảng là = [" + mangso + "]<br>");
+
     for (let i = 0; i < mangso.length; i++) {
         if (mangso [i] < 0) {
-            count = 0;
-            document.write(' Số nguyên âm trong mảng : ' + mangso[i] )
+            count++;
+            document.write(' Số nguyên âm trong mảng : ' + mangso[i]);
             document.write('<br>')
 
-        } else {
-            count++;
         }
     }
+    document.write('Tổng số nguyên âm trong mảng'+ count)
 
 </script>
 </body>

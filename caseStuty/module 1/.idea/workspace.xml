@@ -2,12 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="569eaceb-e846-4ec5-b8be-4969eada65fe" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/yeu_cau_5_OOP/Xo_so.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yeu_cau_5_OOP/xo-so_again.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/yeu_cau_5_mảng/text.Quan_ly_svien.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../bai10_ cau_lenh_lap/.idea/bai10_ cau_lenh_lap.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../bai10_ cau_lenh_lap/thuc_hanh/Cau_lenh_for/soBatKyLonHon0.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../bai10_ cau_lenh_lap/thuc_hanh/Cau_lenh_for/soBatKyLonHon0.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../bai12_ mang 1/co_caro.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../on_tap/on_tap.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../bai13_mang 2/bai_tạp/luyen_tap_mang_1/b1_bảng_so_nguyen_10_phan_tu.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../bai13_mang 2/bai_tạp/luyen_tap_mang_1/b1_bảng_so_nguyen_10_phan_tu.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../bai13_mang 2/bai_tạp/luyen_tap_mang_1/bai3_tong_trung_binh.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../bai13_mang 2/bai_tạp/luyen_tap_mang_1/bai3_tong_trung_binh.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../bai13_mang 2/bai_tạp/luyen_tap_mang_1/bai5_mang_so-nguyen_am.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../bai13_mang 2/bai_tạp/luyen_tap_mang_1/bai5_mang_so-nguyen_am.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../bai13_mang 2/bai_tạp/luyen_tap_mang_1/bai6_v_thuoc_mang_so_nguyen.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../bai13_mang 2/bai_tạp/luyen_tap_mang_1/bai6_v_thuoc_mang_so_nguyen.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../bai13_mang 2/bai_tạp/luyen_tap_mang_1/bai7_xoa_v_khoi_mang.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../bai13_mang 2/bai_tạp/luyen_tap_mang_1/bai7_xoa_v_khoi_mang.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../bai13_mang 2/bai_tạp/luyen_tap_mang_1/bai9_noi_2 _mang.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../bai13_mang 2/bai_tạp/luyen_tap_mang_1/bai9_noi_2 _mang.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../bai13_mang 2/bai_tạp/luyen_tap_mang_1/t.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../bai13_mang 2/bai_tạp/luyen_tap_mang_1/text.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../bai13_mang 2/bai_tạp/luyen_tạp_mang_2/bai3_dem_so_ky_tu_trong_mang.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../bai13_mang 2/bai_tạp/luyen_tạp_mang_2/bai3_dem_so_ky_tu_trong_mang.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../bai13_mang 2/bai_tạp/luyen_tạp_mang_2/bai4_dem_so_tu_trong_chuoi.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../bai13_mang 2/bai_tạp/luyen_tạp_mang_2/bai4_dem_so_tu_trong_chuoi.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../bai7_bien_kieu_du_lieu_toan_tu/Bai_tap/Ung_dung-chuyen_doi_tien_te/ung_dung_chuyen_doi_tien_te.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../bai7_bien_kieu_du_lieu_toan_tu/Bai_tap/Ung_dung-chuyen_doi_tien_te/ung_dung_chuyen_doi_tien_te.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../bai7_bien_kieu_du_lieu_toan_tu/Bai_tap/Ung_dung_may_tinh/ung_dung_may_tinh.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../bai7_bien_kieu_du_lieu_toan_tu/Bai_tap/Ung_dung_may_tinh/ung_dung_may_tinh.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../bai9_cau_dieu_kien-2/bai-tap/luyen-tạp-cau_truc_dieu-kien 2/so_tuôi.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../bai9_cau_dieu_kien-2/bai-tap/luyen-tạp-cau_truc_dieu-kien 2/so_tuôi.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yeu_cau3_mang_va_loop/Bai2_ tim_ptu_trong b_nhung_ko _thuoc_a.html" beforeDir="false" afterPath="$PROJECT_DIR$/yeu_cau3_mang_va_loop/Bai2_ tim_ptu_trong b_nhung_ko _thuoc_a.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../demo/list student/list student.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../demo/list student/list student.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yeu_cau_5_mảng/text.Quan_ly_svien.html" beforeDir="false" afterPath="$PROJECT_DIR$/yeu_cau_5_mảng/text.Quan_ly_svien.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,7 +47,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../demo/list student/list student.html" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../.." />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -54,7 +66,8 @@
       <option name="presentableId" value="Default" />
       <updated>1616474152331</updated>
       <workItem from="1616474153464" duration="14278000" />
-      <workItem from="1616548899093" duration="10026000" />
+      <workItem from="1616548899093" duration="12810000" />
+      <workItem from="1616635289464" duration="218000" />
     </task>
     <servers />
   </component>
@@ -62,9 +75,9 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="556" y="168" key="FileChooserDialogImpl" timestamp="1616569028487">
+    <state x="556" y="168" key="FileChooserDialogImpl" timestamp="1616635351087">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="556" y="168" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1616569028487" />
+    <state x="556" y="168" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1616635351087" />
   </component>
 </project>

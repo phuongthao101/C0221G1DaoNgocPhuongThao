@@ -6,20 +6,39 @@
 </head>
 <body>
 <script>
-    let arr = [] ;
-    let count = 0 ;
-    let v = prompt("Nhập số v cần tìm ") ;
-    for (let i =0 ; i < 5 ; i ++) {
-        arr[i]= prompt("Nhập phần tử của chuỗi") ;
-        if (v.indexOf(arr[i]) != -1 ){
-            count ++ ;
-        }
-    }if ( count > 0 ) {
+    // let arr = [] ;
+    // let count = 0 ;
+    // let v = prompt("Nhập số v cần tìm ") ;
+    //
+    // for (let i =0 ; i < 5 ; i ++) {
+    //     arr[i]= prompt("Nhập phần tử của chuỗi") ;
+    //
+    //     if (v.indexOf(arr[i]) != -1 ){
+    //         count ++ ;
+    //     }
+    // }if ( count > 0 ) {
+    //
+    // }else {
+    //     alert("V is not in the array");
+    //
+    // }
 
-    }else {
-        alert("V is not in the array");
-
+    let array = [];
+    for (let i = 0; i < 5; i++) {
+        array[i] = parseInt(prompt('Nhập vào mảng : '));// vòng lặp nhập mảng
     }
+
+    document.write(' Mảng = ' + array + ' , ' + '<br>');
+
+    let v = prompt("Nhập số v cần tìm ") ;
+    for (let i =0 ; i < array.length ; i ++) {
+        if(v.indexOf(array[i]) != - 1){
+            array.splice(i,1);              // xóa phần tử trong mảng
+            document.write('Mảng mới:' + array)
+
+        }
+    }
+
 </script>
 </body>
 </html>

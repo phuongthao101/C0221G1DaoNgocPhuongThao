@@ -8,22 +8,12 @@
 
 <script>
 
-    let arr1 = prompt('Nhâp chuỗi 1: ');
-    let arr2 = prompt('Nhập chuỗi 2: ');
-
-    if (arr1.length != arr2.length) {
-        document.write('2 chuỗi không bằng nhau')
+    let array1 = prompt('Nhập chuỗi 1');
+    let array2 = prompt('Nhập chuỗi 2');
+    if (array1 === array2) {
+        alert('chuỗi 1 bằng chuỗi 2')
     } else {
-        for (let i = 0; i < arr1.length; i++) {
-            for (let j = 0; j < arr2.length; j++) {
-                if (arr1[i] == arr2[j]) {
-                    document.write('Các phần tử trong 2 chuỗi giống nhau')
-                } else {
-                    document.write('Các phần tử trong 2 chuỗi ko giống nhau')
-                }
-            }
-        }
-
+        alert('chuỗi 1 không bằng chuỗi 2')
     }
 
 

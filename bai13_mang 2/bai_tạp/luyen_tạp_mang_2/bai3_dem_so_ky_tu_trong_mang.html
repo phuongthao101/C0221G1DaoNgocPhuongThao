@@ -7,16 +7,14 @@
 <body>
 <script>
 
-    let mang = [4, "Hello", 9, "word",18,22,"abc",1,9];
-    let count = 0;
-    document.write("Mảng gồm = ["+mang+"]<br>");
-    for (let i=0; i<mang.length; i++){
-        if (mang[i] %2 == 0 ||mang[i] %2 == 1){
-            count ++
+    let mangSo='0123456789';
+    let nhap=prompt('Nhập');
+    let dem=0;
+    for(let i=0;i<nhap.length;i++){
+        if(mangSo.indexOf(nhap[i])>-1){
+            dem++
         }
-    }
-    document.write("Các ký tự số trong mảng là "+count+" số<br>")
-
+    }alert(dem)
 
 </script>
 </body>
