@@ -5,29 +5,36 @@
     <title>Bài 3_ Nhập chuyển chữ thường sang chữ hoa</title>
 </head>
 <body>
+
 <script>
 
-    let str = prompt("nhập vào chuỗi");
-    let mangHoa = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-    let mangThuong = 'abcdefghijklmnopqrstuvwxyz';
-    let result = [];
-    for(let x=0; x<str.length; x++)
-    {
-        if(mangHoa.indexOf(str[x]) !== -1)
-        {
-            result.push(str[x].toLowerCase());
-        }
-        else if(mangThuong.indexOf(str[x]) !== -1)
-        {
-            result.push(str[x].toUpperCase());
-        }
-        else
-        {
-            result.push(str[x]);
-        }
-    }
-    document.write(result.join(""));
+   let str = prompt("nhập vào chuỗi");
+   let mangHoa = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+   let mangThuong = 'abcdefghijklmnopqrstuvwxyz';
+   let result = [];
+   for(let x=0; x<str.length; x++)
+   {
+       if(mangHoa.indexOf(str[x]) !== -1)
+       {
+           result.push(str[x].toLowerCase());
+       }
+       else if(mangThuong.indexOf(str[x]) !== -1)
+       {
+           result.push(str[x].toUpperCase());
+       }
+       else
+       {
+           result.push(str[x]);
+       }
+   }
+   document.write(result.join(""));
+
+   /* Đây là chú thích */
+   for (let i = 0; i < 10; i++) {
+       console.log(i);
+   }
 
 </script>
+
 </body>
 </html>

@@ -6,22 +6,22 @@
 </head>
 <body>
 <script>
-    let n = prompt("nhập vào số phần tử của mảng :");
-    let a = [];
-    for (let i = 0; i < n; i++) {
-        a[i] = prompt("nhập");
-    }
-    let num = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+    let n = prompt("nhập vào phần tử của mảng :").split('');
+    let num = '0123456789'.split("");
     let text = ['không', 'một', 'hai', 'ba', 'bốn', 'năm', 'sáu', 'bảy', 'tám', 'chín'];
-
-   for(let i=0; i<n; i++){
-       for(let j= 0; j<text.length; j++){
-           if(a[i] == num[j]){
-               a[i] = text[j]
-           }
-
-       }
-   }alert(a)
+    let result = [];
+    for (let i = 0; i < n.length; i++) {
+        for (let j = 0; j < num.length; j++) {
+            if (isNaN(n[i])) {
+                result.push(n[i]);
+                break;
+            } else if (n[i] == num[j]) {
+                result.push(text[j]);
+                break;
+            }
+        }
+    }
+    alert(result)
 
 </script>
 </body>
