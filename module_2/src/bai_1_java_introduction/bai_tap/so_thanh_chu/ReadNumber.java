@@ -5,47 +5,26 @@ import java.util.Scanner;
 public class ReadNumber {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter your number to check:");
+        System.out.print("Enter number : ");
         int number = Integer.parseInt(scanner.nextLine());
+        int numberInput = number;
+        String[] arrayNum = {"zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen"};
+        String[] arrayNum20 = {"twenty", "thirty", "forty", "fify", "sixties", "seventies", "eighty", "ninety"};
+        String strNum = "";
+        if (number < 20) {
+            strNum = arrayNum[number];
+        } else {
+            if (number < 100) {
+                strNum += arrayNum20[number / 10 - 2];
+                strNum += " " + arrayNum[number % 10];
+            } else {
+                strNum += arrayNum[number / 100] + " hundred ";
+                strNum += arrayNum20[(number % 100) / 10 - 2];
+                strNum += " " + arrayNum[number % 10];
+            }
 
-        switch (number){
-            case 0:
-                System.out.println("Zero");
-                break;
-            case 1:
-                System.out.println("One");
-                break;
-            case 2:
-                System.out.println("Two");
-                break;
-            case 3:
-                System.out.println("Three");
-                break;
-            case 4:
-                System.out.println("Four");
-                break;
-            case 5:
-                System.out.println("Five");
-                break;
-            case 6:
-                System.out.println("Six");
-                break;
-            case 7:
-                System.out.println("Seven");
-                break;
-            case 8:
-                System.out.println("Eight");
-                break;
-            case 9:
-                System.out.println("Nine");
-                break;
-            case 10:
-                System.out.println("Ten");
-                break;
-            default:
-                System.out.println("out of ability");
         }
 
-
+        System.out.println(numberInput + " read : " + strNum);
     }
 }
