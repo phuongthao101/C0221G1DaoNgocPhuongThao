@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tìm chỉ số của phân số lớn nhất </title>
+</head>
+<body>
+<script>
+
+    let a = [5, 2, 5];
+    let b = [6, 3, 4];
+    let max= a[0]/b[0];
+    let tu=0;
+    let mau=0;
+    let index='';
+    for(let i=0;i<a.length;i++){
+        if( a[i]/b[i]>max){
+            max= a[i]/b[i];
+            index =i;
+            tu=a[i];
+            mau=b[i]
+        }
+    }
+    document.write (tu+"/"+mau+"<br>"+'vị trí: ' + index)
+</script>
+</body>
+</html>

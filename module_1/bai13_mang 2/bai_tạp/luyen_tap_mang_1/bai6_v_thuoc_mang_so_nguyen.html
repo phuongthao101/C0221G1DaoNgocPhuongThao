@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>V thuộc mảng số nguyên</title>
+</head>
+<body>
+<script>
+
+    // let arr = [];
+    // let count = 0;
+    // let v = prompt("Nhập số v cần tìm ");
+    //
+    // for (let i = 0; i < 5; i++) {
+    //     arr[i] = prompt("Nhập phần tử của mảng");
+    //     count++;
+    //
+    // }
+    // if (count > 0) {
+    //     alert("V is in the array");
+    // } else {
+    //     alert("V is not in the array");
+    // }
+    // // note: hàm indexof = nếu hàm indexof = -1 > ko thuộc mảng
+
+    let array=[];
+    let size = parseInt(prompt('Nhập vào dộ dài mảng '));
+    let v=prompt('Nhập và ký tự cần kiểm tra');
+    for(let i = 0; i< size; i++) {
+        array[i] = prompt('Nhập vào phần tử mảng');
+    }
+        if(array.indexOf(v) == -1) {
+            alert('v ko thuộc mảng')
+        }else {
+            alert('v thuộc mảng')
+
+    }
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính tổng các số chắn</title>
+</head>
+<body>
+<script>
+    //Tạo mảng 2 chiều
+
+    function createMatrix() {
+        let m = parseInt(prompt("Nhập vào số dòng của ma trận"));
+        let n = parseInt(prompt("Nhập số cột của ma trận "));
+        let matrix = [];
+
+        for (let i = 0; i < m; i++) {
+            let row = [];
+            for (let j = 0; j < n; j++) {
+                row[j] = parseInt(prompt("nhập số vào ma trận"));
+            }
+            matrix[i] = row
+        }
+        return matrix;
+    }
+
+    // let matrix = createMatrix();
+
+
+    //Tìm tổng số chẵn mảng 2 chiều
+    //------------------------------------------------------
+    function totalEven(matrix) {
+        let sum = 0;
+        for (let i = 0; i < matrix.length; i++) {
+            for (let j = 0; j < matrix[i].length; j++) {
+                if (matrix[i][j] % 2 == 0) {
+                    sum += matrix[i][j]
+
+                }
+            }
+        }
+        console.table(matrix);
+        alert('Tổng số chẵn trong ma trận là ' + sum)
+    }
+
+    // totalEven(matrix);
+
+
+    // Đếm số nguyên tố trong mảng 2 chiều
+    //-----------------------------------------------
+    let matrix2 = createMatrix();
+
+    function checkPrime(num) {
+        if (num < 2) {
+            return  false;
+        } else {
+            for (let i = 2; i < num - 1; i++) {
+                if (num % i == 0) {
+                    return  false;
+                    break;
+                }
+            }
+        }
+        return true;
+    }
+
+    function findPrime(matrix) {
+        let primeArr = [];
+        for (let i = 0; i < matrix.length; i++) {
+            for (let j = 0; j < matrix[i].length; j++) {
+                if (checkPrime(matrix[i][j])) {
+                    primeArr.push(parseInt((matrix[i][j])))
+                }
+            }
+
+        }
+        console.log(matrix);
+        document.write( 'Số nguyên tố là:' + primeArr +"\n Đếm số nto: "+ primeArr.length)
+    }
+
+    findPrime(matrix2)
+
+
+</script>
+</body>
+</html>

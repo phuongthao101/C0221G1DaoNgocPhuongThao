@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tìm giá trị trong mảng</title>
+</head>
+<body>
+<script>
+
+    let array=[];
+    let size = parseInt(prompt('Nhập vào dộ dài mảng '));
+    let v=prompt('Nhập và ký tự cần kiểm tra');
+    for(let i = 0; i< size; i++) {
+        array[i] = prompt('Nhập vào phần tử mảng');
+    }
+    if(array.indexOf(v) == -1) {
+        alert('v ko thuộc mảng')
+    }else {
+        alert('v thuộc mảng')
+
+    }
+
+</script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Đếm số ký tự khác nhau trong chuỗi</title>
+</head>
+<body>
+<script>
+
+    // let n=prompt('nhập chuỗi cần kiểm tra:').split("");
+    // let array=[];
+    // for(let i=0; i<n.length; i++){
+    //     if(array.indexOf(n[i])==-1){
+    //         array.push(n[i]);
+    //
+    //     }
+    // }alert(array + 'số ký tự' + array.length)
+
+    function differentSymbolsNaive(str) {
+        let arr = [];
+        for (let i = 0; i < str.length; i++) {
+            if (arr.indexOf(str.charAt(i)) === -1) { // lấy ký tự thứ i trong chuỗi xem thuộc mảng ko,charAt() lấy ký tự trong mảng
+
+                arr.push(str.charAt(i))    // lấy các ký tự trong chuỗi khác nhau đưa vào mảng
+            }
+        }
+        return arr.length // số phần tử của mảng
+    }
+
+    let str = prompt('Nhập vao chuỗi cần kiểm tra');
+    alert("Số ký tự khác nhau là :" + differentSymbolsNaive(str))
+
+</script>
+</body>
+</html>
