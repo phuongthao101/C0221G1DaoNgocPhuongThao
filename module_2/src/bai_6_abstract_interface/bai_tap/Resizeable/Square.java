@@ -36,7 +36,7 @@ public class Square extends Shape {
 
     @Override
     public void howToColor() {
-
+        System.out.println("Color all four sides..");
     }
 
     double getArea() {

@@ -11,6 +11,7 @@ public class Main<shapes> {
         shapes[0] = new Circle(x,"blue",true);
         shapes[1] = new Rectangle(x,x, "blue",false );
         shapes[2] = new Square(x, "yellow", false);
+
         for (Shape a : shapes) {
             System.out.println(a);
         }
@@ -18,6 +19,7 @@ public class Main<shapes> {
         for (Shape a : shapes) {
             a.resize(Math.random() * 100);
         }
+
         System.out.println("\n");
         System.out.println(Arrays.toString(shapes));
     }
