@@ -83,7 +83,7 @@ public class ProductManager extends Product {
 
                     break;
                 case 5:
-                    System.out.println("Nhập tên sản phẩm ");
+                    System.out.println("Nhập tên sản phẩm "); // tìm tên sp
                     String name = scanner.nextLine();
 
                     for (Product item : productList) {
