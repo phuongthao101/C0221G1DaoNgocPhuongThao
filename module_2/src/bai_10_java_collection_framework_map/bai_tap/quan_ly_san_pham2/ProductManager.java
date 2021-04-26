@@ -97,7 +97,7 @@ public class ProductManager extends Product {
                     productList.sort(Comparator.comparing(Product::getPrice));
                     break;
                 case 7:
-                    System.out.println("Sắp xếp Giam dần ");
+                    System.out.println("Sắp xếp Giảm dần ");
                     Collections.reverse(productList);
                     break;
                 case 8:
@@ -116,7 +116,7 @@ public class ProductManager extends Product {
     static void showMenu() {
         System.out.println("1. Thêm SẢM PHẨM");
         System.out.println("2. HIỂN THỊ DANH SÁCH SẢN PHẨM");
-        System.out.println("3. SỮA THÔNG TIN SẢN PHẨM ");
+        System.out.println("3. SỬA THÔNG TIN SẢN PHẨM ");
         System.out.println("4. XÓA SẢN PHẨM  ");
         System.out.println("5. TÌM KIẾM SẢN PHẨM THEO TÊN  ");
         System.out.println("6. TÌM KIẾM SẢN PHẨM THEO GIÁ TĂNG DẦN  ");

@@ -1,66 +1,74 @@
 package Controllers;
 
-import Models.Villa;
-import javafx.css.Styleable;
-
 import java.util.Scanner;
 
 public class MainController {
-    public static Scanner scanner = new Scanner(System.in);
+    private static Scanner scanner = new Scanner(System.in);
 
     public static void displayMainMenu() {
 
-        System.out.println("1.\t Add New Services\n" +
-                "2.\tShow Services\n" +
-                "3.\tAdd New Customer\n" +
-                "4.\tShow Information of Customer\n" +
-                "5.\tAdd New Booking\n" +
-                "6.\tShow Information of Employee\n" +
-                "7.\tExit\n");
-        System.out.println("Please choose one option below");
+        int choose = 0;
+        do {
 
-        switch (scanner.nextInt()) {
-            case 1:
-                addNewServies();
-                break;
-            case 2:
-                showServices();
-                break;
-            case 3:
-                addNewCustumer();
-                break;
+            System.out.println("1.\t Add New Services\n" +
+                    "2.\tShow Services\n" +
+                    "3.\tAdd New Customer\n" +
+                    "4.\tShow Information of Customer\n" +
+                    "5.\tAdd New Booking\n" +
+                    "6.\tShow Information of Employee\n" +
+                    "7.\tExit\n");
+            System.out.println("Please choose one option (1 - 6)");
+            choose = scanner.nextInt();
 
-            case 4:
-                showInformationCustomers();
-                break;
+            switch (choose) {
+                case 1:
+                    addNewServies();
+                    break;
+                case 2:
+                    showServices();
+                    break;
+                case 3:
+                   addNewCustumer();
 
-            case 5:
-                addNewBooking();
-                break;
-            case 6:
-                ShowInformationOfEmployee();
-                break;
-            case 7:
-                break;
+                case 4:
+                   addNewBooking();
+                    break;
 
+                case 5:
+                    showInformationCustomers();
+                    break;
+                case 6:
+                    ShowInformationOfEmployee();
+                    break;
+                case 7:
+                    break;
+                default:
+                    System.out.println("Fail. Please choose number of menu exactly !");
+                    break;
+
+            }
+        }
+            while (choose >= 1 && choose <= 7) ;
         }
 
-    }
-
-    public static void ShowInformationOfEmployee() {
-    }
-
-    public static void showInformationCustomers() {
-    }
-
-    public static void addNewBooking() {
-    }
-
-    public static void addNewCustumer() {
+    private static void ShowInformationOfEmployee() {
 
     }
 
+    private static void showInformationCustomers() {
 
+    }
+
+    private static void addNewBooking() {
+
+    }
+
+    private static void addNewCustumer() {
+    }
+
+
+
+//--------------------------------------------------------------------------------------------
 
     public static void addNewServies() {
         System.out.println("1.\tAdd New Villa\n" +
@@ -73,7 +81,7 @@ public class MainController {
             case 1:
                 addNewVilla();
                 break;
-                
+
             case 2:
                 addNewHouse();
                 break;
@@ -88,19 +96,21 @@ public class MainController {
                 break;
         }
 
+    }
+
+    private static void addNewRoom() {
+
+    }
+
+    private static void addNewHouse() {
 
     }
 
     private static void addNewVilla() {
 
-
     }
 
-    private static void addNewRoom() {
-    }
-
-    private static void addNewHouse() {
-    }
+    //-------------------------------------------------------------------------------------------------
 
     public static void showServices() {
         System.out.println("1.\tShow all Villa\n" +
@@ -114,13 +124,13 @@ public class MainController {
         System.out.println("Please choose one option below");
         switch (scanner.nextInt()) {
             case 1:
-                showVilla();
+               showVilla();
                 break;
             case 2:
                 showHouse();
                 break;
             case 3:
-                showRoom();
+               showRoom();
                 break;
             case 4:
 
@@ -136,14 +146,20 @@ public class MainController {
 
     }
 
-    private static void showHouse() {
+    private static void showRoom() {
 
+    }
+
+    private static void showHouse() {
 
     }
 
     private static void showVilla() {
-    }
-    private static void showRoom() {
+
     }
 
+    public static void main(String[] args) {
+        MainController.displayMainMenu();
+    }
 }
+

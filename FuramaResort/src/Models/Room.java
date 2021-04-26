@@ -1,35 +1,32 @@
 package Models;
 
-public abstract class Room extends Services {
-    private String freeServices;
+public class Room extends Services {
+    private ExtraService extraServices;
 
-    public Room(String id, String nameServices, float areaUsed, float rentalCost, int amountOfPeople, String typeOfRent, String freeServices) {
+    public Room(String id, String nameServices, float areaUsed, float rentalCost, int amountOfPeople,
+                String typeOfRent, ExtraService extraServices) {
         super(id, nameServices, areaUsed, rentalCost, amountOfPeople, typeOfRent);
-        this.freeServices = freeServices;
+        this.extraServices = extraServices;
     }
 
-    public Room(String freeServices) {
-        this.freeServices = freeServices;
-    }
-    public Room(){
-
+    public ExtraService getExtraServices() {
+        return extraServices;
     }
 
-    public String getFreeServices() {
-        return freeServices;
+    public void setExtraServices(ExtraService extraServices) {
+        this.extraServices = extraServices;
     }
-
-    public void setFreeServices(String freeServices) {
-        this.freeServices = freeServices;
-    }
+    // sử dụng phương thức showInfor() để hiển thị thông tin của đối tượng vừa được tạo.
     @Override
-    public String showInfor() {
-        return "\nNameServices" + super.getNameServices() +
-                " \nAreaused" + super.getAreaUsed() +
-                " \nrentalcosts" + super.getRentalCost() +
-                "\namountofpeople" + super.getAmountOfPeople() +
-                "\ntypeofrent" + super.getTypeOfRent() +
-                "\nid" + super.getId() +
-                "\nFreeServices: " + this.getFreeServices();
+    public String toString() {
+        return "Room{" +
+                "extraServices=" + extraServices +
+                '}' + super.toString();// kế thừa phthuc lớp cha
+    }
+
+    @Override
+    public void showInfor() {
+
+        System.out.println(this.toString());
     }
 }
