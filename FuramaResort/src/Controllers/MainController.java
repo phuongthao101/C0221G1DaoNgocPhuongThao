@@ -28,7 +28,7 @@ public class MainController {
                     showServices();
                     break;
                 case 3:
-                   addNewCustumer();
+                   addNewCustomer();
 
                 case 4:
                    addNewBooking();
@@ -63,7 +63,7 @@ public class MainController {
 
     }
 
-    private static void addNewCustumer() {
+    private static void addNewCustomer() {
     }
 
 
@@ -96,6 +96,10 @@ public class MainController {
                 break;
         }
 
+
+    }
+    private static void addNewVilla() {
+
     }
 
     private static void addNewRoom() {
@@ -106,9 +110,7 @@ public class MainController {
 
     }
 
-    private static void addNewVilla() {
 
-    }
 
     //-------------------------------------------------------------------------------------------------
 
@@ -158,8 +160,6 @@ public class MainController {
 
     }
 
-    public static void main(String[] args) {
-        MainController.displayMainMenu();
-    }
+
 }
 
