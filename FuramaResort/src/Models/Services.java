@@ -2,23 +2,23 @@ package Models;
 
 public abstract class Services {
     protected String id;
-    protected String nameServices;
-    protected float areaUse;
-    protected float rentalCost;
-    protected int amountOfPeople;
-    protected String typeOfRent;
-
-    public Services(String id, String nameServices, float areaUsed, float rentalCost, int amountOfPeople, String typeOfRent) {
-        this.id = id;
-        this.nameServices = nameServices;
-        this.areaUse = areaUsed;
-        this.rentalCost = rentalCost;
-        this.amountOfPeople = amountOfPeople;
-        this.typeOfRent = typeOfRent;
-    }
+    //    public static String ID_REGEX="^[]";
+    protected String name;
+    protected String areaUse;
+    protected String cost;
+    protected String maxPeople;
+    protected String rentType;
 
     public Services() {
+    }
 
+    public Services(String id, String name, String areaUse, String cost, String maxPeople, String rentType) {
+        this.id = id;
+        this.name = name;
+        this.areaUse = areaUse;
+        this.cost = cost;
+        this.maxPeople = maxPeople;
+        this.rentType = rentType;
     }
 
     public String getId() {
@@ -29,49 +29,67 @@ public abstract class Services {
         this.id = id;
     }
 
-    public String getNameServices() {
-        return nameServices;
+    public String getName() {
+        return name;
     }
 
-    public void setNameServices(String nameServices) {
-        this.nameServices = nameServices;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public float getAreaUsed() {
+    public String getAreaUse() {
         return areaUse;
     }
 
-    public void setAreaUsed(float areaUsed) {
-        this.areaUse = areaUsed;
+    public void setAreaUse(String areaUse) {
+        this.areaUse = areaUse;
     }
 
-    public float getRentalCost() {
-        return rentalCost;
+    public String getCost() {
+        return cost;
     }
 
-    public void setRentalCost(float rentalCost) {
-        this.rentalCost = rentalCost;
+    public void setCost(String cost) {
+        this.cost = cost;
     }
 
-    public int getAmountOfPeople() {
-        return amountOfPeople;
+    public String getMaxPeople() {
+        return maxPeople;
     }
 
-    public void setAmountOfPeople(int amountOfPeople) {
-        this.amountOfPeople = amountOfPeople;
+    public void setMaxPeople(String maxPeople) {
+        this.maxPeople = maxPeople;
     }
 
-    public String getTypeOfRent() {
-        return typeOfRent;
+    public String getRentType() {
+        return rentType;
     }
 
-    public void setTypeOfRent(String typeOfRent) {
-        this.typeOfRent = typeOfRent;
+    public void setRentType(String rentType) {
+        this.rentType = rentType;
     }
 
+    public String  showInfor() {
+        return  "Services{" +
+                "id='" + id + '\'' +
+                ", name='" + name + '\'' +
+                ", areaUse='" + areaUse + '\'' +
+                ", cost='" + cost + '\'' +
+                ", maxPeople='" + maxPeople + '\'' +
+                ", rentType='" + rentType + '\'' +
+                '}';
+    }
 
-
-    public abstract void showInfor();
+    @Override
+    public String toString() {
+        return
+                 id + "," +
+                 name + ","+
+                 areaUse +
+                ", " + cost +
+                "," + maxPeople +
+                "," + rentType;
+    }
 
 
 }

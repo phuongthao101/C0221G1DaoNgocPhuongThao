@@ -18,7 +18,7 @@ public class ProductManager {
 
         Product.showMenu();
         int choose = 0;
-        do {
+
             System.out.println(" Please choose option 1-3");
             choose = Integer.parseInt(scanner.nextLine());
             switch (choose) {
@@ -35,7 +35,6 @@ public class ProductManager {
                     System.out.println(" Please choose 1-3 ");
                     break;
             }
-        } while (choose >= 1 && choose <= 3);
 
     }
 

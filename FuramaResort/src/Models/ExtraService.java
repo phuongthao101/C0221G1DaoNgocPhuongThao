@@ -37,10 +37,19 @@ public class ExtraService {
 
     @Override
     public String toString() {
+        return
+                 extraServiceName +
+                "," + price +
+                "," + unit
+                ;
+    }
+
+    public String showInfor() {
         return "ExtraService{" +
                 "extraServiceName='" + extraServiceName + '\'' +
                 ", price=" + price +
                 ", unit='" + unit + '\'' +
-                '}' +super.toString();
+                '}';
     }
+
 }

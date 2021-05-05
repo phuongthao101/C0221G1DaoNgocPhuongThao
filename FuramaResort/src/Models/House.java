@@ -2,14 +2,27 @@ package Models;
 
 public class House extends Services {
     private String standardRoom;
-    private String otherDescription;
-    private int numberOfFloor;
+    private String description;
+    private String floors;
 
-    public House(String id, String nameServices, float areaUsed, float rentalCost, int amountOfPeople, String typeOfRent, String standardRoom, String otherDescription, int numberOfFloor) {
-        super(id, nameServices, areaUsed, rentalCost, amountOfPeople, typeOfRent);
+
+    public House(String standardRoom, String description, String floors) {
         this.standardRoom = standardRoom;
-        this.otherDescription = otherDescription;
-        this.numberOfFloor = numberOfFloor;
+        this.description = description;
+        this.floors = floors;
+    }
+
+    public House(String id, String name, String areaUse, String cost, String maxPeople, String rentType, String standardRoom, String description, String floors) {
+        super(id, name, areaUse, cost, maxPeople, rentType);
+        this.standardRoom = standardRoom;
+        this.description = description;
+        this.floors = floors;
+    }
+
+    public House() {
+    }
+
+    public House(String string, double parseDouble, double parseDouble1, int parseInt, String string1, String string2, String string3, int parseInt1) {
     }
 
     public String getStandardRoom() {
@@ -20,34 +33,48 @@ public class House extends Services {
         this.standardRoom = standardRoom;
     }
 
-    public String getOtherDescription() {
-        return otherDescription;
+    public String getDescription() {
+        return description;
     }
 
-    public void setOtherDescription(String otherDescription) {
-        this.otherDescription = otherDescription;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
-    public int getNumberOfFloor() {
-        return numberOfFloor;
+    public String getFloors() {
+        return floors;
     }
 
-    public void setNumberOfFloor(int numberOfFloor) {
-        this.numberOfFloor = numberOfFloor;
+    public void setFloors(String floors) {
+        this.floors = floors;
     }
-// sử dụng phương thức showInfor() để hiển thị thông tin của đối tượng vừa được tạo.
+
     @Override
     public String toString() {
-        return "House{" +
-                "standardRoom='" + standardRoom + '\'' +
-                ", otherDescription='" + otherDescription + '\'' +
-                ", numberOfFloor=" + numberOfFloor +
-                '}'+ super.toString();
+        return standardRoom+
+                "," + description +
+                "," + floors +
+                "," + id +
+                "," + name +
+                "," + areaUse +
+                "," + cost + '\'' +
+                "," + maxPeople +
+                "," + rentType
+                ;
     }
 
     @Override
-    public void showInfor() {
-
-        System.out.println(this.toString());
+    public String showInfor() {
+        return "House{" +
+                "standardRoom='" + standardRoom + '\'' +
+                ", description='" + description + '\'' +
+                ", floors='" + floors + '\'' +
+                ", id='" + id + '\'' +
+                ", name='" + name + '\'' +
+                ", areaUse='" + areaUse + '\'' +
+                ", cost='" + cost + '\'' +
+                ", maxPeople='" + maxPeople + '\'' +
+                ", rentType='" + rentType + '\'' +
+                '}';
     }
 }

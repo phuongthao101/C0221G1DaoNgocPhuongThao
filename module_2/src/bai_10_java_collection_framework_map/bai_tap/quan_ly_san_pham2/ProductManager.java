@@ -67,7 +67,7 @@ public class ProductManager extends Product {
                         break;
                     }
                 case 4:
-                    System.out.println("Chọn ID sản phẩm cần sửa");
+                    System.out.println("Chọn ID sản phẩm cần xóa");
                     int number = Integer.parseInt(scanner.nextLine());
                     boolean check = true;
                     for (Product item : productList) {

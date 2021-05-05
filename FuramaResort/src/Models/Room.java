@@ -1,32 +1,44 @@
 package Models;
 
 public class Room extends Services {
-    private ExtraService extraServices;
+    private ExtraService extraService;
 
-    public Room(String id, String nameServices, float areaUsed, float rentalCost, int amountOfPeople,
-                String typeOfRent, ExtraService extraServices) {
-        super(id, nameServices, areaUsed, rentalCost, amountOfPeople, typeOfRent);
-        this.extraServices = extraServices;
+    public Room(ExtraService extraService) {
+        this.extraService = extraService;
     }
 
-    public ExtraService getExtraServices() {
-        return extraServices;
+    public Room(String id, String name, String areaUse, String cost, String maxPeople,
+                String rentType, ExtraService extraService) {
+        super(id, name, areaUse, cost, maxPeople, rentType);
+        this.extraService = extraService;
     }
 
-    public void setExtraServices(ExtraService extraServices) {
-        this.extraServices = extraServices;
+    public Room(String idRoom, String nameRoom, String areaRoom, String costRoom, String peopleRoom, String rentTypeRoom, String extraService) {
     }
-    // sử dụng phương thức showInfor() để hiển thị thông tin của đối tượng vừa được tạo.
+
+
     @Override
     public String toString() {
-        return "Room{" +
-                "extraServices=" + extraServices +
-                '}' + super.toString();// kế thừa phthuc lớp cha
+        return
+
+                "," + id +
+                "," + name +
+                "," + areaUse +
+                "," + cost +
+                "," + maxPeople +
+                "," + rentType + ","+extraService  ;
     }
 
     @Override
-    public void showInfor() {
-
-        System.out.println(this.toString());
+    public String showInfor() {
+        return "Room{" +
+                "freeService='" + extraService + '\'' +
+                ", id='" + id + '\'' +
+                ", name='" + name + '\'' +
+                ", areaUse='" + areaUse + '\'' +
+                ", cost='" + cost + '\'' +
+                ", maxPeople='" + maxPeople + '\'' +
+                ", rentType='" + rentType + '\'' +
+                '}';
     }
 }

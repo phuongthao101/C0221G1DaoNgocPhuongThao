@@ -1,28 +1,33 @@
 package Models;
 
+import Commons.Vadidate;
+
+import java.io.*;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
+import java.util.regex.Pattern;
 
 public class Customer {
-    private static ArrayList<Villa> listVilla=new ArrayList<>();
-    private static ArrayList<House> listHouse=new ArrayList<>();
-    private static ArrayList<Room> listRoom=new ArrayList<>();
+
     public static Scanner scanner = new Scanner(System.in);
     private String nameOfCustomer;
     private String dateOfBirth;
     private String gender;
-    private int cmnd;
+    private int idCard;
     private double phoneNumber;
     private String typeOfCustomer;
     private String email;
     private String address;
     private Services services;
 
-    public Customer(String nameOfCustomer, String dateOfBirth, String gender, int cmnd, float phoneNumber, String typeOfCustomer, String email, String address, Services services) {
+
+
+    public Customer(String nameOfCustomer, String dateOfBirth, String gender, int idCard, float phoneNumber, String typeOfCustomer, String email, String address, Services services) {
         this.nameOfCustomer = nameOfCustomer;
         this.dateOfBirth = dateOfBirth;
         this.gender = gender;
-        this.cmnd = cmnd;
+        this.idCard = idCard;
         this.phoneNumber = phoneNumber;
         this.typeOfCustomer = typeOfCustomer;
         this.email = email;
@@ -30,32 +35,8 @@ public class Customer {
         this.services = services;
     }
 
-    public Customer() {
+    public Customer(String nameOfCustomer, String dateOfBirth, String gender, String idCard, String phoneNumber, String typeOfCustomer, String email, String address, String services) {
 
-    }
-
-    public static ArrayList<Villa> getListVilla() {
-        return listVilla;
-    }
-
-    public static void setListVilla(ArrayList<Villa> listVilla) {
-        Customer.listVilla = listVilla;
-    }
-
-    public static ArrayList<House> getListHouse() {
-        return listHouse;
-    }
-
-    public static void setListHouse(ArrayList<House> listHouse) {
-        Customer.listHouse = listHouse;
-    }
-
-    public static ArrayList<Room> getListRoom() {
-        return listRoom;
-    }
-
-    public static void setListRoom(ArrayList<Room> listRoom) {
-        Customer.listRoom = listRoom;
     }
 
     public static Scanner getScanner() {
@@ -90,19 +71,19 @@ public class Customer {
         this.gender = gender;
     }
 
-    public int getCmnd() {
-        return cmnd;
+    public int getIdCard() {
+        return idCard;
     }
 
-    public void setCmnd(int cmnd) {
-        this.cmnd = cmnd;
+    public void setIdCard(int idCard) {
+        this.idCard = idCard;
     }
 
     public double getPhoneNumber() {
         return phoneNumber;
     }
 
-    public void setPhoneNumber(float phoneNumber) {
+    public void setPhoneNumber(double phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
 
@@ -138,30 +119,30 @@ public class Customer {
         this.services = services;
     }
 
-    public void addNewCustomer(){
 
-    System.out.println("Enter name: ");
-    String name = scanner.nextLine();
-    System.out.println("Enter Date of Birth: ");
-    String dateOfBirth = scanner.nextLine();
-    System.out.println("Enter Gender: ");
-    String gender = scanner.nextLine();
-    System.out.println("Enter Number of identity Card: ");
-    String number = scanner.nextLine();
-    System.out.println("Enter phone number: ");
-    String phone = scanner.nextLine();
-    System.out.println("Enter type of customer: ");
-    String type = scanner.nextLine();
-    System.out.println("Enter email: ");
-    String email = scanner.nextLine();
-    System.out.println("Enter address: ");
-    String address = scanner.nextLine();
-}
+    public List<Customer> getCustomers() {
+        return customers;
+    }
+
+    public void setCustomers(List<Customer> customers) {
+        this.customers = customers;
+    }
+
+
 
 
 public void showInformationCustomers(){
-
-
+    try {
+        FileReader data = new FileReader("D:\\C0221G1DaoNgocPhuongThao\\FuramaResort\\src\\Data\\Customer.csv");
+        BufferedReader bfr = new BufferedReader(data);
+        while (bfr.readLine() != null) {
+            System.out.println(bfr.readLine());
+        }
+    } catch (IOException e) {
+        e.printStackTrace();
+    }
 }
 
 }
+
+
