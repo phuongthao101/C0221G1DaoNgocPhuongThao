@@ -7,18 +7,18 @@ import Models.Room;
 import Models.Services;
 import Models.Villa;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 
 public class ServiceController {
 
     private static Scanner scanner = new Scanner(System.in);
 
-    public static List<Services> villas = new ArrayList();
-    public static List<Services> houses = new ArrayList();
-    public static List<Services> rooms = new ArrayList();
+    public static List<Services> servicesList = new ArrayList();
+    private static String Villa;
+    private static String House;
+    private static String Room;
+
 
     public static void addNewServices() {
         while (true) {
@@ -47,37 +47,61 @@ public class ServiceController {
     }
 
     private static void addRoom() {
-        System.out.printf("Input Room");
-        InputService.inputRoom();
-        FuncReadAndWriteFile.writeFile("Room.csv", rooms, true);
+//String idRoom, String nameRoom, String areaRoom, String costRoom, String peopleRoom, String rentTypeRoom, String extraService) {
+        String id = InputService.inputId();
+        String name = InputService.inputnameService();
+        String area = InputService.inputAreaUse();
+        String cost = InputService.inputRentalCost();
+        String people = InputService.inputPeople();
+        String rentType = InputService.inputTypeOfRent();
+        String extraService = InputService.inputExtraService();
+
+        List<Services> servicesList = new ArrayList<>();
+        Services room = new Room(id, name, area, id, name, area, cost, people, rentType, extraService);
+        servicesList.add(room);
+        FuncReadAndWriteFile.writeFile("Service.csv", servicesList, true);
+
+
     }
 
     private static void addHouse() {
-        System.out.printf("Input House");
-        InputService.inputHouse();
-        FuncReadAndWriteFile.writeFile("House.csv", houses, true);
+        String id = InputService.inputId();
+        String name = InputService.inputnameService();
+        String area = InputService.inputAreaUse();
+        String cost = InputService.inputRentalCost();
+        String people = InputService.inputPeople();
+        String rentType = InputService.inputTypeOfRent();
+
+        String standard = InputService.inputStandardRoom();
+        String description = InputService.inputDescription();
+        String floors = InputService.inputFloors();
+
+        List<Services> servicesList = new ArrayList<>();
+        Services house = new Room(id, name, area, cost, people, rentType, standard, description, floors);
+        servicesList.add(house);
+        FuncReadAndWriteFile.writeFile("Service.csv", servicesList, true);
+
     }
 
     public static void addVilla() {
-        System.out.printf("Input Villa");
-        InputService.inputVilla();
-        FuncReadAndWriteFile.writeFile("Villa.csv", villas, true);
+        String id = InputService.inputId();
+        String name = InputService.inputnameService();
+        String area = InputService.inputAreaUse();
+        String cost = InputService.inputRentalCost();
+        String people = InputService.inputPeople();
+        String rentType = InputService.inputTypeOfRent();
+
+        String standard = InputService.inputStandardRoom();
+        String description = InputService.inputDescription();
+        String floors = InputService.inputFloors();
+        String poolArea = InputService.inputAreaUse();
+
+        List<Services> servicesList = new ArrayList<>();
+        Services villa = new Room(id, name, area, cost, people, rentType, standard, description, floors, poolArea);
+        servicesList.add(villa);
+        FuncReadAndWriteFile.writeFile("Service.csv", servicesList, true);
     }
 
-    public static void ShowInformationOfEmployee() {
-
-    }
-
-    public static void showInformationCustomers() {
-
-    }
-
-    public static void addNewBooking() {
-
-    }
-
-    public static void addNewCustomer() {
-    }
 
     public static void showServices() {
         while (true) {
@@ -101,8 +125,14 @@ public class ServiceController {
                     showAllRoom();
                     break;
                 case "4":
+                    showAllServicesNotDuplicate(Villa);
+                    break;
                 case "5":
+                    showAllServicesNotDuplicate(House);
+                    break;
                 case "6":
+                    showAllServicesNotDuplicate(Room);
+                    break;
                 case "7":
                     MainController.displayMainMenu();
                     break;
@@ -113,34 +143,50 @@ public class ServiceController {
 
     }
 
-    public static void showAllVilla() {
-        List<Services> list = FuncReadAndWriteFile.readWrite("Villa.csv");
+    public static List<Villa> showAllVilla() {
+        List<Services> list = FuncReadAndWriteFile.readFile("src\\Data\\Service.csv");
+        List<Villa> villaList = new ArrayList<>();
         for (Services services : list) {
-            System.out.println(services);
+            if (services instanceof Villa) {
+                villaList.add((Villa) services);
+                System.out.println(services);
+            }
         }
+        return villaList;
     }
 
-//    public static void showAllVillaIn1File(){
-//        List<Services> list = FuncReadAndWriteFile.readWrite("src\\Data\\Service.csv");
-//        for (Services services:list){
-//            if (services instanceof Villa){
-//                System.out.println(services);
-//            }
-//        }
-//    }
-//
-    public static void showAllHouse() {
-        List<Services> list = FuncReadAndWriteFile.readWrite("House.csv");
+
+    public static List<House> showAllHouse() {
+        List<Services> list = FuncReadAndWriteFile.readFile("src\\Data\\Service.csv");
+        List<House> houseList = new ArrayList<>();
         for (Services services : list) {
-            System.out.println(services);
+            if (services instanceof House) {
+                houseList.add((House) services);
+                System.out.println(services);
+            }
         }
+        return houseList;
     }
 
-    public static void showAllRoom() {
-        List<Services> list = FuncReadAndWriteFile.readWrite("Room.csv");
+    public static List<Room> showAllRoom() {
+        List<Services> list = FuncReadAndWriteFile.readFile("src\\Data\\Service.csv");
+        List<Room> roomList = new ArrayList<>();
         for (Services services : list) {
-            System.out.println(services);
+            if (services instanceof Room) {
+                roomList.add((Room) services);
+                System.out.println(services);
+            }
         }
+        return roomList;
+    }
+
+    public static void showAllServicesNotDuplicate(String fileName) {
+        Set<String> setOfServices = new TreeSet<>();
+        System.out.println("--------------------");
+        System.out.println("List service not duplicate name");
+
     }
 
 }
+
+

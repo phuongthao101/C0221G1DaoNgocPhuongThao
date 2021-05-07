@@ -8,216 +8,385 @@ import java.util.List;
 import java.util.Scanner;
 import java.util.regex.Pattern;
 
+import static Controllers.CustomerController.customerList;
+
 import static Controllers.ServiceController.*;
+//Tên dịch vụ, Diện tích sử dụng, Chi phí thuê, Số lượng người tối đa, Kiểu thuê (bao gồm thuê theo năm, tháng, ngày, giờ).
+//-	Riêng Villa sẽ có thêm thông tin: Tiêu chuẩn phòng, Mô tả tiện nghi khác, Diện tích hồ bơi, Số tầng.
+//
 
 public class InputService {
-    List<Customer> customers = new ArrayList<>();
-
 
     private static Scanner scanner = new Scanner(System.in);
 
-    public static void inputVilla() {
-        System.out.println("enter id");
-        String id = scanner.nextLine();
-
-        while (!Pattern.matches(Vadidate.ID_VILLA_REGEX, id)) {
-            System.out.println("enter id SVVL-YYYY");
-            id = scanner.nextLine();
-        }
-
-        System.out.println("enter name");
-        String name = scanner.nextLine();
-        while (!Pattern.matches(Vadidate.SERVICE_NAME_REGEX, name)) {
-            System.out.println("enter name FIRST IS UPPERCASE");
-            name = scanner.nextLine();
-        }
-        System.out.println("enter area use");
-        String area = scanner.nextLine();
-        while (!Pattern.matches(Vadidate.AREA_REGEX, area)) {
-            System.out.println("enter area >30");
-            area = scanner.nextLine();
-        }
-        System.out.println("enter cost");
-        String cost = scanner.nextLine();
-        while (!Pattern.matches(Vadidate.COST_REGEX, cost)) {
-            System.out.println("enter cost just number");
-            cost = scanner.nextLine();
-        }
-        System.out.println("enter people");
-        String people = scanner.nextLine();
-        while (!Pattern.matches(Vadidate.PEOPLE_REGEX, people)) {
-            System.out.println("enter area 0< && <30");
-            people = scanner.nextLine();
-        }
-        System.out.println("enter rent type");
-        String rentType = scanner.nextLine();
-        while (!Pattern.matches(Vadidate.RENT_REGEX, rentType)) {
-            System.out.println("enter rent type: day || month || year");
-            rentType = scanner.nextLine();
-        }
-        System.out.println("enter standard room");
-        String standardRoom = scanner.nextLine();
-        System.out.println("enter description");
-        String description = scanner.nextLine();
-        System.out.println("enter floors");
-        String floors = scanner.nextLine();
+    public static String inputId() {
+        String id = null;
+        while (true) {
+            try {
+                System.out.printf("Enter id");
+                id = scanner.nextLine();
+                ValidateException.checkId(id);
+                return id;
 
 
-        while (!Pattern.matches(Vadidate.FLOORS_REGEX, floors)) {
-            System.out.println("enter floors just number");
-            floors = scanner.nextLine();
+            } catch (ValidateException e) {
+                System.err.println(e.getMessage());
+            }
         }
-        System.out.println("enter pool areas");
-        String poolArea = scanner.nextLine();
+    }
 
-        while (!Pattern.matches(Vadidate.AREA_REGEX, poolArea)) {
-            System.out.println("enter area 0< && <30");
-            poolArea = scanner.nextLine();
+    public static String inputnameService() {
+        String nameService = null;
+        while (true) {
+            try {
+                System.out.printf("Enter name");
+                nameService = scanner.nextLine();
+                ValidateException.checkNameService(nameService);
+                return nameService;
+
+
+            } catch (ValidateException e) {
+                System.err.println(e.getMessage());
+            }
         }
-        Villa villa = new Villa(id, name, area, cost, people, rentType, standardRoom, description, floors, poolArea);
-        villas.add(villa);
+    }
+
+    public static String inputAreaUse() {
+        String areaUse = null;
+        while (true) {
+            try {
+                System.out.printf("Enter area Use");
+                areaUse = scanner.nextLine();
+                ValidateException.checkArea(areaUse);
+                return areaUse;
+
+
+            } catch (ValidateException e) {
+                System.err.println(e.getMessage());
+            }
+        }
+    }
+
+    public static String inputRentalCost() {
+        String rentalCost = null;
+        while (true) {
+            try {
+                System.out.printf("Enter rentalCost");
+                rentalCost = scanner.nextLine();
+                ValidateException.checkCost(rentalCost);
+                return rentalCost;
+
+
+            } catch (ValidateException e) {
+                System.err.println(e.getMessage());
+            }
+        }
+    }
+
+    public static String inputPeople() {
+        String peole = null;
+        while (true) {
+            try {
+                System.out.println("Enter peole");
+                peole = scanner.nextLine();
+                ValidateException.checkPeople(peole);
+                return peole;
+
+
+            } catch (ValidateException e) {
+                System.err.println(e.getMessage());
+            }
+        }
+    }
+
+    public static String inputTypeOfRent() {
+        String typeOfRent = null;
+        while (true) {
+            try {
+                System.out.println("Enter TypeOfRent");
+                typeOfRent = scanner.nextLine();
+                ValidateException.checkRent(typeOfRent);
+                return typeOfRent;
+
+
+            } catch (ValidateException e) {
+                System.err.println(e.getMessage());
+            }
+        }
+    }
+
+    public static String inputExtraService() {
+        String extraService = null;
+        while (true) {
+            try {
+                System.out.println("Enter ExtraService");
+                extraService = scanner.nextLine();
+                ValidateException.checkExtraService(extraService);
+                return extraService;
+
+
+            } catch (ValidateException e) {
+                System.err.println(e.getMessage());
+            }
+        }
+    }
+
+    public static String inputStandardRoom() {
+        String standardRoom = null;
+        while (true) {
+            try {
+                System.out.printf("Enter Standard Room");
+                standardRoom = scanner.nextLine();
+                ValidateException.checkNameService(standardRoom);
+                return standardRoom;
+
+
+            } catch (ValidateException e) {
+                System.err.println(e.getMessage());
+            }
+        }
 
     }
 
-    public static void inputHouse() {
-        System.out.println("enter id");
-        String id = scanner.nextLine();
-        while (!Pattern.matches(Vadidate.ID_VILLA_REGEX, id)) {
-            System.out.println("enter id SVVL-YYYY");
-            id = scanner.nextLine();
-        }
-        System.out.println("enter name");
-        String name = scanner.nextLine();
-        while (!Pattern.matches(Vadidate.SERVICE_NAME_REGEX, name)) {
-            System.out.println("enter name FIRST IS UPPERCASE");
-            name = scanner.nextLine();
-        }
-        System.out.println("enter area use");
-        String area = scanner.nextLine();
-        while (!Pattern.matches(Vadidate.AREA_REGEX, area)) {
-            System.out.println("enter area >30");
-            area = scanner.nextLine();
-        }
-        System.out.println("enter cost");
-        String cost = scanner.nextLine();
-        while (!Pattern.matches(Vadidate.COST_REGEX, cost)) {
-            System.out.println("enter cost just number");
-            cost = scanner.nextLine();
-        }
-        System.out.println("enter people");
-        String people = scanner.nextLine();
-        while (!Pattern.matches(Vadidate.PEOPLE_REGEX, people)) {
-            System.out.println("enter area 0< && <30");
-            people = scanner.nextLine();
-        }
-        System.out.println("enter rent type");
-        String rentType = scanner.nextLine();
-        while (!Pattern.matches(Vadidate.RENT_REGEX, rentType)) {
-            System.out.println("enter rent type: day || month || year");
-            rentType = scanner.nextLine();
-        }
-        System.out.println("enter standard room");
-        String standardRoom = scanner.nextLine();
-        System.out.println("enter description");
-        String description = scanner.nextLine();
-        System.out.println("enter floors");
-        String floors = scanner.nextLine();
-        while (!Pattern.matches(Vadidate.FLOORS_REGEX, floors)) {
-            System.out.println("enter floors just number");
-            floors = scanner.nextLine();
-        }
-        House house = new House(id, name, area, cost, people, rentType, standardRoom, description, floors);
-        houses.add(house);
-
+    public static String inputDescription() {
+        String description = null;
+        System.out.println("Enter Description");
+        description = scanner.nextLine();
+        return description;
     }
 
-
-    public static void inputRoom() {
-
-            System.out.println("enter idRoom");
-            String idRoom = scanner.nextLine();
-            while (!Pattern.matches(Vadidate.ID_VILLA_REGEX, idRoom)) {
-                System.out.println("enter idRoom SVVL-YYYY");
-                idRoom = scanner.nextLine();
-            }
-            System.out.println("enter nameRoom ");
-            String nameRoom = scanner.nextLine();
-            while (!Pattern.matches(Vadidate.SERVICE_NAME_REGEX, nameRoom)) {
-                System.out.println("enter nameRoom  FIRST IS UPPERCASE");
-                nameRoom = scanner.nextLine();
-            }
-            System.out.println("enter areaRoom use");
-            String areaRoom = scanner.nextLine();
-            while (!Pattern.matches(Vadidate.AREA_REGEX, areaRoom)) {
-                System.out.println("enter areaRoom >30");
-                areaRoom = scanner.nextLine();
-            }
-            System.out.println("enter costRoom");
-            String costRoom = scanner.nextLine();
-            while (!Pattern.matches(Vadidate.COST_REGEX, costRoom)) {
-                System.out.println("enter costRoom just number");
-                costRoom = scanner.nextLine();
-            }
-            System.out.println("enter peopleRoom");
-            String peopleRoom = scanner.nextLine();
-            while (!Pattern.matches(Vadidate.PEOPLE_REGEX, peopleRoom)) {
-                System.out.println("enter areaRoom 0< && <30");
-                peopleRoom = scanner.nextLine();
-            }
-            System.out.println("enter rent type");
-            String rentTypeRoom = scanner.nextLine();
-            while (!Pattern.matches(Vadidate.RENT_REGEX, rentTypeRoom)) {
-                System.out.println("enter rent type: day || month || year");
-                rentTypeRoom = scanner.nextLine();
-            }
-//            System.out.println("enter free service");
-//            String freeService = scanner.nextLine();
-//            while (!Pattern.matches(Vadidate.FREE_SERVICE_REGEX, freeService)) {
-//                System.out.println("enter areaRoom 0< && <30");
-//                freeService = scanner.nextLine();
-//            }
-            System.out.println("enter extraService");
-            String extraService = scanner.nextLine();
-            Room room = new Room(idRoom, nameRoom, areaRoom, costRoom, peopleRoom, rentTypeRoom, extraService);
-
-            rooms.add(room);
-            FuncReadAndWriteFile.writeFile("House.csv", (List<Services>) room, true);
-        }
-
-
-
-    public static void inputCustomer(){
-
-        System.out.println("Enter name: ");
-        String nameOfCustomer = scanner.nextLine();
-
-        System.out.println("Enter Date of Birth: ");
-        String dateOfBirth = scanner.nextLine();
-
-        System.out.println("Enter Gender: ");
-        String gender = scanner.nextLine();
-
-        System.out.println("Enter Number of identity Card: ");
-        String idCard = scanner.nextLine();
-
-        System.out.println("Enter phone number: ");
-        String phoneNumber = scanner.nextLine();
-
-        System.out.println("Enter type of customer: ");
-        String typeOfCustomer = scanner.nextLine();
-
-        System.out.println("Enter email: ");
-        String email = scanner.nextLine();
-
-        System.out.println("Enter address: ");
-        String address = scanner.nextLine();
-
-        System.out.println("Enter services: ");
-        String services = scanner.nextLine();
-
-        Customer customer = new Customer(nameOfCustomer, dateOfBirth,  gender,  idCard,
-                phoneNumber,  typeOfCustomer,  email, address,  services);
-        customer.add(customer);
+    public static String inputFloors() {
+        String floors = null;
+        System.out.println("Enter floors");
+        floors = scanner.nextLine();
+        return floors;
     }
+
+    public static String inputGender() {
+        boolean check = false;
+        String choose = null;
+        String gender = null;
+        while (true) {
+            System.out.println("Choose gender " +
+                    "\n 1. Man" + "\n2. Women");
+            choose = scanner.nextLine();
+            switch (choose) {
+                case "1":
+                    gender = "Men";
+                    check = true;
+                    break;
+                case "2":
+                    gender = "Women";
+                    check = true;
+                    break;
+                default:
+                    System.out.println("Please choose 1 or 2 ");
+
+            }
+            if (check) {
+                break;
+            }
+
+        }
+        return gender;
+    }
+
+    public static String inputIdCard() {
+        String idCard = null;
+        while (true) {
+            try {
+                System.out.println("Enter Id Card");
+                idCard = scanner.nextLine();
+                ValidateException.checkExtraService(idCard);
+                return idCard;
+
+            } catch (ValidateException e) {
+                System.err.println(e.getMessage());
+            }
+        }
+    }
+
+    public static String inputDay() {
+        String day = null;
+        while (true) {
+            try {
+                System.out.println("Enter Day");
+                day = scanner.nextLine();
+                ValidateException.checkExtraService(day);
+                return day;
+
+            } catch (ValidateException e) {
+                System.err.println(e.getMessage());
+            }
+        }
+    }
+
+    public static String inputEmail() {
+        String email = null;
+        while (true) {
+            try {
+                System.out.println("Enter email");
+                email = scanner.nextLine();
+                ValidateException.checkExtraService(email);
+                return email;
+
+            } catch (ValidateException e) {
+                System.err.println(e.getMessage());
+            }
+        }
+    }
+
+    public static String inputService() {
+        String service = null;
+
+        System.out.println("Enter service");
+        service = scanner.nextLine();
+
+        return service;
+
+    }
+    public static String inputPhone() {
+        String phone = null;
+
+        System.out.println("Enter phone");
+        phone = scanner.nextLine();
+
+        return phone;
+
+    }
+    public static String inputTypeCustomer() {
+        String typeCustomer = null;
+
+        System.out.println("Enter typeCustomer");
+        typeCustomer = scanner.nextLine();
+
+        return typeCustomer;
+
+    }
+    public static String inputAddress() {
+        String address = null;
+
+        System.out.println("Enter address");
+        address = scanner.nextLine();
+
+        return address;
+
+    }
+    public static String inputCustomerName() {
+        String customerName = null;
+        while (true) {
+            try {
+                System.out.println("Enter Customer name");
+                customerName = scanner.nextLine();
+                ValidateException.checkExtraService(customerName);
+                return customerName;
+
+            } catch (ValidateException e) {
+                System.err.println(e.getMessage());
+            }
+        }
+    }
+    public static String inputLevel(){
+        boolean check = false;
+        String choose = null;
+        String level = null;
+        while (true){
+            System.out.println("Chon trinh do cua nhan vien : \n" +
+                    "1.Trung cấp\n" +
+                    "2.Cao Đăng\n" +
+                    "3.Đại học \n" +
+                    "4.Sau đại học");
+            choose = scanner.nextLine();
+            switch (choose){
+                case "1":
+                    level = "Trung cấp";
+                    check = true;
+                    break;
+                case "2":
+                    level = "Cao đẳng";
+                    check = true;
+                    break;
+                case "3":
+                    level = "Đại học";
+                    check = true;
+                    break;
+                case "4":
+                    level = "Sau đại học";
+                    check = true;
+                    break;
+
+            }
+            if (check){
+                break;
+            }else {
+                System.out.println("vui long chon theo danh sach 1-4");
+            }
+        }
+        return level;
+    }
+    public static String inputPosition(){
+        boolean check = false;
+        String choose = null;
+        String positon = null;
+        while (true){
+            //Lễ tân, phục vụ, chuyên viên, giám sát, quản lý, giá đốc.
+            System.out.println("Chon vi tri cua nhan vien : \n" +
+                    "1.Lễ tân\n" +
+                    "2.Phục vụ\n" +
+                    "3.Chuyên viên \n" +
+                    "4.Giám sát\n" +
+                    "5.Quản lý\n" +
+                    "6.Giám đốc");
+            choose = scanner.nextLine();
+            switch (choose){
+                case "1":
+                    positon = "Lễ tân";
+                    check = true;
+                    break;
+                case "2":
+                    positon = "Phục vụ";
+                    check = true;
+                    break;
+                case "3":
+                    positon = "Chuyên viên";
+                    check = true;
+                    break;
+                case "4":
+                    positon = "Giám sát";
+                    check = true;
+                    break;
+                case "5":
+                    positon = "Quản lý";
+                    check = true;
+                    break;
+                case "6":
+                    positon = "Giám đốc";
+                    check = true;
+                    break;
+
+            }
+            if (check){
+                break;
+            }else {
+                System.out.println("vui long chon theo danh sach 1-4");
+            }
+        }
+        return positon;
+    }
+    public static String inputSalary(){
+        String salary = null;
+        while (true){
+            try{
+                System.out.println("nhap luong nhan vien");
+                salary = scanner.nextLine();
+                ValidateException.checkNumber(salary);
+                break;
+            }catch ( ValidateException e){
+                System.err.println(e.getMessage());
+            }
+        }
+        return salary;
+    }
+
 }
 

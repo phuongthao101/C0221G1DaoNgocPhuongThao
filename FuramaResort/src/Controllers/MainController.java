@@ -2,6 +2,9 @@ package Controllers;
 
 import java.util.Scanner;
 
+import static Controllers.BookingController.addNewBooking;
+import static Controllers.CustomerController.*;
+import static Controllers.EmployeeController.showEmployee;
 import static Controllers.ServiceController.*;
 
 
@@ -38,17 +41,17 @@ public class MainController {
                    showServices();
                     break;
                 case 3:
-                   addNewCustomer();
-
+                    addNewCustomer();
                 case 4:
-                   addNewBooking();
+                    showInformationOfCustomer();
                     break;
 
                 case 5:
-                    showInformationCustomers();
+                    addNewBooking();
+
                     break;
                 case 6:
-                    ShowInformationOfEmployee();
+                    showEmployee();
                     break;
                 case 7:
                     isExit = true;
@@ -64,9 +67,6 @@ public class MainController {
         }
             while (choose >= 1 && choose <= 7) ;
         }
-
-
-
 
 
 

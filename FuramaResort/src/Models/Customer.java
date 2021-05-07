@@ -1,12 +1,6 @@
 package Models;
 
-import Commons.Vadidate;
-
-import java.io.*;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
-import java.util.regex.Pattern;
 
 public class Customer {
 
@@ -20,7 +14,6 @@ public class Customer {
     private String email;
     private String address;
     private Services services;
-
 
 
     public Customer(String nameOfCustomer, String dateOfBirth, String gender, int idCard, float phoneNumber, String typeOfCustomer, String email, String address, Services services) {
@@ -119,29 +112,35 @@ public class Customer {
         this.services = services;
     }
 
-
-    public List<Customer> getCustomers() {
-        return customers;
+    @Override
+    public String toString() {
+        return
+                nameOfCustomer +
+                        "," + dateOfBirth +
+                        "," + gender +
+                        "," + idCard +
+                        "," + phoneNumber +
+                        "," + typeOfCustomer +
+                        "," + email +
+                        "," + address +
+                        "," + services
+                ;
     }
 
-    public void setCustomers(List<Customer> customers) {
-        this.customers = customers;
+    public String showInfor() {
+        return "Customer{" +
+                "nameOfCustomer='" + nameOfCustomer + '\'' +
+                ", dateOfBirth='" + dateOfBirth + '\'' +
+                ", gender='" + gender + '\'' +
+                ", idCard=" + idCard +
+                ", phoneNumber=" + phoneNumber +
+                ", typeOfCustomer='" + typeOfCustomer + '\'' +
+                ", email='" + email + '\'' +
+                ", address='" + address + '\'' +
+                ", services=" + services +
+                '}';
+
     }
-
-
-
-
-public void showInformationCustomers(){
-    try {
-        FileReader data = new FileReader("D:\\C0221G1DaoNgocPhuongThao\\FuramaResort\\src\\Data\\Customer.csv");
-        BufferedReader bfr = new BufferedReader(data);
-        while (bfr.readLine() != null) {
-            System.out.println(bfr.readLine());
-        }
-    } catch (IOException e) {
-        e.printStackTrace();
-    }
-}
 
 }
 

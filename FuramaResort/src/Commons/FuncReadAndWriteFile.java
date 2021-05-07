@@ -36,7 +36,7 @@ public class FuncReadAndWriteFile {
         }
     }
 
-    public static List<Services> readWrite(String fileName){
+    public static List<Services> readFile(String fileName){
         File file = new File(PATH +fileName);
         FileReader fileReader = null;
         BufferedReader bufferedReader = null;
