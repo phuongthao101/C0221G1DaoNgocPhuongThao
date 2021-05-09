@@ -52,19 +52,19 @@ public class QuanLyChucNang {
     public static void themCongNhan() {
         //ing id, String hoTen, String namSinh, String gioiTinh, String diaChi, String bac
         String id = QuanLyNhapLieu.nhapId();
-
         String hoTen = QuanLyNhapLieu.nhapHoTen();
         String namSinh = QuanLyNhapLieu.nhapNamSinh();
         String gioiTinh = QuanLyNhapLieu.nhapGioiTinh();
         String diaChi = QuanLyNhapLieu.nhapDiaChi();
-        String bac = QuanLyNhapLieu.nhapCapBac();
+      String bac = QuanLyNhapLieu.nhapCapBac();
 
         List<CanBo> canBoList = new ArrayList<>();
         CanBo congNhan = new CongNhan(id, hoTen,namSinh,gioiTinh,diaChi,bac);
         canBoList.add(congNhan);
-        DocGhiFile.ghiFile("CongNhan.csv", canBoList, true);
+        DocGhiFile.ghiFile("CanBo.csv", canBoList, true);
 
     }
+
     public static void themKySu(){
         String id = QuanLyNhapLieu.nhapId();
         String hoTen = QuanLyNhapLieu.nhapHoTen();
@@ -76,9 +76,10 @@ public class QuanLyChucNang {
         List<CanBo> canBoList = new ArrayList<>();
         CanBo kySu = new KySu(id,hoTen,namSinh,gioiTinh,diaChi,nganh);
         canBoList.add(kySu);
-        DocGhiFile.ghiFile("KySu.csv",canBoList,true);
+        DocGhiFile.ghiFile("CanBo.csv",canBoList,true);
     }
-    public static void themNhanVien(){
+
+    public static void themNhanVien() {
         String id = QuanLyNhapLieu.nhapId();
         String hoTen = QuanLyNhapLieu.nhapHoTen();
         String namSinh = QuanLyNhapLieu.nhapNamSinh();
@@ -89,7 +90,7 @@ public class QuanLyChucNang {
         List<CanBo> canBoList = new ArrayList<>();
         CanBo nhanVien = new NhanVien(id,hoTen,namSinh,gioiTinh,diaChi,congViec);
         canBoList.add(nhanVien);
-        DocGhiFile.ghiFile("NhanVien.csv",canBoList,true);
+        DocGhiFile.ghiFile("CanBo.csv",canBoList,true);
     }
 
     public static void timKiemTheoTen(){
@@ -115,11 +116,11 @@ public class QuanLyChucNang {
         boolean kiemTra = false;
         int chon = 0;
         List<CanBo> canBoList = DocGhiFile.docFile("CanBo.csv");
+
         while (true){
-            for (int i =0 ;i<canBoList.size();i++){
+            for (int i=0 ;i< canBoList.size();i++){
                 System.out.println((i+1)+" : "+canBoList.get(i));
             }
-
             System.out.println("Nhập cán bộ cần xóa");
             while (true){
                 try{
@@ -130,10 +131,10 @@ public class QuanLyChucNang {
                     e.printStackTrace();
                 }
             }
-            for (int i = 0; i< canBoList.size(); i++){
-                if(chon -1 == i){
+            for (int i = 0; i < canBoList.size(); i++){
+                if(chon == i + 1){
                     canBoList.remove(i);
-                    DocGhiFile.ghiFile("CanBo.csv", canBoList, true);
+                    DocGhiFile.ghiFile("CanBo.csv", canBoList, false);
                     kiemTra = true;
                     break;
 
@@ -181,7 +182,7 @@ public class QuanLyChucNang {
         }
     }
     public static void hienThiCongNhan(){
-        List<CanBo> canBoList = DocGhiFile.docFile("CongNhan.csv");
+        List<CanBo> canBoList = DocGhiFile.docFile("CanBo.csv"); // ghi 3 file , "CongNhan.csv"
         for (CanBo canBo : canBoList){
             if (canBo instanceof  CongNhan){
                 canBo.showInfo();
@@ -189,7 +190,7 @@ public class QuanLyChucNang {
         }
     }
     public static void hienThiKySu(){
-        List<CanBo> canBoList = DocGhiFile.docFile("KySu.csv");
+        List<CanBo> canBoList = DocGhiFile.docFile("CanBo.csv");
         for (CanBo canBo : canBoList){
             if (canBo instanceof  KySu){
                 canBo.showInfo();
@@ -197,7 +198,7 @@ public class QuanLyChucNang {
         }
     }
     public static void hienThiNhanVien(){
-        List<CanBo> canBoList = DocGhiFile.docFile("NhanVien.csv");
+        List<CanBo> canBoList = DocGhiFile.docFile("CanBo.csv");
         for (CanBo canBo : canBoList){
             if (canBo instanceof  NhanVien){
                 canBo.showInfo();

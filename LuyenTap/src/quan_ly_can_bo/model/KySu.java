@@ -4,7 +4,7 @@ public class KySu extends CanBo {
     private String nganhDaoTao;
 
     public KySu(String id, String ten, String namSinh, String gioiTinh, String diaChi, String nganhDaoTao) {
-        super(id, 2,ten, namSinh, gioiTinh, diaChi);
+        super(id,ten, namSinh, gioiTinh, diaChi);
         this.nganhDaoTao = nganhDaoTao;
     }
 
@@ -25,7 +25,8 @@ public class KySu extends CanBo {
 
     @Override
     public String toString() {
-        return super.toString()+"," + nganhDaoTao ;
+//        return super.toString()+","+"2" +","+ nganhDaoTao ;
+        return String.format("%s,2,%s",super.toString(),nganhDaoTao);
 
     }
 

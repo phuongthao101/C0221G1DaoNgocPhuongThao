@@ -2,16 +2,15 @@ package quan_ly_can_bo.model;
 
 public abstract class CanBo {
     protected String id;
-    protected int loai;
+
     protected String hoTen;
     protected String namSinh;
     protected String gioiTinh;
     protected String diaChi;
 
 
-    public CanBo(String id, int loai, String ten, String namSinh, String gioiTinh, String diaChi) {
+    public CanBo(String id, String ten, String namSinh, String gioiTinh, String diaChi) {
         this.id = id;
-        this.loai = loai;
         this.hoTen = ten;
         this.namSinh = namSinh;
         this.gioiTinh = gioiTinh;
@@ -62,23 +61,10 @@ public abstract class CanBo {
         this.diaChi = diaChi;
     }
 
-    public int getLoai() {
-        return loai;
-    }
-
-    public void setLoai(int loai) {
-        this.loai = loai;
-    }
 
     @Override
     public String toString() {
-        return
-             id +
-            "," + hoTen +
-            "," + namSinh +
-            "," + gioiTinh +
-            "," + diaChi
-            ;
+        return String.format("%s,%s,%s,%s,%s", id, hoTen, namSinh, gioiTinh, diaChi);
 }
     public abstract void showInfo();
 }

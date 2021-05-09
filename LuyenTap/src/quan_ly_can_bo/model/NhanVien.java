@@ -5,7 +5,7 @@ public class NhanVien extends CanBo {
     private String congViec;
 
     public NhanVien(String id, String ten, String namSinh, String gioiTinh, String diaChi, String congViec) {
-        super(id, 3,ten, namSinh, gioiTinh, diaChi);
+        super(id,ten, namSinh, gioiTinh, diaChi);
         this.congViec = congViec;
     }
 
@@ -18,8 +18,8 @@ public class NhanVien extends CanBo {
 
     @Override
     public String toString() {
-        return super.toString()+"," + congViec
-                ;
+        return String.format("%s,3,%s",super.toString(),congViec);
+
     }
 
     @Override

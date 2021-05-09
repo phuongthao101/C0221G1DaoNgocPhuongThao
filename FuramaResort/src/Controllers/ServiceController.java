@@ -15,9 +15,7 @@ public class ServiceController {
     private static Scanner scanner = new Scanner(System.in);
 
     public static List<Services> servicesList = new ArrayList();
-    private static String Villa;
-    private static String House;
-    private static String Room;
+
 
 
     public static void addNewServices() {
@@ -59,7 +57,7 @@ public class ServiceController {
         List<Services> servicesList = new ArrayList<>();
         Services room = new Room(id, name, area, id, name, area, cost, people, rentType, extraService);
         servicesList.add(room);
-        FuncReadAndWriteFile.writeFile("Service.csv", servicesList, true);
+        FuncReadAndWriteFile.writeFile("Room.csv", servicesList, true);
 
 
     }
@@ -79,7 +77,7 @@ public class ServiceController {
         List<Services> servicesList = new ArrayList<>();
         Services house = new Room(id, name, area, cost, people, rentType, standard, description, floors);
         servicesList.add(house);
-        FuncReadAndWriteFile.writeFile("Service.csv", servicesList, true);
+        FuncReadAndWriteFile.writeFile("House.csv", servicesList, true);
 
     }
 
@@ -99,7 +97,7 @@ public class ServiceController {
         List<Services> servicesList = new ArrayList<>();
         Services villa = new Room(id, name, area, cost, people, rentType, standard, description, floors, poolArea);
         servicesList.add(villa);
-        FuncReadAndWriteFile.writeFile("Service.csv", servicesList, true);
+        FuncReadAndWriteFile.writeFile("Villa.csv", servicesList, true);
     }
 
 
@@ -125,13 +123,13 @@ public class ServiceController {
                     showAllRoom();
                     break;
                 case "4":
-                    showAllServicesNotDuplicate(Villa);
+
                     break;
                 case "5":
-                    showAllServicesNotDuplicate(House);
+
                     break;
                 case "6":
-                    showAllServicesNotDuplicate(Room);
+
                     break;
                 case "7":
                     MainController.displayMainMenu();

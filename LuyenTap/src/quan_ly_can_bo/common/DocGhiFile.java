@@ -26,9 +26,7 @@ public class DocGhiFile {
             for (CanBo canBo : canBoList) {
                 bufferedWriter.write(canBo.toString());
                 bufferedWriter.newLine();
-
             }
-            bufferedWriter.flush();
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -52,7 +50,6 @@ public class DocGhiFile {
         String line = null;
         String[] strings = null;
 
-
         try {
 
             file = new File(PATH + fileName);
@@ -60,44 +57,42 @@ public class DocGhiFile {
                 file.createNewFile();
             }
             fileReader = new FileReader(file);
+
             bufferedReader = new BufferedReader(fileReader);
-//            while ((line = bufferedReader.readLine()) != null) {
-//                strings = line.split(",");
-////                if(strings[1] == "1"){
-////                    CanBo congNhan= new CongNhan(strings[0],strings[1],strings[2],strings[3],strings[4],strings[5]);
-////                    canBoList.add(congNhan);
-//                Integer loai = Integer.parseInt(strings[1]);
-//
-//            if (strings[5].contains("/7")) {
-//                CanBo congNhan = new CongNhan(strings[0], strings[1], strings[2], strings[3], strings[4], strings[5]);
-//                canBoList.add(congNhan);
-//
-//            } else if (strings[5].contains("PV")) {
-//                CanBo nhanVien = new NhanVien(strings[0], strings[1], strings[2], strings[3], strings[4], strings[5]);
-//                canBoList.add(nhanVien);
-//            } else {
-//                CanBo kySu = new KySu(strings[0], strings[1], strings[2], strings[3], strings[4], strings[5]);
-//                canBoList.add(kySu);
-//            }
-//        }
+            while ((line = bufferedReader.readLine()) != null) {
+                if(line.length() == 0){
+                    continue;
+                }
+                strings = line.split(",");
 
-    }catch(
-    IOException e)
+                int loai = Integer.parseInt(strings[5]);
+                if (loai == 1) {
 
-    {
-        e.printStackTrace();
-    }finally
+                        CanBo congNhan = new CongNhan(strings[0],strings[1], strings[2], strings[3], strings[4], strings[6]);
+                    canBoList.add(congNhan);
+                } else if (loai == 2) {
+                    CanBo kySu = new KySu(strings[0], strings[1], strings[2], strings[3], strings[4], strings[6]);
+                    canBoList.add(kySu);
+                } else {
+                    CanBo nhanVien = new NhanVien(strings[0], strings[1], strings[2], strings[3], strings[4], strings[6]);
+                    canBoList.add(nhanVien);
+                }
 
-    {
-        try {
-            bufferedReader.close();
-            fileReader.close();
-        } catch (IOException e) {
+            }
+
+        } catch (
+                IOException e) {
             e.printStackTrace();
+        } finally {
+            try {
+                bufferedReader.close();
+                fileReader.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
-    }
         return canBoList;
-}
+    }
 
     public static List<String> docFileNganhDaoTao(String fileName) {
         File file = null;
