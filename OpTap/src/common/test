@@ -1,0 +1,11 @@
+CREATE TABLE Bike(
+    Id primary  key;
+    Palate nvarchar(100);
+    Name nvarchar(100)
+)
+
+Id | Palate | Name
+1  | Test   | sam
+2  | Test 2 | sam 2
+
+SELECT Id, Name, Palate FROM Bike
