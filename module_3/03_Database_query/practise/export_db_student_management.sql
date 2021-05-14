@@ -27,7 +27,7 @@ join`subject`
 on `subject`.sub_id =  mark.sub_id
 where `subject`.sub_name = 'CF';
 
-
+-- done
 
 
 

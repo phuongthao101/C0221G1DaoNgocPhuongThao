@@ -19,13 +19,17 @@ values
 ('Bep dien', 2);
 insert into order_detail (order_id, product_id, order_qty)
 values
-(1,1,3),
-(1,3,7),
-(1,4,2),
-(2,1,2),
-(3,1,8),
-(2,5,4),
-(2,3,3);
+(2,3,7),
+(3,3,2),
+(4,4,2),
+(5,5,8),
+(6,6,4);
+
+-- dùng lệnh TRUNCATE TABLE table_name; để xóa dữ liệu trong bảng
+truncate table order_detail;
+select * from order_detail;
+
+
 -- Hiển thị các thông tin  gồm oID, oDate, pPrice của tất cả các hóa đơn trong bảng Order
 select `order`.order_id,`order`.order_date, product.product_price
 from `order`
@@ -56,7 +60,7 @@ select o.order_id, o.order_date, sum (od.order_qty * p.product_price) as total
 from `order` o , order_detail od , product p
 where o.order_id = od.order_id and od.product_id = p.product_id
 group by o.order_id;
-
+-- chua fix dc 
 
 
 
