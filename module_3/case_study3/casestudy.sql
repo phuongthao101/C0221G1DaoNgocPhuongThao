@@ -146,7 +146,7 @@ insert into staff(`name`, birthday, id_card, salary, phone, email, address)
 values 
 ('Nguyen A', '1998/5/5', 0215593478, '500','0956565669', 'nguyenA@gmail.com', 'Quang Nam' ),
 ('Nguyen B', '1998/6/5', 0215593478, '400','0956565236', 'nguyenB@gmail.com', 'Binh Dinh' );
-insert into type_customer(name_customer)
+insert into type_custumer(name_customer)
 values
 ('Diamond'),
 ('Platinium'),
@@ -159,3 +159,4 @@ values
 insert into type_service (type_service_name)
 values ('Cao cap'),
 ('Trung cap');
+-- done

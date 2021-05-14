@@ -1,3 +1,4 @@
+drop database if exists student_management;
 create database if not exists student_management ;
 use student_management;
 create table class(
@@ -8,7 +9,7 @@ start_date datetime not null,
 );
 create table student (
 student_id int not null auto_increment primary key,
-name_id varchar(60) not null,
+student_name varchar(60) not null,
 address varchar (50),
 phone varchar(20),
 `status` bit,
