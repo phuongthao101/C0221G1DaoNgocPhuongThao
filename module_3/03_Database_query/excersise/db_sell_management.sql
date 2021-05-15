@@ -56,11 +56,14 @@ where order_id is null;
 -- Hiển thị mã hóa đơn, ngày bán và giá tiền của từng hóa đơn 
 -- (giá một hóa đơn được tính bằng tổng giá bán của từng loại mặt hàng xuất hiện trong hóa đơn. 
 -- Giá bán của từng loại được tính = odQTY*pPrice)
-select o.order_id, o.order_date, sum (od.order_qty * p.product_price) as total
-from `order` o , order_detail od , product p
-where o.order_id = od.order_id and od.product_id = p.product_id
-group by o.order_id;
--- chua fix dc 
+
+select `order`.order_id , `order`.order_date , sum(order_detail.order_qty * product.product_price)
+from `order`
+join order_detail on `order`.order_id = order_detail.order_id
+join product on product.product_id = order_detail.product_id
+group by `order`.order_id;
+-- done 
+
 
 
 

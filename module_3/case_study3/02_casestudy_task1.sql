@@ -16,10 +16,10 @@ values
 ('giam doc');
 insert into type_rent (type_rent_name)
 values 
-("Nam",1200),
-("Thang",150),
-("Ngay",10),
-("Gio",2);
+("Nam"),
+("Thang"),
+("Ngay"),
+("Gio");
 insert into type_custumer(name_customer)
 values
 ("Diamond"),
@@ -69,15 +69,13 @@ values
 
 insert into contract (staff_id, customer_id, service_id,date_contract,  end_contract, deposit, total_price)
 values 
-(1,1,1,'2021/12/5', '2022/12/5', 100,2000),
- (2,2,2,'2021/12/5', '2022/12/5', 200,2000),
- (3,3,3,'2021/12/5', '2022/12/5', 300,5000),
- (4,4,4,'2021/12/5', '2022/12/5', 400,3000);
- 
+(1,1,1,"2020/11/10","2020/11/15", 100,2000),
+ (2,2,2,"2018/10/12","2019/10/15", 200,2000),
+ (3,3,3,"2009/11/10","2009/11/15", 300,5000);
+
 
 insert into contract_detail (contract_id, extra_service_id,amount)
 values 
 (1,1,100),
 (2,2,200),
-(3,3,200),
-(4,4,200);
+(3,3,200);
