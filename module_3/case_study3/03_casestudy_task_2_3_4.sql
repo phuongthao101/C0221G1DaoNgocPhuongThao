@@ -21,7 +21,7 @@ from customer
 inner join contract 
 on customer.customer_id = contract.customer_id
  -- where type_custumer.type_customer_id = 'diamond'
-group by customer.customer_name
+group by customer.customer_id
 order by total_contract ASC;
 
 -- done

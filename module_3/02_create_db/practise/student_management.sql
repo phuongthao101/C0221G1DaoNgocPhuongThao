@@ -12,7 +12,7 @@ student_id int not null auto_increment primary key,
 student_name varchar(60) not null,
 address varchar (50),
 phone varchar(20),
-`status` bit,
+`status` int,
 class_id int not null,
 foreign key (class_id) references class(class_id)
 );

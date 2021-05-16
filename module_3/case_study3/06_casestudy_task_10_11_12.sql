@@ -36,6 +36,6 @@ use casestudy;
  and year(contract.date_contract) = 2018
  group by contract.contract_id;
     
- -- fix lai 
+ -- 
  
  
