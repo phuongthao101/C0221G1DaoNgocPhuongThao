@@ -13,7 +13,7 @@ left join contract on customer.customer_id = contract.customer_id
 left join service on service.service_id = contract.service_id
 left join contract_detail on contract.contract_id = contract_detail.contract_id
 left join extra_service on extra_service.extra_service_id = contract_detail.extra_service_id
-group by customer.customer_id, contract.contract_id;
+group by contract.contract_id;
 
 
 
