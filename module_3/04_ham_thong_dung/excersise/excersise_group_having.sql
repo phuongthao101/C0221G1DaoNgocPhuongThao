@@ -6,6 +6,7 @@ from `subject` sj
 group by sj.sub_id
 having sj.credit >=all (select credit from `subject`);
 
+
 -- Hiển thị các thông tin môn học có điểm thi lớn nhất.
 select *
 from `subject`
