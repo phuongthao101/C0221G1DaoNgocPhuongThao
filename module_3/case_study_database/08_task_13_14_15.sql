@@ -29,8 +29,10 @@ from staff
 inner join `level` on `level`.level_id = staff.level_id
 inner join department on department.department_id = staff.department_id
 inner join contract on contract.staff_id = staff.staff_id
+where year(contract.date_contract) between 2018 and 2019 
 group by contract.staff_id
 having count(contract.staff_id) <=3;
+-- done
 
 
 
