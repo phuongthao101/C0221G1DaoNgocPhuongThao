@@ -32,10 +32,12 @@ use casestudy;
  join customer on customer.customer_id = contract.customer_id
  join service on service.service_id = contract.service_id
  join contract_detail on contract_detail.contract_id = contract.contract_id
- where contract.date_contract = month(contract.date_contract) not in (1,2,3,4,5,6)  and month(contract.date_contract) in (10,11,12)
+ where month(contract.date_contract) in (10,11,12)
  and year(contract.date_contract) = 2018
+ and not exists (select contract.date_contract from contract
+                 where (month (contract.date_contract) between 1 and 6) and service_id = contract.service_id )
  group by contract.contract_id;
     
- -- 
+ -- done
  
  

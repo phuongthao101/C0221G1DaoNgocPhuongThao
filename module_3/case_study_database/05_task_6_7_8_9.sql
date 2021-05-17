@@ -20,9 +20,10 @@ having month(contract.date_contract) not in (1,2,3) and year(contract.date_contr
  from service
  inner join type_service on type_service.type_service_id = service.type_service_id
  inner join contract on contract.service_id = service.service_id
- where year(contract.date_contract) = '2018'
+ where year(contract.date_contract) = 2018
  and not exists (select date_contract from contract 
- where year(date_contract) = 2019);
+ where year(date_contract) = 2019
+ and contract.contract_id = service_id);
  
 -- task 8
 -- Hiển thị thông tin HoTenKhachHang có trong hệ thống, 
