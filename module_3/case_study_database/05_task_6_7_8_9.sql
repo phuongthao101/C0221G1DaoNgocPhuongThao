@@ -7,8 +7,8 @@ select service.service_id, service.service_name, service.area, service.price, ty
 from service
 join type_service on type_service.type_service_id = service.type_service_id
 join contract on contract.service_id = service.service_id
-group by service.service_id, contract.date_contract
-having month(contract.date_contract) not in (1,2,3) and year(contract.date_contract) = 2020;
+where contract.contract_id not in ( select contract.contract_id from contract where year (contract.date_contract ) = 2020 and month(contract.date_contract ) in (1,2,3));
+
 
 -- task 7
 -- 	Hiển thị thông tin IDDichVu, TenDichVu, DienTich, SoNguoiToiDa, ChiPhiThue, TenLoaiDichVu 
