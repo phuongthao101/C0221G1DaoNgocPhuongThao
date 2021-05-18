@@ -29,8 +29,8 @@ having sum(service.price + contract_detail. amount * extra_service.price) >=5000
 -- task 18.	Xóa những khách hàng có hợp đồng trước năm 2016 (chú ý ràng buộc giữa các bảng).
 select * 
 from contract;
-
-delete customer
+SET SQL_SAFE_UPDATES = 0;
+delete 
 from customer 
 where customer.customer_id not in (select contract_id from contract where year(contract.date_contract) >= 2016);
 
