@@ -4,7 +4,7 @@ SET SQL_SAFE_UPDATES = 0;
 
 SET FOREIGN_KEY_CHECKS=0;
 
-delete staff from staff
+delete  from staff
 where staff.staff_id not in (select staff_id from contract where year(contract.date_contract) between 2017 and 2019);
 
 SET FOREIGN_KEY_CHECKS=1;
@@ -32,8 +32,7 @@ and customer_id in (select a.id from (
 select * 
 from contract;
 SET SQL_SAFE_UPDATES = 0;
-delete 
-from customer 
+delete from customer 
 where customer.customer_id not in (select contract_id from contract where year(contract.date_contract) >= 2016);
 
 -- done 

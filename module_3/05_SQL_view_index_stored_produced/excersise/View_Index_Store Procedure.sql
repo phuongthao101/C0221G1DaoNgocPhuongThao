@@ -62,16 +62,17 @@ drop view product_view;
 
 -- Tạo store procedure lấy tất cả thông tin của tất cả các sản phẩm trong bảng product
  delimiter //
- create procedure product_procedure()
+ create procedure find_all_product()
  begin
  select *
  from Products;
- end;// 
- delimiter  ;
+ end;
+ // delimiter  ;
+ call find_all_product();
  
  -- Tạo store procedure thêm một sản phẩm mới
  delimiter //
- create procedure add_product(
+ create procedure add_product( in
 product_Code varchar(45), 
 product_Name varchar (45), 
 product_Price int,
@@ -79,31 +80,47 @@ product_Amount int,
 product_Description varchar (45),
 product_Status varchar (45))
  begin
- insert into add_product(productCode,productName,productPrice,productAmount,productDescription,productStatus)
- values (product_Code,product_Name,product_Price,product_Amount,product_Description,product_Status);
- end;// 
- delimiter  ;
+ insert into Products
+ values (p_product_code, p_product_name, p_product_price, p_product_amount, p_product_description, p_product_status);
+ end;
+ // delimiter  ;
+ 
+ call add_product('VM', 'Vsmart', 500, 30, 'black', 'available');
+ 
 -- Tạo store procedure sửa thông tin sản phẩm theo id
 
  delimiter //
- create procedure update_product(product_Id int , product_Name varchar(45))
+ create procedure update_product( p_id int,
+    new_product_code varchar(30),
+    new_product_name varchar(30),
+	new_product_price int,
+	new_product_amount int,
+	new_product_description varchar(30),
+	new_product_status varchar(30))
  begin
  
- update update_product
- set productName = product_Name
- where productId = product_Id;
+ update Products
+ set product_code = new_product_code, 
+		product_name = new_product_name,
+        product_price = new_product_price,
+        product_amount = new_product_amount,
+        product_description = new_product_description,
+        product_status = new_product_status
+    where id = p_id;
  
- end;// 
- delimiter  ;
+ end;
+ // delimiter  ;
+call editProduct(5,"VM","Vsmart",100,2000,"white ","available");
  
  -- Tạo store procedure xoá sản phẩm theo id
   delimiter //
- create procedure delete_product(product_Id int)
+ create procedure delete_product(in product_Id int)
  begin
 delete from Products
 where productID = product_id;
  end;// 
  delimiter  ;
+call detele_product;
 
  
 
