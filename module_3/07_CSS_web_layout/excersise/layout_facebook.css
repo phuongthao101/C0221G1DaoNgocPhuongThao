@@ -1,0 +1,148 @@
+body {
+    width: 100%;
+    font-family: Tahoma;
+    font-size: 13px;
+    margin: 0px auto;
+
+}
+
+#menu_top {
+    background: cornflowerblue;
+    height: 100px;
+    width: 100%;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.5);
+    display: flex;
+}
+
+#menu_top ul {
+    margin: 0px;
+    padding: 0px;
+}
+
+#menu_top ul li {
+    /*bỏ gạch chân trong danh sách*/
+    list-style: none;
+    border: 2px solid gainsboro;
+}
+
+#menu_top ul li a {
+    text-decoration: none;
+    color: white;
+}
+
+#main {
+    background: #6C6C6E;
+}
+
+#main #left {
+    background: lightgray;
+    min-height: 700px;
+    overflow: hidden;
+
+
+}
+
+#main #left:hover {
+    overflow: scroll;
+}
+
+#main ul {
+    margin: 0px;
+    padding: 0px;
+}
+
+#main li {
+    list-style: none;
+    border: 2px solid gainsboro;
+}
+
+#main ul li a {
+    text-decoration: none;
+    color: black;
+    border: #FFFFFF;
+
+}
+
+#right:hover {
+    overflow: scroll;
+}
+
+#main #right {
+    background: lightgray;
+    float: left;
+    min-height: 700px;
+    overflow: hidden;
+
+}
+
+#center:hover {
+    overflow: scroll;
+}
+
+#main #center {
+    background: white;
+    float: left;
+    min-height: 700px;
+    overflow: hidden;
+}
+
+
+#footer {
+    background: blue;
+    width: 1000px;
+    height: 60px;
+    color: white;
+    clear: left;
+    /*//canh giữa */
+    line-height: 60px;
+    text-align: center;
+}
+
+
+.col-1 {
+    width: 8.33%;
+}
+
+.col-2 {
+    width: 16.66%;
+}
+
+.col-3 {
+    width: 25%;
+}
+
+.col-4 {
+    width: 33.33%;
+}
+
+.col-5 {
+    width: 41.66%;
+}
+
+.col-6 {
+    width: 50%;
+}
+
+.col-7 {
+    width: 58.33%;
+}
+
+.col-8 {
+    width: 66.66%;
+}
+
+.col-9 {
+    width: 75%;
+}
+
+.col-10 {
+    width: 83.33%;
+}
+
+.col-11 {
+    width: 91.66%;
+}
+
+.col-12 {
+    width: 100%;
+}
