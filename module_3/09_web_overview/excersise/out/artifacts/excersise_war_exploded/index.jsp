@@ -16,7 +16,7 @@
   <input type="text" name="ProductDescription" size="30"  placeholder="Product Description" />
   <input type="text" name="ListPrice" size="30"  placeholder="List Price" />
   <input type="text" name="DiscountPercent" size="30"  placeholder="Discount Percent" />
-  <input type = "submit" id = "submit" value = "Amount"/>
+  <input type = "submit" id = "submit" value = "Discount"/>
 
 </form>
   </body>
