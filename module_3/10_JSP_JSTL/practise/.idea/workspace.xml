@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bf993463-af94-4e3d-a6f2-7a90a671a3a1" name="Default Changelist" comment="" />
+    <list default="true" id="bf993463-af94-4e3d-a6f2-7a90a671a3a1" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../../11_MVC/practise/MVC_customer/MVC_customer.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../excersise/02_calculator/src/Servlet/CalculatorServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/../excersise/02_calculator/src/servlet/CalculatorServlet.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -21,6 +24,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../excersise/01_list_customer" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -33,6 +37,7 @@
       <option name="presentableId" value="Default" />
       <updated>1622020810947</updated>
       <workItem from="1622020814960" duration="58000" />
+      <workItem from="1622164398431" duration="42000" />
     </task>
     <servers />
   </component>
@@ -40,10 +45,10 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="549" y="155" key="FileChooserDialogImpl" timestamp="1622020843339">
+    <state x="549" y="155" key="FileChooserDialogImpl" timestamp="1622164439271">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="549" y="155" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1622020843339" />
+    <state x="549" y="155" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1622164439271" />
     <state x="465" y="238" key="com.intellij.ide.util.TipDialog" timestamp="1622020824880">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

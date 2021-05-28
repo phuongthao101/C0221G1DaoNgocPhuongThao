@@ -1,6 +1,6 @@
-package Servlet;
+package servlet;
 
-import Model.Customer;
+import model.Customer;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -10,7 +10,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.List;
 
 @WebServlet(name = "StudentServlet", urlPatterns = {"/customer"})
 public class CustomerServlet extends HttpServlet {
