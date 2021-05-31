@@ -39,6 +39,30 @@ public class ProductServlet extends HttpServlet {
                 break;
         }
     }
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String action = request.getParameter("action");
+        if (action == null) {
+            action = "";
+        }
+        switch (action) {
+            case "create":
+                showCreateTable(request, response);
+                break;
+            case "edit":
+                showEditTable(request,response);
+                break;
+            case "delete":
+                showDeleteTable(request,response);
+                break;
+            case "view":
+                viewDetail(request,response);
+                break;
+            default:
+                showList(request, response);
+                break;
+        }
+
+    }
 
     private void searchProduct(HttpServletRequest request, HttpServletResponse response) {
         String name = request.getParameter("name");
@@ -125,30 +149,7 @@ public class ProductServlet extends HttpServlet {
     }
 
 
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String action = request.getParameter("action");
-        if (action == null) {
-            action = "";
-        }
-        switch (action) {
-            case "create":
-                showCreateTable(request, response);
-                break;
-            case "edit":
-                showEditTable(request,response);
-                break;
-            case "delete":
-                showDeleteTable(request,response);
-                break;
-            case "view":
-                viewDetail(request,response);
-                break;
-            default:
-                showList(request, response);
-                break;
-        }
 
-    }
 
     private void viewDetail(HttpServletRequest request, HttpServletResponse response) {
         int id = Integer.parseInt(request.getParameter("id"));
