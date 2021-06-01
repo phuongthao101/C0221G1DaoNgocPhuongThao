@@ -141,8 +141,7 @@ public class UserServlet extends HttpServlet {
         dispatcher.forward(request, response);
     }
 
-    private void insertUser(HttpServletRequest request, HttpServletResponse response)
-            {
+    private void insertUser(HttpServletRequest request, HttpServletResponse response) {
         String name = request.getParameter("name");
         String email = request.getParameter("email");
         String country = request.getParameter("country");
