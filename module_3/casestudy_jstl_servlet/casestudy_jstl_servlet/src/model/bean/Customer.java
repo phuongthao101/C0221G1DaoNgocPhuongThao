@@ -13,7 +13,7 @@ public class Customer {
     private String customer_email;
     private String customer_address;
 
-    public Customer() {
+    public Customer(String id, String name, String gender, String birthday, String idCard, String phone, String email, String address) {
     }
 
     public Customer(int customer_type_id, String customer_name, String customer_birthday, String customer_gender, String customer_id_card, String customer_phone, String customer_email, String customer_address) {

@@ -34,4 +34,11 @@ public class CustomerService implements ICustomerService {
     public boolean add(Customer customer) {
         return userRepository.update(customer);
     }
+
+    @Override
+    public Customer findById(int id) {
+        return null;
+    }
+
+
 }

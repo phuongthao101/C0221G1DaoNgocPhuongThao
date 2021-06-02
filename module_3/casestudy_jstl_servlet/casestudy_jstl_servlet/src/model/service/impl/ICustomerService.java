@@ -20,4 +20,6 @@ public interface ICustomerService {
 
     boolean add(Customer customer) ;
 
+    Customer findById(int id);
+
 }

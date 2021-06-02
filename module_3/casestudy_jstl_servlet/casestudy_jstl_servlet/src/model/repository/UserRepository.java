@@ -20,6 +20,8 @@ public class UserRepository {
     final String DELETE_CUSTOMER_SQL = "delete from customer where customer_id = ?;";
     final String UPDATE_CUSTOMER_SQL = "update customer set type_customer_id = ?,customer_name=?, gender=?,birthday=?, id_card=?, phone=?, " +
             "email=?, address=? where customer_id = ?;";
+    final String SELECT_USER_BY_ID = "select type_customer_id,customer_name, gender,birthday, id_card, phone, email, address" +
+            " from customer where customer_id =?";
 
 
     public List<Customer> findByAll() {
@@ -161,6 +163,39 @@ public class UserRepository {
             e.printStackTrace();
         }
         return check;
+
+    }
+
+    public Customer findById(int id) {
+        Connection connection = baseRepository.getConnection();
+        Customer customer = null;
+
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(SELECT_USER_BY_ID);
+            preparedStatement.setInt(1, id);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                int id1 = resultSet.getInt("customer_id");
+                String name1 = resultSet.getString("customer_name");
+                String gender = resultSet.getString("gender");
+                String birthday = resultSet.getString("birthday");
+                String idCard = resultSet.getString("id_card");
+                String phone = resultSet.getString("phone");
+                String email = resultSet.getString("email");
+                String address = resultSet.getString("address");
+
+                customer = new Customer(id1, name1, gender, birthday, idCard, phone, email, address);
+
+
+            }
+            preparedStatement.close();
+            connection.close();
+
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return customer;
 
     }
 
