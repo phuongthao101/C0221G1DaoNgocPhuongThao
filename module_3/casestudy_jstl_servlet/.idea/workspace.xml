@@ -2,17 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3fe4eac3-d659-4602-9f2d-f46a86864d0e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/casestudy_jstl_servlet/web/furama_html/addContract.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/casestudy_jstl_servlet/web/furama_html/list_contract.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/casestudy_jstl_servlet/web/furama_html/service.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/casestudy_jstl_servlet/web/furama_html/test.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/casestudy_jstl_servlet/web/furama_html/addCustomer.html" beforeDir="false" afterPath="$PROJECT_DIR$/casestudy_jstl_servlet/web/furama_html/addCustomer.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/casestudy_jstl_servlet/web/furama_html/addEmployee.html" beforeDir="false" afterPath="$PROJECT_DIR$/casestudy_jstl_servlet/web/furama_html/addEmployee.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/casestudy_jstl_servlet/web/furama_html/addService.html" beforeDir="false" afterPath="$PROJECT_DIR$/casestudy_jstl_servlet/web/furama_html/addService.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/casestudy_jstl_servlet/web/furama_html/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/casestudy_jstl_servlet/web/furama_html/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/casestudy_jstl_servlet/web/furama_html/list_customer.html" beforeDir="false" afterPath="$PROJECT_DIR$/casestudy_jstl_servlet/web/furama_html/list_customer.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/casestudy_jstl_servlet/web/furama_html/list_employee.html" beforeDir="false" afterPath="$PROJECT_DIR$/casestudy_jstl_servlet/web/furama_html/list_employee.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/casestudy_jstl_servlet/src/model/repository/BaseRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/casestudy_jstl_servlet/src/model/repository/BaseRepository.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,6 +14,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -49,25 +41,77 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../13_JDBC_QUERYING_TRANSCTION/excersice/ex1" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="RunManager">
     <configuration name="Tomcat 9.0.21" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.21" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/" />
+      <option name="UPDATING_POLICY" value="redeploy-artifacts" />
       <deployment>
         <artifact name="casestudy_jstl_servlet:war exploded">
           <settings>
-            <option name="CONTEXT_PATH" value="/casestudy_jstl_servlet_war_exploded" />
+            <option name="CONTEXT_PATH" value="" />
           </settings>
         </artifact>
       </deployment>
-      <server-settings />
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="Tomcat_9_0_21_casestudy_jstl_servlet" />
+      </server-settings>
       <predefined_log_file enabled="true" id="Tomcat" />
       <predefined_log_file enabled="true" id="Tomcat Catalina" />
       <predefined_log_file id="Tomcat Manager" />
       <predefined_log_file id="Tomcat Host Manager" />
       <predefined_log_file id="Tomcat Localhost Access" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="52895" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
       <method v="2">
         <option name="Make" enabled="true" />
         <option name="BuildArtifacts" enabled="true">
@@ -88,7 +132,7 @@
       <updated>1622256361242</updated>
       <workItem from="1622256364344" duration="129000" />
       <workItem from="1622535706194" duration="2827000" />
-      <workItem from="1622597395719" duration="4181000" />
+      <workItem from="1622597395719" duration="4951000" />
     </task>
     <servers />
   </component>
@@ -96,21 +140,25 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="223" y="68" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1622601955610">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="223" y="68" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1622601955610" />
     <state x="523" y="129" key="DetectedRootsChooserDialog" timestamp="1622601070001">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="523" y="129" key="DetectedRootsChooserDialog/0.0.1536.824@0.0.1536.824" timestamp="1622601070001" />
-    <state x="549" y="155" key="FileChooserDialogImpl" timestamp="1622601712006">
+    <state x="549" y="155" key="FileChooserDialogImpl" timestamp="1622602258183">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="549" y="155" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1622601712006" />
-    <state x="249" y="0" key="SettingsEditor" timestamp="1622601542105">
+    <state x="549" y="155" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1622602258183" />
+    <state x="249" y="0" key="SettingsEditor" timestamp="1622602294519">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="249" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1622601542105" />
-    <state x="209" y="0" key="new project wizard" timestamp="1622256491901">
+    <state x="249" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1622602294519" />
+    <state x="209" y="0" key="new project wizard" timestamp="1622602306754">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="209" y="0" key="new project wizard/0.0.1536.824@0.0.1536.824" timestamp="1622256491901" />
+    <state x="209" y="0" key="new project wizard/0.0.1536.824@0.0.1536.824" timestamp="1622602306754" />
   </component>
 </project>
