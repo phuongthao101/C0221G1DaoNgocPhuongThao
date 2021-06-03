@@ -9,7 +9,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class UserRepository {
+public class CustomerRepository {
 
     BaseRepository baseRepository = new BaseRepository(); // tạo đối tượng
 
@@ -20,8 +20,7 @@ public class UserRepository {
     final String DELETE_CUSTOMER_SQL = "delete from customer where customer_id = ?;";
     final String UPDATE_CUSTOMER_SQL = "update customer set type_customer_id = ?,customer_name=?, gender=?,birthday=?, id_card=?, phone=?, " +
             "email=?, address=? where customer_id = ?;";
-    final String SELECT_USER_BY_ID = "select type_customer_id,customer_name, gender,birthday, id_card, phone, email, address" +
-            " from customer where customer_id =?";
+    final String SELECT_USER_BY_ID = "select *" + " from customer where customer_id =?";
 
 
     public List<Customer> findByAll() {
@@ -34,6 +33,7 @@ public class UserRepository {
 
             while (resultSet.next()) {// trỏ đến từng record
                 int id = resultSet.getInt("customer_id");
+                int id1 = resultSet.getInt("type_customer_id");
                 String name = resultSet.getString("customer_name");
                 String gender = resultSet.getString("gender");
                 String birthday = resultSet.getString("birthday");
@@ -42,7 +42,7 @@ public class UserRepository {
                 String email = resultSet.getString("email");
                 String address = resultSet.getString("address");
 
-                Customer customer = new Customer(id, name, gender, birthday, idCard, phone, email, address);
+                Customer customer = new Customer(id,id1, name, gender, birthday, idCard, phone, email, address);
                 userList.add(customer);
 
 
@@ -58,7 +58,7 @@ public class UserRepository {
 
     }
 
-    public boolean update(Customer customer) {
+    public boolean update(int id, Customer customer) {
         Connection connection = baseRepository.getConnection();
         boolean check = false;
         try {
@@ -69,10 +69,10 @@ public class UserRepository {
             preparedStatement.setString(4, customer.getCustomer_birthday());
             preparedStatement.setString(5, customer.getCustomer_id_card());
             preparedStatement.setString(6, customer.getCustomer_phone());
-            preparedStatement.setString(6, customer.getCustomer_email());
-            preparedStatement.setString(6, customer.getCustomer_address());
+            preparedStatement.setString(7, customer.getCustomer_email());
+            preparedStatement.setString(8, customer.getCustomer_address());
 
-            preparedStatement.setInt(7, customer.getCustomer_id());
+            preparedStatement.setInt(9,id);
 
             check = preparedStatement.executeUpdate() > 0;
             preparedStatement.close();
@@ -88,7 +88,7 @@ public class UserRepository {
     public List<Customer> findByName(String name) {
         Connection connection = baseRepository.getConnection();
 
-        List<Customer> userList = new ArrayList<>();
+        List<Customer> customerList = new ArrayList<>();
 
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(SELECT_CUSTOMER_BY_NAME);
@@ -96,6 +96,7 @@ public class UserRepository {
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
                 int id = resultSet.getInt("customer_id");
+                int id1 = resultSet.getInt("type_customer_id");
                 String name1 = resultSet.getString("customer_name");
                 String gender = resultSet.getString("gender");
                 String birthday = resultSet.getString("birthday");
@@ -104,8 +105,8 @@ public class UserRepository {
                 String email = resultSet.getString("email");
                 String address = resultSet.getString("address");
 
-                Customer customer = new Customer(id, name1, gender, birthday, idCard, phone, email, address);
-                userList.add(customer);
+                Customer customer = new Customer(id,id1, name1, gender, birthday, idCard, phone, email, address);
+                customerList.add(customer);
 
             }
             preparedStatement.close();
@@ -115,7 +116,7 @@ public class UserRepository {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return userList;
+        return customerList;
 
     }
 
@@ -131,8 +132,8 @@ public class UserRepository {
             preparedStatement.setString(4, customer.getCustomer_birthday());
             preparedStatement.setString(5, customer.getCustomer_id_card());
             preparedStatement.setString(6, customer.getCustomer_phone());
-            preparedStatement.setString(6, customer.getCustomer_email());
-            preparedStatement.setString(6, customer.getCustomer_address());
+            preparedStatement.setString(7, customer.getCustomer_email());
+            preparedStatement.setString(8, customer.getCustomer_address());
 
             check = preparedStatement.executeUpdate() > 0;
             preparedStatement.close();
@@ -175,7 +176,8 @@ public class UserRepository {
             preparedStatement.setInt(1, id);
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
-                int id1 = resultSet.getInt("customer_id");
+                int id2 = resultSet.getInt("customer_id");
+                int id1 = resultSet.getInt("type_customer_id");
                 String name1 = resultSet.getString("customer_name");
                 String gender = resultSet.getString("gender");
                 String birthday = resultSet.getString("birthday");
@@ -184,7 +186,7 @@ public class UserRepository {
                 String email = resultSet.getString("email");
                 String address = resultSet.getString("address");
 
-                customer = new Customer(id1, name1, gender, birthday, idCard, phone, email, address);
+                customer = new Customer(id2,id1, name1, gender, birthday, idCard, phone, email, address);
 
 
             }

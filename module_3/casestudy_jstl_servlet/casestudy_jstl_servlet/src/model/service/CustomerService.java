@@ -1,18 +1,18 @@
 package model.service;
 
 import model.bean.Customer;
-import model.repository.UserRepository;
+import model.repository.CustomerRepository;
 import model.service.impl.ICustomerService;
 
 import java.util.List;
 
 public class CustomerService implements ICustomerService {
-    UserRepository userRepository = new UserRepository();
+    CustomerRepository userRepository = new CustomerRepository();
 
 
     @Override
-    public boolean update(Customer customer) {
-        return userRepository.update(customer);
+    public boolean update(int id,Customer customer) {
+        return userRepository.update(id,customer);
     }
 
     @Override
@@ -32,13 +32,12 @@ public class CustomerService implements ICustomerService {
 
     @Override
     public boolean add(Customer customer) {
-        return userRepository.update(customer);
+        return userRepository.add(customer);
     }
 
     @Override
     public Customer findById(int id) {
-        return null;
+        return userRepository.findById(id);
     }
-
 
 }

@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public interface ICustomerService {
-    boolean update(Customer customer) ;
+    boolean update(int id,Customer customer) ;
 
      List<Customer> findByName(String name) ;
 
