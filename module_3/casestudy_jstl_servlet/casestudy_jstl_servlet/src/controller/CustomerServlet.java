@@ -1,6 +1,7 @@
 package controller;
 
-import model.bean.Customer;
+import model.bean.customer.Customer;
+import model.bean.customer.TypeCustomer;
 import model.service.CustomerService;
 
 import javax.servlet.RequestDispatcher;
@@ -11,7 +12,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.List;
 
 @WebServlet(name = "CustomerServlet", urlPatterns = {"/customer"})
@@ -73,7 +73,10 @@ public class CustomerServlet extends HttpServlet {
 
     private void listCustomer(HttpServletRequest request, HttpServletResponse response) {
         List<Customer> customerList = customerService.findByAll();
+        List<TypeCustomer> typeCustomerList = customerService.findAllTypeCustomer();
+
         request.setAttribute("customers", customerList);
+        request.setAttribute("typeCustomers", typeCustomerList);
         RequestDispatcher dispatcher = request.getRequestDispatcher("view/customer/list_customer.jsp");
         try {
             dispatcher.forward(request, response);
@@ -82,6 +85,8 @@ public class CustomerServlet extends HttpServlet {
         } catch (IOException e) {
             e.printStackTrace();
         }
+
+
     }
 
     private void createCustomer(HttpServletRequest request, HttpServletResponse response) {

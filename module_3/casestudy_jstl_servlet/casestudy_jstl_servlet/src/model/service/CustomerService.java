@@ -1,6 +1,7 @@
 package model.service;
 
-import model.bean.Customer;
+import model.bean.customer.Customer;
+import model.bean.customer.TypeCustomer;
 import model.repository.CustomerRepository;
 import model.service.impl.ICustomerService;
 
@@ -38,6 +39,11 @@ public class CustomerService implements ICustomerService {
     @Override
     public Customer findById(int id) {
         return userRepository.findById(id);
+    }
+
+    @Override
+    public List<TypeCustomer> findAllTypeCustomer() {
+        return userRepository.findAllTypeCustomer();
     }
 
 }

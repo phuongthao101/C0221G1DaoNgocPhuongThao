@@ -75,7 +75,7 @@
 
             <tr class="table-primary">
                 <th>Id Customer</th>
-                <th>Id Type Customer</th>
+                <th>Type Customer</th>
                 <th>Customer Name</th>
                 <th>Gender</th>
                 <th>Birthday</th>
@@ -92,7 +92,11 @@
             <c:forEach var="customer" items="${customers}">
                 <tr>
                     <td>${customer.customer_id}</td>
-                    <td>${customer.customer_type_id}</td>
+                  <c:forEach var="typeCustomer" items="${typeCustomers}">
+                      <c:if test="${typeCustomer.customer_type_id == customer.customer_type_id}">
+                          <td>${typeCustomer.customer_type_name}</td>
+                      </c:if>
+                  </c:forEach>
                     <td>${customer.customer_name}</td>
                     <td>${customer.customer_birthday}</td>
                     <td>${customer.customer_gender}</td>

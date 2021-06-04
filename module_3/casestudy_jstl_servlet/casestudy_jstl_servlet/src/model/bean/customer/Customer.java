@@ -1,4 +1,4 @@
-package model.bean;
+package model.bean.customer;
 
 import java.util.Date;
 

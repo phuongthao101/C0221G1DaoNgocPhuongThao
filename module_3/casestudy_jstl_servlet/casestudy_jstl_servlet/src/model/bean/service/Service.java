@@ -1,4 +1,4 @@
-package model.bean;
+package model.bean.service;
 
 public class Service {
     private int service_id;
@@ -10,13 +10,14 @@ public class Service {
     private int service_type_id;
     private String standard_room;
     private String description_other_convenience;
-    private double pool_area;
-    private int number_of_floors;
+    private String pool_area;
+    private String number_of_floors;
 
     public Service() {
     }
 
-    public Service(String service_name, int service_area, double service_cost, int service_max_people, int rent_type_id, int service_type_id, String standard_room, String description_other_convenience, double pool_area, int number_of_floors) {
+    public Service(int service_id, String service_name, int service_area, double service_cost, int service_max_people, int rent_type_id, int service_type_id, String standard_room, String description_other_convenience, String pool_area, String number_of_floors) {
+        this.service_id = service_id;
         this.service_name = service_name;
         this.service_area = service_area;
         this.service_cost = service_cost;
@@ -28,8 +29,8 @@ public class Service {
         this.pool_area = pool_area;
         this.number_of_floors = number_of_floors;
     }
-    public Service(int service_id, String service_name, int service_area, double service_cost, int service_max_people, int rent_type_id, int service_type_id, String standard_room, String description_other_convenience, double pool_area, int number_of_floors) {
-        this.service_id = service_id;
+
+    public Service(String service_name, int service_area, double service_cost, int service_max_people, int rent_type_id, int service_type_id, String standard_room, String description_other_convenience, String pool_area, String number_of_floors) {
         this.service_name = service_name;
         this.service_area = service_area;
         this.service_cost = service_cost;
@@ -114,19 +115,19 @@ public class Service {
         this.description_other_convenience = description_other_convenience;
     }
 
-    public double getPool_area() {
+    public String getPool_area() {
         return pool_area;
     }
 
-    public void setPool_area(double pool_area) {
+    public void setPool_area(String pool_area) {
         this.pool_area = pool_area;
     }
 
-    public int getNumber_of_floors() {
+    public String getNumber_of_floors() {
         return number_of_floors;
     }
 
-    public void setNumber_of_floors(int number_of_floors) {
+    public void setNumber_of_floors(String number_of_floors) {
         this.number_of_floors = number_of_floors;
     }
 }

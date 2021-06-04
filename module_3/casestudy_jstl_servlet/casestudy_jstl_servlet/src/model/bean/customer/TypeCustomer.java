@@ -1,4 +1,4 @@
-package model.bean;
+package model.bean.customer;
 
 public class TypeCustomer {
     private int customer_type_id;

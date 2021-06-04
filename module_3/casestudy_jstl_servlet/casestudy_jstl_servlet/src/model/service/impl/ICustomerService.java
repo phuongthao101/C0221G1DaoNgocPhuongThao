@@ -1,12 +1,8 @@
 package model.service.impl;
 
-import model.bean.Customer;
+import model.bean.customer.Customer;
+import model.bean.customer.TypeCustomer;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.List;
 
 public interface ICustomerService {
@@ -21,5 +17,7 @@ public interface ICustomerService {
     boolean add(Customer customer) ;
 
     Customer findById(int id);
+
+    List<TypeCustomer> findAllTypeCustomer();
 
 }

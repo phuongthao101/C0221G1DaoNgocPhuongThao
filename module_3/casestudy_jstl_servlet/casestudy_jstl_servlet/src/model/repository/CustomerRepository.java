@@ -1,6 +1,7 @@
 package model.repository;
 
-import model.bean.Customer;
+import model.bean.customer.Customer;
+import model.bean.customer.TypeCustomer;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -20,8 +21,35 @@ public class CustomerRepository {
     final String DELETE_CUSTOMER_SQL = "delete from customer where customer_id = ?;";
     final String UPDATE_CUSTOMER_SQL = "update customer set type_customer_id = ?,customer_name=?, gender=?,birthday=?, id_card=?, phone=?, " +
             "email=?, address=? where customer_id = ?;";
-    final String SELECT_USER_BY_ID = "select *" + " from customer where customer_id =?";
+    final String SELECT_USER_BY_ID = "select * from customer where customer_id =?";
+    final String SELECT_TYPE_CUSTOMER = "select* from customer_type;";
 
+
+    public List<TypeCustomer> findAllTypeCustomer() {
+        Connection connection = baseRepository.getConnection(); // tạo connect với DB
+        List<TypeCustomer> typeCustomers = new ArrayList<>(); // tạo list chứa thông tin user
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(SELECT_TYPE_CUSTOMER); // truy vấn
+            ResultSet resultSet = preparedStatement.executeQuery(); // dùng cho câu lệnh select; chứa dữ liệu
+
+            while (resultSet.next()) {// trỏ đến từng record
+                int id = resultSet.getInt("customer_type_id");
+                String name = resultSet.getString("customer_type_name");
+
+                TypeCustomer typeCustomer = new TypeCustomer(id,name);
+                typeCustomers.add(typeCustomer);
+
+
+            }
+            preparedStatement.close();
+            connection.close();
+
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return typeCustomers;
+    }
 
     public List<Customer> findByAll() {
         // kết nối database => lấy lại cái danh sách
@@ -42,7 +70,7 @@ public class CustomerRepository {
                 String email = resultSet.getString("email");
                 String address = resultSet.getString("address");
 
-                Customer customer = new Customer(id,id1, name, gender, birthday, idCard, phone, email, address);
+                Customer customer = new Customer(id, id1, name, gender, birthday, idCard, phone, email, address);
                 userList.add(customer);
 
 
@@ -72,7 +100,7 @@ public class CustomerRepository {
             preparedStatement.setString(7, customer.getCustomer_email());
             preparedStatement.setString(8, customer.getCustomer_address());
 
-            preparedStatement.setInt(9,id);
+            preparedStatement.setInt(9, id);
 
             check = preparedStatement.executeUpdate() > 0;
             preparedStatement.close();
@@ -105,7 +133,7 @@ public class CustomerRepository {
                 String email = resultSet.getString("email");
                 String address = resultSet.getString("address");
 
-                Customer customer = new Customer(id,id1, name1, gender, birthday, idCard, phone, email, address);
+                Customer customer = new Customer(id, id1, name1, gender, birthday, idCard, phone, email, address);
                 customerList.add(customer);
 
             }
@@ -186,7 +214,7 @@ public class CustomerRepository {
                 String email = resultSet.getString("email");
                 String address = resultSet.getString("address");
 
-                customer = new Customer(id2,id1, name1, gender, birthday, idCard, phone, email, address);
+                customer = new Customer(id2, id1, name1, gender, birthday, idCard, phone, email, address);
 
 
             }
