@@ -13,7 +13,7 @@ public class Service {
     private String pool_area;
     private String number_of_floors;
 
-    public Service() {
+    public Service(String name, String birthday, String id_card, Double employee_salary, String employee_phone, String employee_email, String employee_address, int position_id, int education_degree_id, int division_id, String username) {
     }
 
     public Service(int service_id, String service_name, int service_area, double service_cost, int service_max_people, int rent_type_id, int service_type_id, String standard_room, String description_other_convenience, String pool_area, String number_of_floors) {

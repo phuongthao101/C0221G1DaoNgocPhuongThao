@@ -26,13 +26,13 @@
         <div class="col-9">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item mr-5">
-                    <a class="navbar-brand mr-0" href="#">Employee <span class="sr-only"></span></a>
+                    <a class="navbar-brand mr-0" href="/employee">Employee <span class="sr-only"></span></a>
                 </li>
                 <li class="nav-item  mr-5">
                     <a class="navbar-brand mr-0" href="/customer">Customer <span class="sr-only"></span></a>
                 </li>
                 <li class="nav-item mr-5 ">
-                    <a class="navbar-brand mr-0" href="#">Service <span class="sr-only"></span></a>
+                    <a class="navbar-brand mr-0" href="/service">Service <span class="sr-only"></span></a>
                 </li>
                 <li class="nav-item mr-5 ">
                     <a class="navbar-brand mr-0" href="#">Contract <span class="sr-only"></span></a>

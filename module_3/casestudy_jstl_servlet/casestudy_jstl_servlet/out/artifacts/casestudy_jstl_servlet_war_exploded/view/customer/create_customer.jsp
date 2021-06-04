@@ -85,7 +85,7 @@
         </div>
     </div>
 
-    <div class="d-flex justify-content-center col-9">
+    <div class="d-flex justify-content-center col-10">
         <a href="/customer" class="btn btn-secondary" style="margin-left: 200px">Back to list</a>
         <input type="submit" class="btn btn-success" style="margin-left: 174px;width: 100px" value="Submit">
     </div>
