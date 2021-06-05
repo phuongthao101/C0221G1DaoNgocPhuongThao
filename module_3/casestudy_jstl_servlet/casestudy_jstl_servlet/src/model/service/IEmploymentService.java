@@ -21,4 +21,8 @@ public interface IEmploymentService {
     public boolean remove(int id);
 
     List<Employee> findByName(String name);
+
+    boolean update(int id, Employee employee);
+
+    Employee findById(int id);
 }

@@ -93,7 +93,7 @@ public class CustomerServlet extends HttpServlet {
 
         boolean check = false;
 
-        int id1 = Integer.parseInt(request.getParameter("type_customer"));
+        int id = Integer.parseInt(request.getParameter("type_customer"));
         String name = request.getParameter("customer_name");
         String birthday = request.getParameter("customer_birthday");
         String gender = request.getParameter("customer_gender");
@@ -103,7 +103,7 @@ public class CustomerServlet extends HttpServlet {
         String address = request.getParameter("customer_address");
 
 
-        Customer newCustomer = new Customer(id1, name, birthday,gender, idCard, phone, email, address);
+        Customer newCustomer = new Customer(id, name, birthday,gender, idCard, phone, email, address);
         check = customerService.add(newCustomer);
         if (check) {
             request.setAttribute("message", "Create success");

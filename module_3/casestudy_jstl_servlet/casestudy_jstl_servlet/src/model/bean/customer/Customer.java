@@ -13,10 +13,10 @@ public class Customer {
     private String customer_email;
     private String customer_address;
 
-    public Customer(String id, String name, String gender, String birthday, String idCard, String phone, String email, String address) {
+    public Customer(int id, String name, String gender, String birthday, String idCard, String phone, String email, String address) {
     }
 
-    public Customer(int customer_type_id, String customer_name, String customer_birthday, String customer_gender, String customer_id_card, String customer_phone, String customer_email, String customer_address) {
+    public Customer(int customer_type_id, String customer_name, String customer_birthday, String customer_gender, double employee_salary, String customer_id_card, String customer_phone, String customer_email, int position_id, int education_degree_id, int division_id, String customer_address) {
         this.customer_type_id = customer_type_id;
         this.customer_name = customer_name;
         this.customer_birthday = customer_birthday;

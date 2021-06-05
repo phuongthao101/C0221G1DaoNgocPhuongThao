@@ -19,7 +19,9 @@ public class Employee {
     public Employee() {
     }
 
-    public Employee(String employee_name, String employee_birthday, String employee_id_card, double employee_salary, String employee_phone, String employee_email, String employee_address, int position_id, int education_degree_id, int division_id, String username) {
+    public Employee(String employee_name, String employee_birthday, String employee_id_card,
+                    double employee_salary, String employee_phone, String employee_email, String employee_address,
+                    int position_id, int education_degree_id, int division_id, String username) {
         this.employee_name = employee_name;
         this.employee_birthday = employee_birthday;
         this.employee_id_card = employee_id_card;

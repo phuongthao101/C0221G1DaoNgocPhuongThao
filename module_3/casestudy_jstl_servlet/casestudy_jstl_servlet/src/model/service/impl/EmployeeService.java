@@ -48,4 +48,15 @@ public class EmployeeService implements IEmploymentService {
     public List<Employee> findByName(String name) {
         return userRepository.findByName(name);
     }
+
+    @Override
+    public boolean update(int id, Employee employee) {
+        return userRepository.update(id,employee);
+    }
+
+    @Override
+    public Employee findById(int id) {
+        return userRepository.findById(id);
+    }
+
 }
