@@ -1,6 +1,8 @@
 package model.service.impl;
 
+import model.bean.contract.AttachService;
 import model.bean.contract.Contract;
+import model.bean.contract.ContractDetail;
 import model.bean.customer.Customer;
 import model.bean.employee.Employee;
 import model.bean.service.Service;
@@ -38,5 +40,19 @@ public class ContractService implements IContractService {
         return userRepository.create(contract);
     }
 
+    @Override
+    public List<ContractDetail> findAllContractDetail() {
+        return userRepository.findAllContractDetail();
+    }
+
+    @Override
+    public List<AttachService> findAllAttachService() {
+        return userRepository.findAllAttachService();
+    }
+
+    @Override
+    public boolean create(ContractDetail contractDetail) {
+        return userRepository.create(contractDetail);
+    }
 
 }

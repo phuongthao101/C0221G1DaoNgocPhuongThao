@@ -1,6 +1,8 @@
 package model.repository;
 
+import model.bean.contract.AttachService;
 import model.bean.contract.Contract;
+import model.bean.contract.ContractDetail;
 import model.bean.customer.Customer;
 import model.bean.employee.Employee;
 import model.bean.service.Service;
@@ -26,6 +28,15 @@ public class ContractRepository {
     final String SELECT_ALL_CUSTOMER = "select* from customer  ;"; // hiển thị danh sách
 
     final String SELECT_ALL_SERVICE = "select* from service  ;"; // hiển thị danh sách
+
+    final String SELECT_ALL_CONTRACT_DETAIL =  "select* from contract_detail  ;";
+    final String SELECT_ALL_ATTACH_SERVICE =  "select* from attach_service  ;";
+
+    private final String INSERT_CONTRACT_DETAIL = "insert into contract_detail (" + "contract_id,\n" +
+            "attach_service_id ,\n" +
+            "quantity)\n" +
+            "values\n" +
+            " (?,?,?);";
 
 
     public List<Employee> findAllEmployee() {
@@ -200,4 +211,89 @@ public class ContractRepository {
         }
         return check;
     }
+
+    public List<ContractDetail> findAllContractDetail() {
+        // kết nối database => lấy lại cái danh sách
+        Connection connection = baseRepository.getConnection(); // tạo connect với DB
+        List<ContractDetail> contractDetailList = new ArrayList<>(); // tạo list chứa thông tin user
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(SELECT_ALL_CONTRACT_DETAIL); // truy vấn
+            ResultSet resultSet = preparedStatement.executeQuery(); // dùng cho câu lệnh select; chứa dữ liệu
+
+            while (resultSet.next()) {// trỏ đến từng record
+                int id = resultSet.getInt("contract_detail_id");
+                int contract_id = resultSet.getInt("contract_id");
+                int attach_service_id = resultSet.getInt("attach_service_id");
+
+                String end_date = resultSet.getString("quantity");
+
+                ContractDetail contractDetail = new ContractDetail(id,contract_id,attach_service_id,end_date);
+
+                contractDetailList.add(contractDetail);
+
+            }
+            preparedStatement.close();
+            connection.close();
+
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return contractDetailList;
+
+    }
+
+    public List<AttachService> findAllAttachService() {
+        // kết nối database => lấy lại cái danh sách
+        Connection connection = baseRepository.getConnection(); // tạo connect với DB
+        List<AttachService> attachServiceList = new ArrayList<>(); // tạo list chứa thông tin user
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(SELECT_ALL_ATTACH_SERVICE); // truy vấn
+            ResultSet resultSet = preparedStatement.executeQuery(); // dùng cho câu lệnh select; chứa dữ liệu
+
+            while (resultSet.next()) {// trỏ đến từng record
+                int id = resultSet.getInt("attach_service_id");
+                String attach_service_name = resultSet.getString("attach_service_name");
+
+                double attach_service_cost = resultSet.getInt("attach_service_cost");
+                int attach_service_unit = resultSet.getInt("attach_service_unit");
+                String attach_service_status = resultSet.getString("attach_service_status");
+
+
+                AttachService attachService = new AttachService(id,attach_service_name,attach_service_cost,attach_service_unit,attach_service_status);
+
+                attachServiceList.add(attachService);
+
+            }
+            preparedStatement.close();
+            connection.close();
+
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return attachServiceList;
+
+    }
+
+    public boolean create(ContractDetail contractDetail) {
+        Connection connection = baseRepository.getConnection();
+        boolean check = false;
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(INSERT_CONTRACT_DETAIL);
+
+            preparedStatement.setInt(1,contractDetail.getContractId());
+            preparedStatement.setInt(2,contractDetail.getAttachServiceId());
+            preparedStatement.setString(3,contractDetail.getQuantity());
+
+            check = preparedStatement.executeUpdate() > 0;
+            preparedStatement.close();
+            connection.close();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return check;
+    }
+
 }

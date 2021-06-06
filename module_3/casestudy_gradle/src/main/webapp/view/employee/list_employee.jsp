@@ -37,6 +37,9 @@
                 <li class="nav-item mr-5 ">
                     <a class="navbar-brand mr-0" href="/contract">Contract <span class="sr-only"></span></a>
                 </li>
+                <li class="nav-item mr-5 ">
+                    <a class="navbar-brand mr-0" href="/contractDetail">ContractDetail <span class="sr-only"></span></a>
+                </li>
             </ul>
         </div>
         <div class="col-3">
