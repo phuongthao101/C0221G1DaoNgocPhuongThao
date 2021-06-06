@@ -1,30 +1,32 @@
 package model.bean.customer;
 
 public class TypeCustomer {
-    private int customer_type_id;
-    private String customer_type_name;
+
+
+    private int customerTypeId;
+    private String customerTypeName;
 
     public TypeCustomer() {
     }
 
-    public TypeCustomer(int customer_type_id, String customer_type_name) {
-        this.customer_type_id = customer_type_id;
-        this.customer_type_name = customer_type_name;
+    public TypeCustomer(int customerTypeId, String customerTypeName) {
+        this.customerTypeId = customerTypeId;
+        this.customerTypeName = customerTypeName;
     }
 
-    public int getCustomer_type_id() {
-        return customer_type_id;
+    public int getCustomerTypeId() {
+        return customerTypeId;
     }
 
-    public void setCustomer_type_id(int customer_type_id) {
-        this.customer_type_id = customer_type_id;
+    public void setCustomerTypeId(int customerTypeId) {
+        this.customerTypeId = customerTypeId;
     }
 
-    public String getCustomer_type_name() {
-        return customer_type_name;
+    public String getCustomerTypeName() {
+        return customerTypeName;
     }
 
-    public void setCustomer_type_name(String customer_type_name) {
-        this.customer_type_name = customer_type_name;
+    public void setCustomerTypeName(String customerTypeName) {
+        this.customerTypeName = customerTypeName;
     }
 }

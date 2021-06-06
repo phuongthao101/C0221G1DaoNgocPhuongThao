@@ -2,8 +2,71 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3fe4eac3-d659-4602-9f2d-f46a86864d0e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/casestudy_jstl_servlet/src/model/repository/BaseRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/casestudy_jstl_servlet/src/model/repository/BaseRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../casestudy_gradle/src/main/java/controller/ContractServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../casestudy_gradle/src/main/java/controller/CustomerServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../casestudy_gradle/src/main/java/controller/EmployeeServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../casestudy_gradle/src/main/java/controller/ServiceServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../casestudy_gradle/src/main/java/model/bean/contract/Contract.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../casestudy_gradle/src/main/java/model/bean/customer/Customer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../casestudy_gradle/src/main/java/model/bean/customer/TypeCustomer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../casestudy_gradle/src/main/java/model/bean/employee/Division.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../casestudy_gradle/src/main/java/model/bean/employee/EducationDegree.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../casestudy_gradle/src/main/java/model/bean/employee/Employee.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../casestudy_gradle/src/main/java/model/bean/employee/Position.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../casestudy_gradle/src/main/java/model/bean/service/RentType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../casestudy_gradle/src/main/java/model/bean/service/Service.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../casestudy_gradle/src/main/java/model/bean/service/ServiceType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../casestudy_gradle/src/main/java/model/repository/BaseRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../casestudy_gradle/src/main/java/model/repository/ContractRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../casestudy_gradle/src/main/java/model/repository/CustomerRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../casestudy_gradle/src/main/java/model/repository/EmployeeRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../casestudy_gradle/src/main/java/model/repository/ServiceRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../casestudy_gradle/src/main/java/model/service/IContractService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../casestudy_gradle/src/main/java/model/service/ICustomerService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../casestudy_gradle/src/main/java/model/service/IEmploymentService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../casestudy_gradle/src/main/java/model/service/IService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../casestudy_gradle/src/main/java/model/service/impl/ContractService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../casestudy_gradle/src/main/java/model/service/impl/CustomerService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../casestudy_gradle/src/main/java/model/service/impl/EmployeeService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../casestudy_gradle/src/main/java/model/service/impl/ServiceService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../casestudy_gradle/src/main/webapp/index.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../casestudy_gradle/src/main/webapp/view/contract/list_contract.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../casestudy_gradle/src/main/webapp/view/customer/create_customer.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../casestudy_gradle/src/main/webapp/view/customer/edit_customer.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../casestudy_gradle/src/main/webapp/view/customer/list_customer.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../casestudy_gradle/src/main/webapp/view/employee/create_employee.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../casestudy_gradle/src/main/webapp/view/employee/edit_employee.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../casestudy_gradle/src/main/webapp/view/employee/list_employee.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../casestudy_gradle/src/main/webapp/view/service/create_service.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../casestudy_gradle/src/main/webapp/view/service/list_service.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/casestudy_jstl_servlet/src/model/bean/contract/Contract.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/casestudy_jstl_servlet/src/model/repository/ContractRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/casestudy_jstl_servlet/src/model/service/IContractService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/casestudy_jstl_servlet/src/model/service/impl/ContractService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/casestudy_jstl_servlet/web/view/contract/list_contract.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/casestudy_jstl_servlet/out/artifacts/casestudy_jstl_servlet_war_exploded/WEB-INF/classes/controller/ContractServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/casestudy_jstl_servlet/out/artifacts/casestudy_jstl_servlet_war_exploded/WEB-INF/classes/controller/ContractServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/casestudy_jstl_servlet/out/artifacts/casestudy_jstl_servlet_war_exploded/WEB-INF/classes/controller/CustomerServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/casestudy_jstl_servlet/out/artifacts/casestudy_jstl_servlet_war_exploded/WEB-INF/classes/controller/CustomerServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/casestudy_jstl_servlet/out/artifacts/casestudy_jstl_servlet_war_exploded/WEB-INF/classes/model/bean/Contract.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/casestudy_jstl_servlet/out/artifacts/casestudy_jstl_servlet_war_exploded/WEB-INF/classes/model/bean/customer/Customer.class" beforeDir="false" afterPath="$PROJECT_DIR$/casestudy_jstl_servlet/out/artifacts/casestudy_jstl_servlet_war_exploded/WEB-INF/classes/model/bean/customer/Customer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/casestudy_jstl_servlet/out/artifacts/casestudy_jstl_servlet_war_exploded/WEB-INF/classes/model/bean/customer/TypeCustomer.class" beforeDir="false" afterPath="$PROJECT_DIR$/casestudy_jstl_servlet/out/artifacts/casestudy_jstl_servlet_war_exploded/WEB-INF/classes/model/bean/customer/TypeCustomer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/casestudy_jstl_servlet/out/artifacts/casestudy_jstl_servlet_war_exploded/WEB-INF/classes/model/repository/CustomerRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/casestudy_jstl_servlet/out/artifacts/casestudy_jstl_servlet_war_exploded/WEB-INF/classes/model/repository/CustomerRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/casestudy_jstl_servlet/out/artifacts/casestudy_jstl_servlet_war_exploded/view/customer/create_customer.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/casestudy_jstl_servlet/out/artifacts/casestudy_jstl_servlet_war_exploded/view/customer/create_customer.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/casestudy_jstl_servlet/out/artifacts/casestudy_jstl_servlet_war_exploded/view/customer/list_customer.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/casestudy_jstl_servlet/out/artifacts/casestudy_jstl_servlet_war_exploded/view/customer/list_customer.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/casestudy_jstl_servlet/out/production/casestudy_jstl_servlet/controller/ContractServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/casestudy_jstl_servlet/out/production/casestudy_jstl_servlet/controller/ContractServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/casestudy_jstl_servlet/out/production/casestudy_jstl_servlet/controller/CustomerServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/casestudy_jstl_servlet/out/production/casestudy_jstl_servlet/controller/CustomerServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/casestudy_jstl_servlet/out/production/casestudy_jstl_servlet/model/bean/Contract.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/casestudy_jstl_servlet/out/production/casestudy_jstl_servlet/model/bean/customer/Customer.class" beforeDir="false" afterPath="$PROJECT_DIR$/casestudy_jstl_servlet/out/production/casestudy_jstl_servlet/model/bean/customer/Customer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/casestudy_jstl_servlet/out/production/casestudy_jstl_servlet/model/bean/customer/TypeCustomer.class" beforeDir="false" afterPath="$PROJECT_DIR$/casestudy_jstl_servlet/out/production/casestudy_jstl_servlet/model/bean/customer/TypeCustomer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/casestudy_jstl_servlet/out/production/casestudy_jstl_servlet/model/repository/CustomerRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/casestudy_jstl_servlet/out/production/casestudy_jstl_servlet/model/repository/CustomerRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/casestudy_jstl_servlet/src/controller/ContractServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/casestudy_jstl_servlet/src/controller/ContractServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/casestudy_jstl_servlet/src/controller/CustomerServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/casestudy_jstl_servlet/src/controller/CustomerServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/casestudy_jstl_servlet/src/model/bean/Contract.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/casestudy_jstl_servlet/src/model/bean/customer/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/casestudy_jstl_servlet/src/model/bean/customer/Customer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/casestudy_jstl_servlet/src/model/bean/customer/TypeCustomer.java" beforeDir="false" afterPath="$PROJECT_DIR$/casestudy_jstl_servlet/src/model/bean/customer/TypeCustomer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/casestudy_jstl_servlet/src/model/repository/CustomerRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/casestudy_jstl_servlet/src/model/repository/CustomerRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/casestudy_jstl_servlet/src/model/repository/ServiceRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/casestudy_jstl_servlet/src/model/repository/ServiceRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/casestudy_jstl_servlet/web/view/customer/create_customer.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/casestudy_jstl_servlet/web/view/customer/create_customer.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/casestudy_jstl_servlet/web/view/customer/list_customer.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/casestudy_jstl_servlet/web/view/customer/list_customer.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,7 +103,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../13_JDBC_QUERYING_TRANSCTION/excersice/ex1" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -133,6 +196,7 @@
       <workItem from="1622256364344" duration="129000" />
       <workItem from="1622535706194" duration="2827000" />
       <workItem from="1622597395719" duration="4951000" />
+      <workItem from="1622890703339" duration="78000" />
     </task>
     <servers />
   </component>

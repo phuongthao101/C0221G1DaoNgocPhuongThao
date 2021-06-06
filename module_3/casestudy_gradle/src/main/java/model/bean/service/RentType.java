@@ -1,0 +1,42 @@
+package model.bean.service;
+
+public class RentType {
+
+
+    private  int rentTypeId;
+    private String rentTypeName;
+    private int cost;
+
+    public RentType() {
+    }
+
+    public RentType(int rentTypeId, String rentTypeName, int cost) {
+        this.rentTypeId = rentTypeId;
+        this.rentTypeName = rentTypeName;
+        this.cost = cost;
+    }
+
+    public int getRentTypeId() {
+        return rentTypeId;
+    }
+
+    public void setRentTypeId(int rentTypeId) {
+        this.rentTypeId = rentTypeId;
+    }
+
+    public String getRentTypeName() {
+        return rentTypeName;
+    }
+
+    public void setRentTypeName(String rentTypeName) {
+        this.rentTypeName = rentTypeName;
+    }
+
+    public int getCost() {
+        return cost;
+    }
+
+    public void setCost(int cost) {
+        this.cost = cost;
+    }
+}

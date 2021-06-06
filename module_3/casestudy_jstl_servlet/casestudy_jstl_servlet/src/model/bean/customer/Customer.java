@@ -3,111 +3,112 @@ package model.bean.customer;
 import java.util.Date;
 
 public class Customer {
-    private int customer_id;
-    private int customer_type_id;
-    private String customer_name;
-    private String customer_birthday;
-    private String customer_gender;
-    private String customer_id_card;
-    private String customer_phone;
-    private String customer_email;
-    private String customer_address;
 
-    public Customer(int id, String name, String gender, String birthday, String idCard, String phone, String email, String address) {
+    private int customerId;
+    private int customerTypeId;
+    private String name;
+    private String birthday;
+    private String gender;
+    private String idCard;
+    private String phone;
+    private String email;
+    private String address;
+
+    public Customer() {
     }
 
-    public Customer(int customer_type_id, String customer_name, String customer_birthday, String customer_gender, double employee_salary, String customer_id_card, String customer_phone, String customer_email, int position_id, int education_degree_id, int division_id, String customer_address) {
-        this.customer_type_id = customer_type_id;
-        this.customer_name = customer_name;
-        this.customer_birthday = customer_birthday;
-        this.customer_gender = customer_gender;
-        this.customer_id_card = customer_id_card;
-        this.customer_phone = customer_phone;
-        this.customer_email = customer_email;
-        this.customer_address = customer_address;
+    public Customer(int customerTypeId, String name, String birthday, String gender, String idCard, String phone, String email, String address) {
+        this.customerTypeId = customerTypeId;
+        this.name = name;
+        this.birthday = birthday;
+        this.gender = gender;
+        this.idCard = idCard;
+        this.phone = phone;
+        this.email = email;
+        this.address = address;
     }
 
-    public Customer(int customer_id, int customer_type_id, String customer_name, String customer_birthday, String customer_gender, String customer_id_card, String customer_phone, String customer_email, String customer_address) {
-        this.customer_id = customer_id;
-        this.customer_type_id = customer_type_id;
-        this.customer_name = customer_name;
-        this.customer_birthday = customer_birthday;
-        this.customer_gender = customer_gender;
-        this.customer_id_card = customer_id_card;
-        this.customer_phone = customer_phone;
-        this.customer_email = customer_email;
-        this.customer_address = customer_address;
+    public Customer(int customerId, int customerTypeId, String name, String birthday, String gender, String idCard, String phone, String email, String address) {
+        this.customerId = customerId;
+        this.customerTypeId = customerTypeId;
+        this.name = name;
+        this.birthday = birthday;
+        this.gender = gender;
+        this.idCard = idCard;
+        this.phone = phone;
+        this.email = email;
+        this.address = address;
     }
 
-    public int getCustomer_id() {
-        return customer_id;
+    public int getCustomerId() {
+        return customerId;
     }
 
-    public void setCustomer_id(int customer_id) {
-        this.customer_id = customer_id;
+    public void setCustomerId(int customerId) {
+        this.customerId = customerId;
     }
 
-    public int getCustomer_type_id() {
-        return customer_type_id;
+    public int getCustomerTypeId() {
+        return customerTypeId;
     }
 
-    public void setCustomer_type_id(int customer_type_id) {
-        this.customer_type_id = customer_type_id;
+    public void setCustomerTypeId(int customerTypeId) {
+        this.customerTypeId = customerTypeId;
     }
 
-    public String getCustomer_name() {
-        return customer_name;
+    public String getName() {
+        return name;
     }
 
-    public void setCustomer_name(String customer_name) {
-        this.customer_name = customer_name;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getCustomer_birthday() {
-        return customer_birthday;
+    public String getBirthday() {
+        return birthday;
     }
 
-    public void setCustomer_birthday(String customer_birthday) {
-        this.customer_birthday = customer_birthday;
+    public void setBirthday(String birthday) {
+        this.birthday = birthday;
     }
 
-    public String getCustomer_gender() {
-        return customer_gender;
+    public String getGender() {
+        return gender;
     }
 
-    public void setCustomer_gender(String customer_gender) {
-        this.customer_gender = customer_gender;
+    public void setGender(String gender) {
+        this.gender = gender;
     }
 
-    public String getCustomer_id_card() {
-        return customer_id_card;
+    public String getIdCard() {
+        return idCard;
     }
 
-    public void setCustomer_id_card(String customer_id_card) {
-        this.customer_id_card = customer_id_card;
+    public void setIdCard(String idCard) {
+        this.idCard = idCard;
     }
 
-    public String getCustomer_phone() {
-        return customer_phone;
+    public String getPhone() {
+        return phone;
     }
 
-    public void setCustomer_phone(String customer_phone) {
-        this.customer_phone = customer_phone;
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 
-    public String getCustomer_email() {
-        return customer_email;
+    public String getEmail() {
+        return email;
     }
 
-    public void setCustomer_email(String customer_email) {
-        this.customer_email = customer_email;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
-    public String getCustomer_address() {
-        return customer_address;
+    public String getAddress() {
+        return address;
     }
 
-    public void setCustomer_address(String customer_address) {
-        this.customer_address = customer_address;
+    public void setAddress(String address) {
+        this.address = address;
     }
 }

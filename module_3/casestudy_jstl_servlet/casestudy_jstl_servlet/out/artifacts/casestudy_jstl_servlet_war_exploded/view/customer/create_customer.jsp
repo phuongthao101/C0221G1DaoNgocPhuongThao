@@ -30,14 +30,12 @@
 
             <div class="form-group">
                 <label> Type Customer</label>
-                <select class="custom-select"  name="type_customer" required>
-                    <option selected disabled value="">Choose...</option>
-                    <option value="1">Diamond</option>
-                    <option value="2">Platinum</option>
-                    <option value="3">Gold</option>
-                    <option value="4">Silver</option>
-                    <option value="5">Member</option>
+                <select class="form-control" name="customer_type_id">
+                    <c:forEach var="type" items="${customerTypes}">
+                        <option value="${type.customerTypeId}">${type.customerTypeName}</option>
+                    </c:forEach>
                 </select>
+
 
             </div>
             <div class="form-group">

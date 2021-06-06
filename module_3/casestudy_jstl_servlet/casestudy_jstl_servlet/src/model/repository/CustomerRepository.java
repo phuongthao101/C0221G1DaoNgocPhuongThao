@@ -91,14 +91,14 @@ public class CustomerRepository {
         boolean check = false;
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(UPDATE_CUSTOMER_SQL); // update sử dụng set
-            preparedStatement.setInt(1, customer.getCustomer_type_id());
-            preparedStatement.setString(2, customer.getCustomer_name());
-            preparedStatement.setString(3, customer.getCustomer_gender());
-            preparedStatement.setString(4, customer.getCustomer_birthday());
-            preparedStatement.setString(5, customer.getCustomer_id_card());
-            preparedStatement.setString(6, customer.getCustomer_phone());
-            preparedStatement.setString(7, customer.getCustomer_email());
-            preparedStatement.setString(8, customer.getCustomer_address());
+            preparedStatement.setInt(1, customer.getCustomerId());
+            preparedStatement.setString(2, customer.getName());
+            preparedStatement.setString(3, customer.getGender());
+            preparedStatement.setString(4, customer.getBirthday());
+            preparedStatement.setString(5, customer.getIdCard());
+            preparedStatement.setString(6, customer.getPhone());
+            preparedStatement.setString(7, customer.getEmail());
+            preparedStatement.setString(8, customer.getAddress());
 
             preparedStatement.setInt(9, id);
 
@@ -154,14 +154,14 @@ public class CustomerRepository {
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(INSERT_CUSTOMER_SQL);
 
-            preparedStatement.setInt(1, customer.getCustomer_type_id());
-            preparedStatement.setString(2, customer.getCustomer_name());
-            preparedStatement.setString(3, customer.getCustomer_gender());
-            preparedStatement.setString(4, customer.getCustomer_birthday());
-            preparedStatement.setString(5, customer.getCustomer_id_card());
-            preparedStatement.setString(6, customer.getCustomer_phone());
-            preparedStatement.setString(7, customer.getCustomer_email());
-            preparedStatement.setString(8, customer.getCustomer_address());
+            preparedStatement.setInt(1, customer.getCustomerTypeId());
+            preparedStatement.setString(2, customer.getName());
+            preparedStatement.setString(3, customer.getGender());
+            preparedStatement.setString(4, customer.getBirthday());
+            preparedStatement.setString(5, customer.getIdCard());
+            preparedStatement.setString(6, customer.getPhone());
+            preparedStatement.setString(7, customer.getEmail());
+            preparedStatement.setString(8, customer.getAddress());
 
             check = preparedStatement.executeUpdate() > 0;
             preparedStatement.close();

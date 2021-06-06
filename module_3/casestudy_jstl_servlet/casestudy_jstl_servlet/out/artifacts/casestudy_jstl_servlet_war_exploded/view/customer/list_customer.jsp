@@ -91,29 +91,29 @@
             <tbody>
             <c:forEach var="customer" items="${customers}">
                 <tr>
-                    <td>${customer.customer_id}</td>
+                    <td>${customer.customerId}</td>
                   <c:forEach var="typeCustomer" items="${typeCustomers}">
-                      <c:if test="${typeCustomer.customer_type_id == customer.customer_type_id}">
-                          <td>${typeCustomer.customer_type_name}</td>
+                      <c:if test="${typeCustomer.customerTypeId == customer.customerTypeId}">
+                          <td>${typeCustomer.customerTypeName}</td>
                       </c:if>
                   </c:forEach>
-                    <td>${customer.customer_name}</td>
-                    <td>${customer.customer_birthday}</td>
-                    <td>${customer.customer_gender}</td>
-                    <td>${customer.customer_id_card}</td>
-                    <td>${customer.customer_phone}</td>
-                    <td>${customer.customer_email}</td>
-                    <td>${customer.customer_address}</td>
+                    <td>${customer.name}</td>
+                    <td>${customer.birthday}</td>
+                    <td>${customer.gender}</td>
+                    <td>${customer.idCard}</td>
+                    <td>${customer.phone}</td>
+                    <td>${customer.email}</td>
+                    <td>${customer.address}</td>
 
                     <td>
                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"
-                                onclick="sendData('${customer.customer_id}','${customer.customer_name}')">
+                                onclick="sendData('${customer.customerId}','${customer.name}')">
                             Delete
                         </button>
-                        <input type="hidden" id="idInput" value="${customer.customer_id}">
+                        <input type="hidden" id="idInput" value="${customer.customerId}">
                     </td>
                     <td>
-                        <a href="/customer?action=edit&customer_id=${customer.customer_id}">
+                        <a href="/customer?action=edit&customer_id=${customer.customerId}">
                             <button type="button" class="btn btn-primary" data-bs-toggle="modal"
                                     data-bs-target="#myModal">Edit
                             </button>
