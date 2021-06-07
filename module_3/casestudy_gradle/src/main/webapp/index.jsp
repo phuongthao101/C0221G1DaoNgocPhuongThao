@@ -58,6 +58,7 @@
             <li class="nav-item mr-5 ">
                 <a class="navbar-brand mr-0" href="/contractDetail">ContractDetail <span class="sr-only"></span></a>
             </li>
+
         </ul>
         <form class="form-inline my-2 my-lg-0">
             <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">

@@ -243,11 +243,7 @@ public class EmployeeRepository {
         return employeeList;
 
     }
-//    final String UPDATE_EMPLOYEE_SQL = " update employee set employee_name=?, employee_birthday=?, employee_id_card=?, \n" +
-//            "\temployee_salary=?, employee_phone=?, employee_email=?, employee_address=?,\n" +
-//            "           position_id=?, education_degree_id=?,\n" +
-//            "                    division_id=?, username=? \n" +
-//            "             where employee_id = ?;";
+
     public boolean update(int id, Employee employee) {
         Connection connection = baseRepository.getConnection();
         boolean check = false;

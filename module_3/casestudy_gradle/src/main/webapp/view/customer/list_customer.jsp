@@ -55,6 +55,7 @@
 
 <div>
     <a class="btn btn-success" href="/customer?action=create">Add new</a>
+    <a class="btn btn-success" href="/customerUsing">Customer Using Service</a>
     <c:if test="${message!=null}">
         <p>${message} </p>
     </c:if>
