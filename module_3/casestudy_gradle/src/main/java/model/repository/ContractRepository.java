@@ -29,6 +29,8 @@ public class ContractRepository {
 
     final String SELECT_ALL_SERVICE = "select* from service  ;"; // hiển thị danh sách
 
+    final String SELECT_ALL_CONTRACT_ID = "select* from contract where contract_id =?  ;"; // hiển thị danh sách
+
     final String SELECT_ALL_CONTRACT_DETAIL =  "select* from contract_detail  ;";
     final String SELECT_ALL_ATTACH_SERVICE =  "select* from attach_service  ;";
 
@@ -38,6 +40,16 @@ public class ContractRepository {
             "values\n" +
             " (?,?,?);";
 
+private final String UPDATE_CONTRACT = "update contract \n" +
+        "set \n" +
+        "start_date =?,\n" +
+        "end_date=?,\n" +
+        "deposit =?,\n" +
+        "total_money=? ,\n" +
+        "employee_id=?,\n" +
+        "customer_id=? ,\n" +
+        "service_id =?\n" +
+        "where contract_id =?;";
 
     public List<Employee> findAllEmployee() {
         // kết nối database => lấy lại cái danh sách
@@ -187,6 +199,42 @@ public class ContractRepository {
 
     }
 
+    public Contract findAllContractId(int idContract) {
+        // kết nối database => lấy lại cái danh sách
+        Connection connection = baseRepository.getConnection(); // tạo connect với DB
+       Contract contract = null;
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(SELECT_ALL_CONTRACT_ID); // truy vấn
+            preparedStatement.setInt(1,idContract);
+            ResultSet resultSet = preparedStatement.executeQuery(); // dùng cho câu lệnh select; chứa dữ liệu
+
+            while (resultSet.next()) {// trỏ đến từng record
+                int id = resultSet.getInt("contract_id");
+                String start_date = resultSet.getString("start_date");
+                String end_date = resultSet.getString("end_date");
+                int deposit = resultSet.getInt("deposit");
+                int total_money = resultSet.getInt("total_money");
+                int employee_id = resultSet.getInt("employee_id");
+                int customer_id = resultSet.getInt("customer_id");
+                int service_id = resultSet.getInt("service_id");
+
+
+//                start_date, end_date, deposit, total_money, employee_id,customer_id, service_id
+             contract = new Contract(id,start_date,end_date,deposit,total_money,employee_id,customer_id,service_id);
+
+
+            }
+            preparedStatement.close();
+            connection.close();
+
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return contract;
+
+    }
+
     public boolean create(Contract contract) {
         Connection connection = baseRepository.getConnection();
         boolean check = false;
@@ -285,6 +333,32 @@ public class ContractRepository {
             preparedStatement.setInt(1,contractDetail.getContractId());
             preparedStatement.setInt(2,contractDetail.getAttachServiceId());
             preparedStatement.setString(3,contractDetail.getQuantity());
+
+            check = preparedStatement.executeUpdate() > 0;
+            preparedStatement.close();
+            connection.close();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return check;
+    }
+
+    public  boolean update(int id, Contract contract) {
+        Connection connection = baseRepository.getConnection();
+        boolean check = false;
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(UPDATE_CONTRACT);
+
+
+            preparedStatement.setString(1,contract.getStartDate());
+            preparedStatement.setString(2,contract.getEndDate());
+            preparedStatement.setInt(3,contract.getDeposit());
+            preparedStatement.setInt(4,contract.getTotalMoney());
+            preparedStatement.setInt(5,contract.getEmployeeId());
+            preparedStatement.setInt(6,contract.getCustomerId());
+            preparedStatement.setInt(7,contract.getServiceId());
+            preparedStatement.setInt(8,id);
 
             check = preparedStatement.executeUpdate() > 0;
             preparedStatement.close();

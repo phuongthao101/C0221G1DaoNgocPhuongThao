@@ -30,4 +30,8 @@ public interface IContractService  {
     List<AttachService> findAllAttachService();
 
     boolean create(ContractDetail contractDetail);
+
+    Contract findAllContractId(int idContract) ;
+
+    boolean update(int id, Contract contract);
 }

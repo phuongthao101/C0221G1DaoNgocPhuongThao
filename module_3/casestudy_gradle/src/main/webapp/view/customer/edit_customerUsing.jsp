@@ -14,7 +14,7 @@
           integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
 </head>
 <body>
-<form action="/customerUsing?action=edit&customer_id=${customerUsing.customer_id}"  method="post">
+<form action="/customerUsing?action=edit&customer_id=${customerUsing.customer_id}"method="post">
     <div class="container col-3"></div>
     <div class="container col-6">
         <div class="container mt-3 ">
@@ -63,7 +63,7 @@
             </div>
             <div class="form-group">
                 <label >Attach Service Name</label>
-                <input type="text" class="form-control"  name="attach_service_name"  value="${customerUsing.attachServiceNam}">
+                <input type="text" class="form-control"  name="attach_service_name"  value="${customerUsing.attachServiceName}">
             </div>
             <div class="form-group">
                 <label >Quantity</label>

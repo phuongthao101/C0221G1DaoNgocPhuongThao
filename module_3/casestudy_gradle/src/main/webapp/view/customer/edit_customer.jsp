@@ -14,7 +14,7 @@
           integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
 </head>
 <body>
-<form action="/customer?action=edit&customer_id=${customer.customer_id}"  method="post">
+<form action="/customer?action=edit"  method="post">
     <div class="container col-3"></div>
     <div class="container col-6">
         <div class="container mt-3 ">
@@ -30,20 +30,20 @@
 
             <div class="form-group">
                 <label for="numberId">ID Customer</label>
-                <input type="number" class="form-control" id="numberId" name="customer_id" aria-describedby="numberId" readonly value="${customer.customer_id}">
+                <input type="number" class="form-control" id="numberId" name="customer_id" aria-describedby="numberId" readonly value="${customer.customerId}">
 
             </div>
             <div class="form-group">
 
-               <select name="typeCustomer">
-                    <c:forEach var="type" items="${typeCustomers}">
-                        <option value="${type.customerId}" ${type.customerId==customer.TypeCustomer.customerId?"selected":""}>${type.customerName}</option>
+               <select name="type_customer_id">
+                    <c:forEach var="type" items="${customerTypes}">
+                        <option value="${type.customerTypeId}" ${type.customerTypeId==customer.customerTypeId?"selected":""}>${type.customerTypeName}</option>
                     </c:forEach>
                 </select>
             </div>
             <div class="form-group">
                 <label for="name"> Customer Name</label>
-                <input type="text" class="form-control" id="name" name="customer_name" aria-describedby="name" value="${customer.customer_name}">
+                <input type="text" class="form-control" id="name" name="customer_name" aria-describedby="name" value="${customer.name}">
 
             </div>
 
@@ -59,27 +59,27 @@
 
             <div class="form-group ">
                 <label for="example-date-input" >Birthday</label>
-                <input class="form-control" type="date" value="2011-08-19" id="example-date-input" name="customer_birthday"  value="${customer.customer_birthday}">
+                <input class="form-control" type="date" value="2011-08-19" id="example-date-input" name="customer_birthday"  value="${customer.birthday}">
 
             </div>
 
             <div class="form-group">
                 <label for="numberId">Id Card</label>
-                <input type="number" class="form-control" id="idCard" aria-describedby="idCard" name="customer_id_card" value="${customer.customer_id_card}">
+                <input type="number" class="form-control" id="idCard" aria-describedby="idCard" name="customer_id_card" value="${customer.idCard}">
 
             </div>
             <div class="form-group">
                 <label for="numberId">Phone Number</label>
-                <input type="number" class="form-control" id="phone" aria-describedby="phone" name="customer_phone" value="${customer.customer_phone}">
+                <input type="number" class="form-control" id="phone" aria-describedby="phone" name="customer_phone" value="${customer.phone}">
 
             </div>
             <div class="form-group ">
                 <label for="inputEmail4">Email</label>
-                <input type="email" class="form-control" id="inputEmail4" name="customer_email"  value="${customer.customer_email}">
+                <input type="email" class="form-control" id="inputEmail4" name="customer_email"  value="${customer.email}">
             </div>
             <div class="form-group">
                 <label for="inputAddress">Address</label>
-                <input type="text" class="form-control" id="inputAddress" name="customer_address" value="${customer.customer_address}">
+                <input type="text" class="form-control" id="inputAddress" name="customer_address" value="${customer.address}">
             </div>
 
 
@@ -90,7 +90,7 @@
         <a href="/customer" class="btn btn-secondary" style="margin-left: 200px">Back to list</a>
         <input type="submit" class="btn btn-success" style="margin-left: 174px;width: 100px" value="Submit">
     </div>
-
+    </div>
 </form>
 
 

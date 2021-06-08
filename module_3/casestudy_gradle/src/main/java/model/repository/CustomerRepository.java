@@ -24,33 +24,6 @@ public class CustomerRepository {
     final String SELECT_USER_BY_ID = "select * from customer where customer_id =?";
     final String SELECT_TYPE_CUSTOMER = "select* from customer_type;";
 
-
-    public List<TypeCustomer> findAllTypeCustomer() {
-        Connection connection = baseRepository.getConnection(); // tạo connect với DB
-        List<TypeCustomer> typeCustomers = new ArrayList<>(); // tạo list chứa thông tin user
-        try {
-            PreparedStatement preparedStatement = connection.prepareStatement(SELECT_TYPE_CUSTOMER); // truy vấn
-            ResultSet resultSet = preparedStatement.executeQuery(); // dùng cho câu lệnh select; chứa dữ liệu
-
-            while (resultSet.next()) {// trỏ đến từng record
-                int id = resultSet.getInt("customer_type_id");
-                String name = resultSet.getString("customer_type_name");
-
-                TypeCustomer typeCustomer = new TypeCustomer(id,name);
-                typeCustomers.add(typeCustomer);
-
-
-            }
-            preparedStatement.close();
-            connection.close();
-
-
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return typeCustomers;
-    }
-
     public List<Customer> findByAll() {
         // kết nối database => lấy lại cái danh sách
         Connection connection = baseRepository.getConnection(); // tạo connect với DB
@@ -86,6 +59,33 @@ public class CustomerRepository {
 
     }
 
+    public List<TypeCustomer> findAllTypeCustomer() {
+        Connection connection = baseRepository.getConnection(); // tạo connect với DB
+        List<TypeCustomer> typeCustomers = new ArrayList<>(); // tạo list chứa thông tin user
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(SELECT_TYPE_CUSTOMER); // truy vấn
+            ResultSet resultSet = preparedStatement.executeQuery(); // dùng cho câu lệnh select; chứa dữ liệu
+
+            while (resultSet.next()) {// trỏ đến từng record
+                int id = resultSet.getInt("customer_type_id");
+                String name = resultSet.getString("customer_type_name");
+
+                TypeCustomer typeCustomer = new TypeCustomer(id,name);
+                typeCustomers.add(typeCustomer);
+
+
+            }
+            preparedStatement.close();
+            connection.close();
+
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return typeCustomers;
+    }
+
+
     public boolean update(int id, Customer customer) {
         Connection connection = baseRepository.getConnection();
         boolean check = false;
@@ -100,7 +100,7 @@ public class CustomerRepository {
             preparedStatement.setString(7, customer.getEmail());
             preparedStatement.setString(8, customer.getAddress());
 
-            preparedStatement.setInt(9, id);
+            preparedStatement.setInt(9, id);// truyền tham số id
 
             check = preparedStatement.executeUpdate() > 0;
             preparedStatement.close();
@@ -154,7 +154,7 @@ public class CustomerRepository {
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(INSERT_CUSTOMER_SQL);
 
-            preparedStatement.setInt(1, customer.getCustomerTypeId());
+            preparedStatement.setInt(1, customer.getCustomerTypeId()); //thêm giá trị cho dấu ?
             preparedStatement.setString(2, customer.getName());
             preparedStatement.setString(3, customer.getGender());
             preparedStatement.setString(4, customer.getBirthday());
@@ -201,7 +201,7 @@ public class CustomerRepository {
 
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(SELECT_USER_BY_ID);
-            preparedStatement.setInt(1, id);
+            preparedStatement.setInt(1, id); // thêm giá trị cho dấu ? của id
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
                 int id2 = resultSet.getInt("customer_id");

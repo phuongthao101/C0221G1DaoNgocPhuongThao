@@ -45,7 +45,7 @@
         </div>
         <div class="col-3">
             <form action="/customerUsing?action=search" method="post" class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" name="employee_name" type="search" aria-label="Search">
+                <input class="form-control mr-sm-2" name="customer_name" type="search" aria-label="Search">
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit" style="color: white">Search</button>
             </form>
         </div>
@@ -104,15 +104,17 @@
                     <td>${customerUsing.endDate}</td>
                     <td>
                         <div class="dropdown">
-                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
                                 Attach Service
                             </button>
-                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <c:forEach items="${showListAttach}" var="temp">
-                                    <c:if test="${temp.contractId == customerUsing.contractId}">
-                                        <span class="dropdown-item">Lỗi ở đây</span>
+                            <div class="dropdown-menu">
+                                <c:forEach items="${showListAttach}" var="list">
+                                    <c:if test="${list.contractId == customerUsing.contractId}">
+                                        <p class="dropdown-item" > ${list.attachServiceName} Số lượng :${list.quantity}</p>
                                     </c:if>
+
                                 </c:forEach>
+
                             </div>
                         </div>
                     </td>
@@ -126,7 +128,7 @@
                         <input type="hidden" id="idInput" value="${customerUsing.customerId}">
                     </td>
                     <td>
-                        <a href="/customerUsing?action=edit&customer_id=${customerUsing.customerId}">
+                        <a href="/contract?action=edit&contract_id=${customerUsing.contractId}">
                             <button type="button" class="btn btn-primary" data-bs-toggle="modal"
                                     data-bs-target="#myModal">Edit
                             </button>

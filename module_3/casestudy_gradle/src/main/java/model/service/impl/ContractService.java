@@ -55,4 +55,14 @@ public class ContractService implements IContractService {
         return userRepository.create(contractDetail);
     }
 
+    @Override
+    public Contract findAllContractId(int idContract) {
+        return userRepository.findAllContractId(idContract);
+    }
+
+    @Override
+    public boolean update(int id, Contract contract) {
+        return userRepository.update(id,contract);
+    }
+
 }

@@ -21,4 +21,20 @@ public class ShowAttachService {
     public void setContractId(int contractId) {
         this.contractId = contractId;
     }
+
+    public String getAttachServiceName() {
+        return attachServiceName;
+    }
+
+    public void setAttachServiceName(String attachServiceName) {
+        this.attachServiceName = attachServiceName;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
 }

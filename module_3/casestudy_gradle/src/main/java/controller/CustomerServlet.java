@@ -23,24 +23,20 @@ public class CustomerServlet extends HttpServlet {
         if (action == null) {
             action = "";
         }
-        try {
-            switch (action) {
-                case "create":
-                    createCustomer(request, response);
-                    break;
-                case "edit":
-                    updateCustomer(request, response);
-                    break;
-                case "search":
-                    searchUserByName(request, response);
-                    break;
-                case "delete":
-                    deleteCustomer(request, response);
-                    break;
+        switch (action) {
+            case "create":
+                createCustomer(request, response);
+                break;
+            case "edit":
+                updateCustomer(request, response);
+                break;
+            case "search":
+                searchUserByName(request, response);
+                break;
+            case "delete":
+                deleteCustomer(request, response);
+                break;
 
-            }
-        } catch (SQLException ex) {
-            throw new ServletException(ex);
         }
     }
 
@@ -50,24 +46,20 @@ public class CustomerServlet extends HttpServlet {
             action = "";
         }
 
-        try {
-            switch (action) {
-                case "create":
-                    showNewForm(request, response);
-                    break;
-                case "edit":
-                    showEditForm(request, response);
-                    break;
-                case "delete":
-                    deleteCustomer(request, response);
-                    break;
+        switch (action) {
+            case "create":
+                showNewForm(request, response);
+                break;
+            case "edit":
+                showEditForm(request, response);
+                break;
+            case "delete":
+                deleteCustomer(request, response);
+                break;
 
-                default:
-                    listCustomer(request, response);
-                    break;
-            }
-        } catch (SQLException ex) {
-            throw new ServletException(ex);
+            default:
+                listCustomer(request, response);
+                break;
         }
     }
 
@@ -118,8 +110,7 @@ public class CustomerServlet extends HttpServlet {
         }
     }
 
-    private void showNewForm(HttpServletRequest request, HttpServletResponse response)
-       {
+    private void showNewForm(HttpServletRequest request, HttpServletResponse response) {
 
         List<TypeCustomer> typeCustomerList = customerService.findAllTypeCustomer();
         request.setAttribute("customerTypes",typeCustomerList);
@@ -134,22 +125,30 @@ public class CustomerServlet extends HttpServlet {
            }
        }
 
-    private void showEditForm(HttpServletRequest request, HttpServletResponse response)
-            throws SQLException, ServletException, IOException {
+    private void showEditForm(HttpServletRequest request, HttpServletResponse response) {
         int id = Integer.parseInt(request.getParameter("customer_id"));
+        List<TypeCustomer> typeCustomerList = customerService.findAllTypeCustomer();
+        request.setAttribute("customerTypes",typeCustomerList);
+
         Customer existingUser = customerService.findById(id);
-        RequestDispatcher dispatcher = request.getRequestDispatcher("view/customer/edit_customer.jsp");
         request.setAttribute("customer", existingUser);
-        dispatcher.forward(request, response);
+        RequestDispatcher dispatcher = request.getRequestDispatcher("view/customer/edit_customer.jsp");
+
+        try {
+            dispatcher.forward(request, response);
+        } catch (ServletException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
     }
 
-    private void updateCustomer(HttpServletRequest request, HttpServletResponse response)
-            throws SQLException, IOException, ServletException {
+    private void updateCustomer(HttpServletRequest request, HttpServletResponse response) {
 
         boolean check = false;
-
-        int id = Integer.parseInt(request.getParameter("type_customer"));
+        int id1 = Integer.parseInt(request.getParameter("customer_id"));
+        int id = Integer.parseInt(request.getParameter("type_customer_id"));
         String name = request.getParameter("customer_name");
         String birthday = request.getParameter("customer_birthday");
         String gender = request.getParameter("customer_gender");
@@ -158,8 +157,8 @@ public class CustomerServlet extends HttpServlet {
         String email = request.getParameter("customer_email");
         String address = request.getParameter("customer_address");
 
-        Customer newCustomer = new Customer(id, name, birthday,gender, idCard, phone, email, address);
-        check = customerService.add(newCustomer);
+        Customer newCustomer = new Customer(id1,id, name, birthday,gender, idCard, phone, email, address);
+        check = customerService.update(id, newCustomer);
         if (check) {
             request.setAttribute("message", "Create success");
         }
@@ -174,16 +173,16 @@ public class CustomerServlet extends HttpServlet {
 
     }
 
-    private void deleteCustomer(HttpServletRequest request, HttpServletResponse response)
-            throws SQLException, IOException, ServletException {
+    private void deleteCustomer(HttpServletRequest request, HttpServletResponse response) {
         int id = Integer.parseInt(request.getParameter("customer_id"));
         customerService.remove(id);
-//        List<Customer> customerList = customerService.findByAll();
-//        request.setAttribute("customer", customerList);
-//        RequestDispatcher dispatcher = request.getRequestDispatcher("view/customer/list_customer.jsp");
-//        dispatcher.forward(request, response);
-        response.sendRedirect("/customer");
-    }
+
+                 try {
+                     response.sendRedirect("/customer");
+                 } catch (IOException e) {
+                     e.printStackTrace();
+                 }
+             }
 
     private void searchUserByName(HttpServletRequest request, HttpServletResponse response) {
 
