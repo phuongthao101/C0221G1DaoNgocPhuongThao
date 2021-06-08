@@ -83,23 +83,38 @@ public class CustomerServlet extends HttpServlet {
 
     private void createCustomer(HttpServletRequest request, HttpServletResponse response) {
 
-        boolean check = false;
-
         int id = Integer.parseInt(request.getParameter("customer_type_id"));
         String name = request.getParameter("customer_name");
+
         String birthday = request.getParameter("customer_birthday");
+
         String gender = request.getParameter("customer_gender");
         String idCard = request.getParameter("customer_id_card");
+
         String phone = request.getParameter("customer_phone");
+
         String email = request.getParameter("customer_email");
+
         String address = request.getParameter("customer_address");
 
 
-        Customer newCustomer = new Customer(id, name, birthday,gender, idCard, phone, email, address);
-        check = customerService.add(newCustomer);
-        if (check) {
-            request.setAttribute("message", "Create success");
+        Customer newCustomer = new Customer(id, name, birthday, gender, idCard, phone, email, address);
+
+        List<String> validString = customerService.add(newCustomer);
+        int checkFull = 0;
+        for (String string : validString) {
+            if (string.equals("")) {
+                checkFull++;
+            }
         }
+        if (checkFull == 6) {
+            request.setAttribute("message", "success");
+        } else {
+            request.setAttribute("message", "Fail!!!");
+            request.setAttribute("Err", validString);
+        }
+        List<TypeCustomer> typeCustomerList = customerService.findAllTypeCustomer();
+        request.setAttribute("customerTypes", typeCustomerList);
         try {
             RequestDispatcher dispatcher = request.getRequestDispatcher("view/customer/create_customer.jsp");
             dispatcher.forward(request, response);
@@ -113,22 +128,22 @@ public class CustomerServlet extends HttpServlet {
     private void showNewForm(HttpServletRequest request, HttpServletResponse response) {
 
         List<TypeCustomer> typeCustomerList = customerService.findAllTypeCustomer();
-        request.setAttribute("customerTypes",typeCustomerList);
+        request.setAttribute("customerTypes", typeCustomerList);
 
         RequestDispatcher dispatcher = request.getRequestDispatcher("view/customer/create_customer.jsp");
-           try {
-               dispatcher.forward(request, response);
-           } catch (ServletException e) {
-               e.printStackTrace();
-           } catch (IOException e) {
-               e.printStackTrace();
-           }
-       }
+        try {
+            dispatcher.forward(request, response);
+        } catch (ServletException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
     private void showEditForm(HttpServletRequest request, HttpServletResponse response) {
         int id = Integer.parseInt(request.getParameter("customer_id"));
         List<TypeCustomer> typeCustomerList = customerService.findAllTypeCustomer();
-        request.setAttribute("customerTypes",typeCustomerList);
+        request.setAttribute("customerTypes", typeCustomerList);
 
         Customer existingUser = customerService.findById(id);
         request.setAttribute("customer", existingUser);
@@ -157,7 +172,7 @@ public class CustomerServlet extends HttpServlet {
         String email = request.getParameter("customer_email");
         String address = request.getParameter("customer_address");
 
-        Customer newCustomer = new Customer(id1,id, name, birthday,gender, idCard, phone, email, address);
+        Customer newCustomer = new Customer(id1, id, name, birthday, gender, idCard, phone, email, address);
         check = customerService.update(id, newCustomer);
         if (check) {
             request.setAttribute("message", "Create success");
@@ -177,12 +192,12 @@ public class CustomerServlet extends HttpServlet {
         int id = Integer.parseInt(request.getParameter("customer_id"));
         customerService.remove(id);
 
-                 try {
-                     response.sendRedirect("/customer");
-                 } catch (IOException e) {
-                     e.printStackTrace();
-                 }
-             }
+        try {
+            response.sendRedirect("/customer");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
     private void searchUserByName(HttpServletRequest request, HttpServletResponse response) {
 

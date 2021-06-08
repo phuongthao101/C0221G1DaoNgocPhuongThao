@@ -14,7 +14,7 @@ public interface ICustomerService {
 
     boolean remove(int id) ;
 
-    boolean add(Customer customer) ;
+    List<String> add(Customer customer) ;
 
     Customer findById(int id);
 

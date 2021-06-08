@@ -12,6 +12,11 @@
     <title>Title</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
           integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <style>
+        small{
+            color: red;
+        }
+    </style>
 </head>
 <body>
 <form action="/customer?action=create"  method="post">
@@ -43,6 +48,7 @@
                 <input type="text" class="form-control" id="name" name="customer_name" aria-describedby="name" >
 
             </div>
+            <small>${Err.get(0)}</small>
 
             <div>
                 <label for="validationDefault04">Gender</label>
@@ -59,25 +65,30 @@
                 <input class="form-control" type="date" value="2011-08-19" id="example-date-input" name="customer_birthday"  >
 
             </div>
-
+            <small>${Err.get(1)}</small>
             <div class="form-group">
                 <label >Id Card</label>
                 <input type="number" class="form-control" id="idCard" aria-describedby="idCard" name="customer_id_card" >
 
             </div>
+            <small>${Err.get(2)}</small>
             <div class="form-group">
                 <label >Phone Number</label>
                 <input type="number" class="form-control" id="phone" aria-describedby="phone" name="customer_phone" >
 
             </div>
+
+            <small>${Err.get(3)}</small>
             <div class="form-group ">
                 <label for="inputEmail4">Email</label>
                 <input type="email" class="form-control" id="inputEmail4" name="customer_email"  >
             </div>
+            <small>${Err.get(4)}</small>
             <div class="form-group">
                 <label for="inputAddress">Address</label>
                 <input type="text" class="form-control" id="inputAddress" name="customer_address" >
             </div>
+            <small>${Err.get(5)}</small>
 
 
         </div>
