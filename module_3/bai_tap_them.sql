@@ -104,7 +104,7 @@ select faculty.faculty_id, faculty.faculty_name, count(faculty.faculty_id) as in
 from instructor
 join faculty on instructor.faculty_id = faculty.faculty_id
 group by faculty.faculty_id,faculty.faculty_name ;
-
+select* from student;
 
 
 

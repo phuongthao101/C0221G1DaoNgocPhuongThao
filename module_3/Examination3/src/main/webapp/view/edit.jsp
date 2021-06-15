@@ -14,12 +14,12 @@
           integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
 </head>
 <body>
-<form action="/employee?action=edit&employee_id=${employee.employeeId}"  method="post">
-    <div class="container col-3"></div>
-    <div class="container col-6">
+<form action="/product?action=edit&product_id=${product.productId}"  method="post">
+    <div class="container col-4"></div>
+    <div class="container col-4">
         <div class="container mt-3 ">
             <div class="alert alert-primary " role="alert" STYLE="text-align: center">
-                <h3>UPDATE EMPLOYEE INFORMATION</h3>
+                <h3>UPDATE PRODUCT INFORMATION</h3>
             </div>
             <%--Bạn đã cập nhật thành công--%>
             <div>
@@ -27,105 +27,58 @@
                     <p class="text-success">${message}</p>
                 </c:if>
             </div>
+
+<%--            product_name ,--%>
+<%--            price ,--%>
+<%--            quantity ,--%>
+<%--            color , `description`,--%>
+<%--            category--%>
             <div class="form-group">
-                <label>ID:</label>
-                <input type="text" class="form-control"  name="employee_id" readonly value="${employee.employeeId}">
-            </div>
+            <label>ID:</label>
+            <input type="text" class="form-control"  name="product_id" readonly value="${product.productId}">
+        </div>
 
             <div class="form-group">
                 <label>Name:</label>
-                <input type="text" class="form-control"  name="employee_name"  value="${employee.name}">
+                <input type="text" class="form-control"  name="product_name"  value="${product.name}">
             </div>
             <div class="form-group">
-                <label>Birthday:</label>
-                <input type="date" class="form-control"  name="employee_birthday"value="${employee.birthday}">
+                <label>Price:</label>
+                <input type="number" class="form-control"  name="price"value="${product.price}">
             </div>
             <div class="form-group">
-                <label>ID Card: </label>
-                <input type="text" class="form-control"  name="employee_id_card" value="${employee.idCard}">
+                <label>Quantity: </label>
+                <input type="text" class="form-control"  name="quantity" value="${product.quantity}">
             </div>
             <div class="form-group">
-                <label>Salary: </label>
-                <input type="number" class="form-control"  name="employee_salary" value="${employee.salary}">
+                <label>Color:</label>
+                <input type="text" class="form-control"  name="color"  value="${product.color}">
             </div>
             <div class="form-group">
-                <label>Phone: </label>
-                <input type="number" class="form-control" name="employee_phone"value="${employee.phone}">
-            </div>
-            <div class="form-group">
-                <label>Email: </label>
-                <input type="email" class="form-control"  name="employee_email" value="${employee.email}">
-            </div>
-            <div class="form-group">
-                <label>Address: </label>
-                <input type="text" class="form-control"  name="employee_address" value="${employee.address}">
-            </div>
 
-            <div class="form-group">
-                <label>Position: </label>
-                <select name="position_id" class="form-control">
-                    <c:forEach var="position" items="${positions}">
-                        <c:choose>
-                            <c:when test="${position.positionId == employee.positionId}">
-                                <option value="${position.positionId}" selected>${position.positionName}</option>
-                            </c:when>
-                            <c:otherwise>
-                                <option value="${position.positionId}" >${position.positionName}</option>
-                            </c:otherwise>
-                        </c:choose>c
-
-                    </c:forEach>
+                <label>Description: </label>
+                <input type="number" class="form-control"  name="description" value="${product.description}">
+            </div>
+            <div>
+                <label for="validationDefault04">Category</label>
+                <select class="custom-select" id="validationDefault04" name="category" required>
+                    <option selected disabled value="">Choose...</option>
+                    <option>Phone</option>
+                    <option>Television</option>
+                    <option>Other</option>
                 </select>
             </div>
-            <div class="form-group">
-                <label>Education degree : </label>
-                <select name="education_degree_id" class="form-control">
-                    <c:forEach var="education_degree" items="${educationDegrees}">
-                        <c:choose>
-                            <c:when test="${education_degree.educationDegreeId == employee.educationId}">
-                                <option value="${education_degree.educationDegreeId}" selected>${education_degree.educationName}</option>
-                            </c:when>
-                            <c:otherwise>
-                                <option value="${education_degree.educationDegreeId}" >${education_degree.educationName}</option>
-                            </c:otherwise>
-                        </c:choose>c
 
-                    </c:forEach>
-                </select>
-
-            </div>
-            <div class="form-group">
-                <label>Division : </label>
-                <select name="division_id" class="form-control">
-                    <c:forEach var="division" items="${divisions}">
-                        <c:choose>
-                            <c:when test="${division.divisionId == employee.divisionId}">
-                                <option value="${division.divisionId}" selected>${division.divisionName}</option>
-                            </c:when>
-                            <c:otherwise>
-                                <option value="${division.divisionId}" >${division.divisionName}</option>
-                            </c:otherwise>
-                        </c:choose>c
-
-                    </c:forEach>
-                </select>
-
-
-
-            </div>
-            <div class="form-group">
-                <label>Username: </label>
-                <input type="text" class="form-control"  name="username" value="${employee.username}">
-            </div>
 
         </div>
     </div>
 
     <div class="d-flex justify-content-center col-10">
-        <a href="/employee" class="btn btn-secondary" style="margin-left: 200px">Back to list</a>
+        <a href="/product" class="btn btn-secondary" style="margin-left: 200px">Back to list</a>
         <input type="submit" class="btn btn-success" style="margin-left: 174px;width: 100px" value="Edit">
     </div>
-
+    <div class="container col-4">
+    </div>
 </form>
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"

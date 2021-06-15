@@ -9,7 +9,7 @@ public class BaseRepository {
 //    allowPublicKeyRetrieval=true&
 //    private String jdbcURL = "jdbc:mysql://localhost:3306/database_furama?allowPublicKeyRetrieval=true&useSSL=false";
 
-    private String jdbcURL= "jdbc:mysql://localhost:3306/examinationDB?useSSL=false";
+    private String jdbcURL= "jdbc:mysql://localhost:3306/examination?useSSL=false";
     private String jdbcUserName = "root";
     private String jdbcPassword ="12345678";
 

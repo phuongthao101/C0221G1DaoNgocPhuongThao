@@ -14,12 +14,12 @@
           integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
 </head>
 <body>
-<form action="/employee?action=create"  method="post">
-    <div class="container col-3"></div>
-    <div class="container col-6">
+<form action="/product?action=create"  method="post">
+    <div class="container col-4"></div>
+    <div class="container col-4">
         <div class="container mt-3 ">
             <div class="alert alert-primary " role="alert" STYLE="text-align: center">
-                <h3>CREATE EMPLOYEE INFORMATION</h3>
+                <h3>CREATE PRODUCT INFORMATION</h3>
             </div>
             <%--Bạn đã cập nhật thành công--%>
             <div>
@@ -27,73 +27,45 @@
                     <p class="text-success">${message}</p>
                 </c:if>
             </div>
+<%--            product_name ,--%>
+<%--            price ,--%>
+<%--            quantity ,--%>
+<%--            color , `description`,--%>
+<%--            category--%>
 
             <div class="form-group">
                 <label>Name:</label>
-                <input type="text" class="form-control" placeholder="Enter name... " name="employee_name">
+                <input type="text" class="form-control" placeholder="Enter name... " name="product_name">
             </div>
             <div class="form-group">
-                <label>Birthday:</label>
-                <input type="date" class="form-control" placeholder="Enter birthday" name="employee_birthday">
+                <label>Price:</label>
+                <input type="number" class="form-control" placeholder="Enter price" name="price">
             </div>
             <div class="form-group">
-                <label>ID Card: </label>
-                <input type="text" class="form-control" placeholder="Enter id card... " name="employee_id_card">
+                <label>Quantity </label>
+                <input type="text" class="form-control" placeholder="Enter quantity... " name="quantity">
             </div>
             <div class="form-group">
-                <label>Salary: </label>
-                <input type="number" class="form-control" placeholder="Enter salary..." name="employee_salary">
+                <label>color: </label>
+                <input type="text" class="form-control" placeholder="Enter color..." name="color">
             </div>
             <div class="form-group">
-                <label>Phone: </label>
-                <input type="number" class="form-control" placeholder="Enter phone number..." name="employee_phone">
+                <label>description: </label>
+                <input type="text" class="form-control" placeholder="Enter description..." name="description">
             </div>
             <div class="form-group">
-                <label>Email: </label>
-                <input type="email" class="form-control" placeholder="Enter email..." name="employee_email">
-            </div>
-            <div class="form-group">
-                <label>Address: </label>
-                <input type="text" class="form-control" placeholder="Enter address... " name="employee_address">
-            </div>
-
-            <div class="form-group">
-                <label>Position: </label>
-                <select name="position_id" class="form-control">
-                    <c:forEach var="position" items="${positions}">
-                        <option value="${position.positionId}">${position.positionName}</option>
-                    </c:forEach>
-                </select>
-            </div>
-            <div class="form-group">
-                <label>Education degree : </label>
-                <select name="education_degree_id" class="form-control">
-                    <c:forEach var="education" items="${educationDegrees}">
-                        <option value="${education.educationDegreeId}">${education.educationName}</option>
-                    </c:forEach>
-                </select>
-            </div>
-            <div class="form-group">
-                <label>Division : </label>
-                <select name="division_id" class="form-control">
-                    <c:forEach var="division" items="${divisions}">
-                        <option value="${division.divisionId}">${division.divisionName}</option>
-                    </c:forEach>
-                </select>
-            </div>
-            <div class="form-group">
-                <label>Username: </label>
-                <input type="text" class="form-control" placeholder="Enter username... " name="username">
+                <label>category: </label>
+                <input type="text" class="form-control" placeholder="Enter category..." name="category">
             </div>
 
         </div>
     </div>
 
     <div class="d-flex justify-content-center col-10">
-        <a href="/employee" class="btn btn-secondary" style="margin-left: 200px">Back to list</a>
+        <a href="/product" class="btn btn-secondary" style="margin-left: 200px">Back to list</a>
         <input type="submit" class="btn btn-success" style="margin-left: 174px;width: 100px" value="Create">
     </div>
-
+    <div class="container col-4"></div>
 </form>
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"

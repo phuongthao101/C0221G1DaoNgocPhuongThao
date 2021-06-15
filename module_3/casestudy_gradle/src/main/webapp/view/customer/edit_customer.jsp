@@ -50,11 +50,11 @@
             <div>
                 <label for="validationDefault04">Gender</label>
                 <select class="custom-select" id="validationDefault04" name="customer_gender" required>
-                    <option selected disabled value="">Choose...</option>
-                    <option>Male</option>
-                    <option>Female</option>
-                    <option>Other</option>
-                </select>
+                <option selected disabled value="">Choose...</option>
+                <option>Male</option>
+                <option>Female</option>
+                <option>Other</option>
+            </select>
             </div>
 
             <div class="form-group ">

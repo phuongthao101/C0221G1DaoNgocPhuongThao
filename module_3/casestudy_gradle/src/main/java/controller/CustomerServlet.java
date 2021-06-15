@@ -113,7 +113,7 @@ public class CustomerServlet extends HttpServlet {
             request.setAttribute("message", "Fail!!!");
             request.setAttribute("Err", validString);
         }
-        List<TypeCustomer> typeCustomerList = customerService.findAllTypeCustomer();
+        List<TypeCustomer> typeCustomerList = customerService.findAllTypeCustomer();// gửi data của typecustomer
         request.setAttribute("customerTypes", typeCustomerList);
         try {
             RequestDispatcher dispatcher = request.getRequestDispatcher("view/customer/create_customer.jsp");
