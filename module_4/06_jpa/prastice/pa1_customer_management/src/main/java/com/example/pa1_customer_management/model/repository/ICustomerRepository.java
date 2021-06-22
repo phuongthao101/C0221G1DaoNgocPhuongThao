@@ -1,6 +1,9 @@
-package model.repository;
+package com.example.pa1_customer_management.model.repository;
 
-import model.entity.Customer;
+import com.example.pa1_customer_management.model.entity.Customer;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
-public interface ICustomerRepository extends IGeneralRepository<Customer>{
+@Repository
+public interface ICustomerRepository extends JpaRepository<Customer,Long> {
 }

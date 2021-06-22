@@ -1,11 +1,12 @@
-package model.service;
+package com.example.pa1_customer_management.model.service;
 
-import model.entity.Customer;
-import model.repository.ICustomerRepository;
+import com.example.pa1_customer_management.model.entity.Customer;
+import com.example.pa1_customer_management.model.repository.ICustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
-
+@Service
 public class CustomerService implements ICustomerService{
     @Autowired
     private ICustomerRepository customerRepository;

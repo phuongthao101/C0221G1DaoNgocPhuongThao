@@ -1,6 +1,15 @@
-package model.service;
+package com.example.pa1_customer_management.model.service;
 
-import model.entity.Customer;
+import com.example.pa1_customer_management.model.entity.Customer;
 
-public interface ICustomerService extends IGeneralService<Customer>{
+import java.util.List;
+
+public interface ICustomerService {
+    List<Customer> findAll();
+
+    Customer findById(Long id);
+
+    void save(Customer customer);
+
+    void remove(Long id);
 }

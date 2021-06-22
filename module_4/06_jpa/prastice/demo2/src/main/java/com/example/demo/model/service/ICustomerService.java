@@ -1,6 +1,7 @@
-package com.example.pa1_customer_management.model.service;
+package com.example.demo.model.service;
 
-import com.example.pa1_customer_management.model.entity.Customer;
+import com.example.demo.model.entity.Customer;
+
 
 import java.util.List;
 

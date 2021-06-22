@@ -1,17 +1,13 @@
-package controller;
+package com.example.pa1_customer_management.controller;
 
-import model.entity.Customer;
-import model.service.ICustomerService;
+import com.example.pa1_customer_management.model.service.ICustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.ModelAndView;
-
-import java.util.List;
 
 @Controller
-@RequestMapping(value = {"/customer"})
+@RequestMapping(value = {"","/customer"})
 public class CustomerController {
 
     @Autowired
@@ -40,10 +36,10 @@ public class CustomerController {
 //        modelAndView.addObject("customers", customers);
 //        return modelAndView;
 //    }
-    @GetMapping(value = "/customers")
+    @GetMapping(value = "")
             public String display(Model model){
 //        List<Customer> customerList = customerService.findAll();
-//        model.addAttribute("customers",customerList);
+//        com.example.pa1_customer_management.model.addAttribute("customers",customerList);
         return "/index";
     }
 

@@ -1,4 +1,4 @@
-package com.example.pa1_customer_management.model.entity;
+package com.example.demo.model.entity;
 
 import javax.persistence.*;
 
