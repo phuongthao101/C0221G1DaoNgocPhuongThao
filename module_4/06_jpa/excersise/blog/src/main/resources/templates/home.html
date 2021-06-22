@@ -1,0 +1,62 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en" xmlns:th="http://www.thymeleaf.org">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>Title</title>-->
+<!--</head>-->
+<!--<body>-->
+<!--<a href="/blog/create">CREATE BLOG</a>-->
+<!--<span th:text="${msg}"></span>-->
+<!--<table border="1" >-->
+<!--    <tr>-->
+<!--        <th>Id</th>-->
+<!--        <th>Name Blog</th>-->
+<!--        <th>Content Blog</th>-->
+<!--        <th>Edit</th>-->
+<!--        <th>Delete</th>-->
+<!--    </tr>-->
+<!--    <tr th:each="blog,loop" th:object="${blog}">-->
+<!--        <td th:text="${loop.count}"></td>-->
+<!--        <td th:text="${blog.name}"></td>-->
+<!--        <td th:text="${blog.content}"></td>-->
+<!--        <td th:href="@{/blog/edit(id=${blog.id})}">Edit</td>-->
+<!--        <td th:href="@{/blog/delete(id=${blog.id})}">Delete</td>-->
+
+<!--    </tr>-->
+
+
+<!--</table>-->
+
+<!--<h2>Blog</h2>-->
+<!--</body>-->
+<!--</html>-->
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<a href="/blog/create">Create Blog</a>
+<span th:text="${msg}" style="color: red"></span>
+<br>
+<table border="1">
+    <tr>
+        <td>Id</td>
+        <td>Name</td>
+        <td>Content</td>
+        <td>Edit</td>
+        <td>Show</td>
+        <td>Delete</td>
+    </tr>
+    <tr th:each="blog,loop : ${blog}">
+        <td th:text="${loop.count}"></td>
+        <td th:text="${blog.name}"></td>
+        <td th:text="${blog.content}"></td>
+        <td><a th:href="@{/blog/edit(id=${b.id})}">Edit</a></td>
+        <td><a th:href="@{/blog/show(id=${b.id})}">Show</a></td>
+        <td><a th:href="@{/blog/delete(id=${b.id})}">Delete</a></td>
+
+    </tr>
+</table>
+</body>
+</html>
