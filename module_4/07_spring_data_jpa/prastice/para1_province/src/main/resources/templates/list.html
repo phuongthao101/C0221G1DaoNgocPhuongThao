@@ -6,6 +6,10 @@
 </head>
 <body>
 <a href="/create-customer">Create new customer</a>
+<form >
+  <input th:type="text" name="keyword">
+  <input th:type="submit" value="Search">
+</form>
 <h1>Customers</h1>
 <table border="1">
   <tr>
@@ -23,5 +27,16 @@
     </tr>
   </th:block>
 </table>
+<p>
+  <a th:id="${customers.hasPrevious()}"
+     th:href="@{/customer(page=${customers.number -1 }, keyword=${keywordValue})}">Previous</a>
+  <span th:text="${customers.number + 1}">
+
+        </span>
+  <span th:text="${customers.totalPages}"></span>
+
+  <a th:id="${customers.hasNext()}"
+     th:href="@{/customer(page=${customers.number +1 }, keyword=${keywordValue})}">Next</a>
+</p>
 </body>
 </html>

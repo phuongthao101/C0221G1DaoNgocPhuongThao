@@ -4,11 +4,16 @@ package com.codegym.controller;
 import com.codegym.model.entity.Customer;
 import com.codegym.model.service.ICustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.swing.text.html.Option;
 import java.util.List;
+import java.util.Optional;
 
 @Controller
 @RequestMapping(value = "")
@@ -33,10 +38,16 @@ public class CustomerController {
         return modelAndView;
     }
     @GetMapping("/customers")
-    public ModelAndView listCustomers() {
-        List<Customer> customers = customerService.findAll();
-        ModelAndView modelAndView = new ModelAndView("list-province");
+    public ModelAndView listCustomers(@PageableDefault(size=2)Pageable pageable, @RequestParam Optional<String> keyword) {
+        String keywordValue="";
+        if (keyword.isPresent()){
+            keywordValue=keyword.get();
+        }
+//        List<Customer> customers = customerService.findAll();
+        ModelAndView modelAndView = new ModelAndView("list");
+        Page<Customer> customers = customerService.findAllSearchName(pageable,keywordValue);
         modelAndView.addObject("customers", customers);
+        modelAndView.addObject("keywordValue", keywordValue);
         return modelAndView;
     }
 

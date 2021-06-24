@@ -4,6 +4,8 @@ import com.codegym.model.entity.Customer;
 import com.codegym.model.repository.ICustomerRepository;
 import com.codegym.model.service.ICustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -32,4 +34,14 @@ public class CustomerService implements ICustomerService {
     public void remove(Long id) {
         customerRepository.deleteById(id);
     }
+
+    @Override
+    public Page<Customer> findAllSearchName(Pageable pageable, String keyword) {
+        return  this.customerRepository.getCustomerBySearchingName(pageable,"%"+keyword+"%");
+    }
+
+//    @Override
+//    public Page<Customer> f(Pageable pageable, String keyword) {
+//        return this.customerRepository.getCustomerBySearchingName(pageable,"%"+keyword+"%");
+//    }
 }
