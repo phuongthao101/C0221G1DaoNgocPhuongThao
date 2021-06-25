@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<a href="/category/create">Register</a>
+<span th:text="${msg}" style="color: blue"></span>
+<form action="/sign-up" method="post" th:object="${userDto}">
+  <table>
+    <tr>
+      <td>First Name</td>
+      <td><input th:type="text" th:field="*{firstName}"></td>
+      <td th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}">Invalid format</td>
+    </tr>
+    <tr>
+      <td>Phone Number: </td>
+      <td><input type="number" th:field="*{phone}"></td>
+      <td th:if="${#fields.hasErrors('phone')}" th:errors="*{phone}">Name Error</td>
+    </tr>
+    <tr>
+      <td>Age: </td>
+      <td><input type="number" th:field="*{age}"></td>
+      <td th:if="${#fields.hasErrors('age')}" th:errors="*{age}">Invalid format</td>
+    </tr>
+    <tr>
+      <td>Email: </td>
+      <td><input type="email" th:field="*{email}"></td>
+      <td th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Invalid format</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><input type="submit" value="Sign Up"></td>
+      <td></td>
+    </tr>
+  </table>
+
+
+</form>
+
+  </tr>
+</table>
+</body>
+</html>
