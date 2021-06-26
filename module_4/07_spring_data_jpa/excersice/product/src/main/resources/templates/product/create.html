@@ -9,12 +9,13 @@
     </a>
 </p>
 <div id="form">
-    <form th:action="@{/product/save}" th:object="${product}"
+    <form th:action="@{/product/save}" th:object="${productDto}"
           method="POST" novalidate="novalidate">
         <input type="hidden" th:field="*{id}"/>
         <div>
             <label>Name</label>
             <input type="text" th:field="*{name}"/>
+            <span style="color: red" th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Invalid format</span>
         </div>
         <div>
             <label>Price</label>

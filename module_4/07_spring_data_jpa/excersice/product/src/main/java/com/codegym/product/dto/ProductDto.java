@@ -1,13 +1,15 @@
 package com.codegym.product.dto;
 
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 public class ProductDto {
     private Long id;
-@NotEmpty
-@Size(min = 5,max = 45)
+    @NotEmpty
+    @Size(min = 5, max = 45)
     private String name;
+    @NotNull
     private Double price;
     private String description;
     private String manufacturer;
