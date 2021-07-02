@@ -24,7 +24,7 @@ public class BlogController {
     @GetMapping(value = "/create")
     public String showFormCreate(Model model){
         model.addAttribute("blog",new Blog());
-        return "create";
+        return "/create";
     }
     @PostMapping(value = "/create")
     public String createBlog(@ModelAttribute Blog blog){

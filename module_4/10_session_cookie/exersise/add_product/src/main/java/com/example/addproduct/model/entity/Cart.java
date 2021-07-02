@@ -62,7 +62,8 @@ public class Cart {
         }
     }
     public void removeProduct(Product product){
-        products.remove(product);
+        Map.Entry<Product, Integer> itemEntry = selectItemInCart(product);
+        products.remove(itemEntry.getKey());
     }
 
     public Integer countProductQuantity(){
