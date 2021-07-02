@@ -160,7 +160,7 @@
         </tr>
     </table>
 </form>
-<h1>Smartphone List</h1>
+<h1 th:text="#{list.phone}"></h1>
 <table id="smartphoneList" border="1">
     <tr>
         <td>Producer</td>
@@ -202,6 +202,9 @@
             <td><input type="submit" value="Update" id="updateSmartphone"></td>
         </tr>
     </table>
+
+
 </form>
+<span th:text="#{list.language}"></span> <a href="?lang=vi">Vietnamese</a> | <a href="?lang=en">English</a><br>
 </body>
 </html>
