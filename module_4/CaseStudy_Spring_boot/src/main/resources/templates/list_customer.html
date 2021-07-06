@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head >
+    <div th:replace="home :: head"></div>
+    <meta charset="UTF-8">
+    <title>Danh sách khách hàng</title>
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <script src="/jquery/jquery-3.6.0.min.js"></script>
+    <script src="/js/bootstrap.js"></script>
+
+</head>
+<body>
+<!--nav bar-->
+<nav class="navbar navbar-expand-lg  navbar-dark bg-success my-2 px-5 border border-info  sticky-top">
+    <a class="navbar-brand mx-5" href="#">Home</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item mr-5">
+                <a class="navbar-brand mr-0" href="/employee">Employee <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item  mr-5">
+                <a class="navbar-brand mr-0" href="/customer">Customer <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item mr-5 ">
+                <a class="navbar-brand mr-0" href="/service">Service <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item mr-5 ">
+                <a class="navbar-brand mr-0" href="#">Contract <span class="sr-only">(current)</span></a>
+            </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit" style="color: white">Search</button>
+        </form>
+    </div>
+</nav>
+
+<div class="container border pt-5 mt-5 ">
+    <div class="notify">
+        <div th:if="${success}">
+            <span style="color: red" th:text="${success}"></span>
+        </div>
+    </div>
+    <p>
+        <a th:href="@{/create_customer}">
+            Add New Customer
+        </a>
+    </p>
+    <div>
+        <div class="table-title">
+            <div class="row">
+                <div class="col-sm-8">
+                    <h3>Customer
+                        <b>Details</b></h3>
+                </div>
+            </div>
+        </div>
+        <table class="table table-bordered table-striped">
+            <thead>
+            <tr class="table-primary">
+                <th>Id</th>
+                <th>Customer Type ID</th>
+                <th>Customer Number</th>
+                <th>Name</th>
+                <th>Birthday</th>
+                <th>Gender</th>
+                <th>ID Card</th>
+                <th>Phone</th>
+                <th>Email</th>
+                <th>Address</th>
+                <th>Edit</th>
+                <th>Delete</th>
+                <th>View</th>
+
+            </tr>
+            </thead>
+
+            <tbody>
+            <tr th:each=" customer : ${customers}">
+                <td th:text="${customer.customerId}"></td>
+                <td th:text="${customer.customerType.customerTypeName}"></td>
+                <td th:text="${customer.customerNumber}"></td>
+                <td th:text="${customer.name}"></td>
+                <td th:text="${customer.birthday}"></td>
+                <td th:text="${customer.gender}"></td>
+                <td th:text="${customer.idCard}"></td>
+                <td th:text="${customer.phone}"></td>
+                <td th:text="${customer.email}"></td>
+                <td th:text="${customer.address}"></td>
+                <td><a th:href="@{edit_customer(id=${customer.getCustomerId()})}">edit</a></td>
+                <td><a th:href="@{delete_customer(id=${customer.getCustomerId()})}">delete</a></td>
+                <td><a th:href="@{view_customer(id=${customer.getCustomerId()})}">view</a></td>
+            </tr>
+
+            </tbody>
+        </table>
+
+
+        <div>
+            <a th:href="@{/(page=${customers.number - 1},keyword=${keyword})}" th:if="${customers.hasPrevious()}">Previous</a>
+            <span th:text="${customers.number+1}"></span>/<span th:text="${customers.totalPages}"></span>
+            <a th:href="@{/(page=${customers.number + 1},keyword=${keyword})}" th:if="${customers.hasNext()}">Next</a>
+
+
+
+        </div>
+
+    </div>
+
+</div>
+<footer th:replace="/home :: footer"></footer>
+</body>
+</html>

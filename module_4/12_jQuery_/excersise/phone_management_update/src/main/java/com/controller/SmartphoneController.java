@@ -13,8 +13,8 @@ import java.util.Optional;
 @RestController
 @RequestMapping("/smartphones")
 public class SmartphoneController {
-    @Autowired
-    private ISmartphoneService smartphoneService;
+        @Autowired
+        private ISmartphoneService smartphoneService;
 
     @PostMapping
     public ResponseEntity<Smartphone> createSmartphone(@RequestBody Smartphone smartphone) {
