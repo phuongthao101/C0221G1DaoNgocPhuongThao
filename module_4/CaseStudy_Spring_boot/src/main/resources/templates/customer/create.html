@@ -21,31 +21,31 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item mr-5">
-        <a class="navbar-brand mr-0" href="/employee">Employee <span class="sr-only">(current)</span></a>
+        <a class="navbar-brand mr-0" href="/list_employee">Employee <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item  mr-5">
-        <a class="navbar-brand mr-0" href="/customer">Customer <span class="sr-only">(current)</span></a>
+        <a class="navbar-brand mr-0" href="/customer/list">Customer <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item mr-5 ">
-        <a class="navbar-brand mr-0" href="/service">Service <span class="sr-only">(current)</span></a>
+        <a class="navbar-brand mr-0" href="/list_service">Service <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item mr-5 ">
         <a class="navbar-brand mr-0" href="#">Contract <span class="sr-only">(current)</span></a>
       </li>
     </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit" style="color: white">Search</button>
-    </form>
+<!--    <form class="form-inline my-2 my-lg-0">-->
+<!--      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">-->
+<!--      <button class="btn btn-outline-success my-2 my-sm-0" type="submit" style="color: white">Search</button>-->
+<!--    </form>-->
   </div>
 </nav>
 <body>
 <p>
-  <a th:href="@{/list_customer}">
+  <a th:href="@{/customer/list}">
     Back to product list
   </a>
 </p>
-<form th:action="@{/save_customer}" th:object="${customerDto}" method="post" novalidate="novalidate">
+<form th:action="@{/customer/save}" th:object="${customerDto}" method="post" novalidate="novalidate">
   <div class="container col-3"></div>
   <div class="container col-6">
     <div class="container mt-3 ">
@@ -54,8 +54,17 @@
       </div>
 <!--      <input type="hidden" th:field="*{customerId}"/>-->
       <div class="form-group">
-        <label for="numberId">ID</label>
-        <input type="number" class="form-control" id="numberId" aria-describedby="numberId">
+        <label for="numberId"> Customer ID</label>
+        <input type="hidden" class="form-control" id="numberId" aria-describedby="numberId">
+
+      </div>
+      <div class="form-group">
+        <label for="numberId">Customer Type </label>
+        <select  class="form-control" th:field="*{customerType}">
+          <option th:each="customerType : ${customerTypes}" th:value="${customerType.customerTypeId}"
+          th:text="${customerType.getCustomerTypeName()}"></option>
+
+        </select>
 
       </div>
       <div class="form-group">
@@ -72,19 +81,19 @@
       </div>
 
       <div class="form-group ">
-        <label for="example-date-input" >Birthday</label>
-        <input class="form-control" type="date" value="2011-08-19" id="example-date-input">
+        <label  >Birthday</label>
+        <input type="date" class="form-control" th:field="*{birthday}"/>
 
       </div>
       <div>
-        <label for="validationDefault04">Gender</label>
-        <select class="custom-select" id="validationDefault04" required>
+        <label >Gender</label>
+<!--        <input type="text" class="form-control" th:field="*{gender}"/>-->
+        <select th:field="*{gender}" class="form-control" id="validationDefault04" required>
           <option selected disabled value="">Choose...</option>
-          <option>Male</option>
-          <option>Female</option>
-          <option>Other</option>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+          <option value="Other">Other</option>
         </select>
-      </div>
 
       <div class="form-group">
         <label for="numberId">Id Card</label>
@@ -109,6 +118,7 @@
     </div>
   </div>
   <div class="container col-3"></div>
+  </div>
   </div>
 </form>
 

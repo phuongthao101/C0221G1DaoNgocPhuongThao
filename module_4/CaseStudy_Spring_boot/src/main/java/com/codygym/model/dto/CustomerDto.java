@@ -1,9 +1,11 @@
 package com.codygym.model.dto;
 
+import com.codygym.model.entity.customer.CustomerType;
+
 public class CustomerDto {
     private Long customerId;
     private String customerNumber;
-    private Long customerTypeId;
+
     private String name;
     private String birthday;
     private String gender;
@@ -11,21 +13,10 @@ public class CustomerDto {
     private String phone;
     private String email;
     private String address;
+    private CustomerType customerType ;
 
-    public CustomerDto() {
-    }
+    public CustomerDto(){
 
-    public CustomerDto(Long customerId, String customerNumber, Long customerTypeId, String name, String birthday, String gender, String idCard, String phone, String email, String address) {
-        this.customerId = customerId;
-        this.customerNumber = customerNumber;
-        this.customerTypeId = customerTypeId;
-        this.name = name;
-        this.birthday = birthday;
-        this.gender = gender;
-        this.idCard = idCard;
-        this.phone = phone;
-        this.email = email;
-        this.address = address;
     }
 
     public Long getCustomerId() {
@@ -44,13 +35,6 @@ public class CustomerDto {
         this.customerNumber = customerNumber;
     }
 
-    public Long getCustomerTypeId() {
-        return customerTypeId;
-    }
-
-    public void setCustomerTypeId(Long customerTypeId) {
-        this.customerTypeId = customerTypeId;
-    }
 
     public String getName() {
         return name;
@@ -106,5 +90,13 @@ public class CustomerDto {
 
     public void setAddress(String address) {
         this.address = address;
+    }
+
+    public CustomerType getCustomerType() {
+        return customerType;
+    }
+
+    public void setCustomerType(CustomerType customerType) {
+        this.customerType = customerType;
     }
 }
