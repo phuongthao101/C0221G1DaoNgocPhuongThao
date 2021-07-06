@@ -1,40 +1,57 @@
 package com.codygym.model.entity.service;
 
+import javax.persistence.*;
+import java.util.List;
+@Entity
 public class RentType {
-    private int rent_type_id;
-    private String rent_type_name;
-    private int rent_type_cost;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long rentTypeId;
+    private String rentTypeName;
+    private Double rentTypeCost;
+
+    @OneToMany(mappedBy = "rentType")
+    List<Service> serviceList;
+
+    public List<Service> getServiceList() {
+        return serviceList;
+    }
+
+    public void setServiceList(List<Service> serviceList) {
+        this.serviceList = serviceList;
+    }
+
+    public RentType(Long rentTypeId, String rentTypeName, Double rentTypeCost, List<Service> serviceList) {
+        this.rentTypeId = rentTypeId;
+        this.rentTypeName = rentTypeName;
+        this.rentTypeCost = rentTypeCost;
+        this.serviceList = serviceList;
+    }
 
     public RentType() {
     }
 
-    public RentType(int rent_type_id, String rent_type_name, int rent_type_cost) {
-        this.rent_type_id = rent_type_id;
-        this.rent_type_name = rent_type_name;
-        this.rent_type_cost = rent_type_cost;
+    public Long getRentTypeId() {
+        return rentTypeId;
     }
 
-    public int getRent_type_id() {
-        return rent_type_id;
+    public void setRentTypeId(Long rentTypeId) {
+        this.rentTypeId = rentTypeId;
     }
 
-    public void setRent_type_id(int rent_type_id) {
-        this.rent_type_id = rent_type_id;
+    public String getRentTypeName() {
+        return rentTypeName;
     }
 
-    public String getRent_type_name() {
-        return rent_type_name;
+    public void setRentTypeName(String rentTypeName) {
+        this.rentTypeName = rentTypeName;
     }
 
-    public void setRent_type_name(String rent_type_name) {
-        this.rent_type_name = rent_type_name;
+    public Double getRentTypeCost() {
+        return rentTypeCost;
     }
 
-    public int getRent_type_cost() {
-        return rent_type_cost;
-    }
-
-    public void setRent_type_cost(int rent_type_cost) {
-        this.rent_type_cost = rent_type_cost;
+    public void setRentTypeCost(Double rentTypeCost) {
+        this.rentTypeCost = rentTypeCost;
     }
 }

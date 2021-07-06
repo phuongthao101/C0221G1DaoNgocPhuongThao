@@ -1,9 +1,6 @@
 package com.codygym.model.entity.service;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Service {
@@ -20,7 +17,29 @@ public class Service {
     private String description_other_convenience;
     private String pool_area;
     private String number_of_floors;
+    @ManyToOne
+    @JoinColumn(name = "service_type_id", referencedColumnName = "serviceTypeId")
+    private ServiceType serviceType;
 
+    @ManyToOne
+    @JoinColumn(name = "rent_type_id", referencedColumnName = "rentTypeId")
+    private RentType rentType;
+
+    public RentType getRentType() {
+        return rentType;
+    }
+
+    public void setRentType(RentType rentType) {
+        this.rentType = rentType;
+    }
+
+    public ServiceType getServiceType() {
+        return serviceType;
+    }
+
+    public void setServiceType(ServiceType serviceType) {
+        this.serviceType = serviceType;
+    }
 
     public Service(String name, String birthday, String id_card, Double employee_salary, String employee_phone, String employee_email, String employee_address, int position_id, int education_degree_id, int division_id, String username) {
     }

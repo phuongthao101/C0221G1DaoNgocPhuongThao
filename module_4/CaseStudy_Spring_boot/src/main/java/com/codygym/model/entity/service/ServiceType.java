@@ -1,30 +1,39 @@
 package com.codygym.model.entity.service;
 
+import javax.persistence.*;
+import java.util.List;
+@Entity
 public class ServiceType {
-    private int service_type_id;
-    private String service_type_name;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long serviceTypeId;
+    private String serviceTypeName;
+
+    @OneToMany(mappedBy = "serviceType")
+    List<Service> serviceList;
+
+    public List<Service> getServiceList() {
+        return serviceList;
+    }
+
+    public void setServiceList(List<Service> serviceList) {
+        this.serviceList = serviceList;
+    }
 
     public ServiceType() {
     }
 
-    public ServiceType(int service_type_id, String service_type_name) {
-        this.service_type_id = service_type_id;
-        this.service_type_name = service_type_name;
+    public ServiceType(Long serviceTypeId, String serviceTypeName, List<Service> serviceList) {
+        this.serviceTypeId = serviceTypeId;
+        this.serviceTypeName = serviceTypeName;
+        this.serviceList = serviceList;
     }
 
-    public int getService_type_id() {
-        return service_type_id;
+    public Long getServiceTypeId() {
+        return serviceTypeId;
     }
 
-    public void setService_type_id(int service_type_id) {
-        this.service_type_id = service_type_id;
-    }
-
-    public String getService_type_name() {
-        return service_type_name;
-    }
-
-    public void setService_type_name(String service_type_name) {
-        this.service_type_name = service_type_name;
+    public void setServiceTypeId(Long serviceTypeId) {
+        this.serviceTypeId = serviceTypeId;
     }
 }
