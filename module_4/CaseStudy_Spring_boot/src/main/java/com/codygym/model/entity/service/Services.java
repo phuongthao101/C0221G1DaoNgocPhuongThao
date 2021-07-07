@@ -3,10 +3,10 @@ package com.codygym.model.entity.service;
 import javax.persistence.*;
 
 @Entity
-public class Service {
+public class Services {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private  Integer id;
+    private  Long id;
     private  String serviceName;
     private  String serviceCode;
     private int serviceArea;
@@ -25,10 +25,10 @@ public class Service {
     @JoinColumn(name = "rent_type_id", referencedColumnName = "rentTypeId")
     private RentType rentType;
 
-    public Service() {
+    public Services() {
     }
 
-    public Service(Integer id, String serviceName, String serviceCode, int serviceArea, double serviceCost, int serviceMaxPeople, String standardRoom, String descriptionOtherConvenience, double poolArea, int numberOfFloors, ServiceType serviceType, RentType rentType) {
+    public Services(Long id, String serviceName, String serviceCode, int serviceArea, double serviceCost, int serviceMaxPeople, String standardRoom, String descriptionOtherConvenience, double poolArea, int numberOfFloors, ServiceType serviceType, RentType rentType) {
         this.id = id;
         this.serviceName = serviceName;
         this.serviceCode = serviceCode;
@@ -43,11 +43,11 @@ public class Service {
         this.rentType = rentType;
     }
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

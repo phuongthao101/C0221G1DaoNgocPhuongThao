@@ -3,7 +3,7 @@ package com.codygym.controller;
 import com.codygym.model.dto.CustomerDto;
 import com.codygym.model.entity.customer.Customer;
 import com.codygym.model.entity.customer.CustomerType;
-import com.codygym.model.service.ICustomerService;
+import com.codygym.model.service.impl.ICustomerService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -37,7 +37,7 @@ public class CustomerController {
     }
 
     @PostMapping(value = "/save")
-    public String saveCustomer(@Valid @ModelAttribute("customerDto") CustomerDto customerDto, BindingResult bindingResult, RedirectAttributes redirectAttributes) {
+    public String saveCustomer(@Valid @ModelAttribute CustomerDto customerDto, BindingResult bindingResult, RedirectAttributes redirectAttributes) {
         if (bindingResult.hasErrors()) {
             return "/customer/create";
         }

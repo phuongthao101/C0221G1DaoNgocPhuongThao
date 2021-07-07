@@ -16,11 +16,19 @@ public class Customer {
     private String phone;
     private String email;
     private String address;
+    private boolean flag;
 
     @ManyToOne
     @JoinColumn(name = "customer_type_id", referencedColumnName = "customerTypeId")
     private CustomerType customerType;
 
+    public boolean isFlag() {
+        return flag;
+    }
+
+    public void setFlag(boolean flag) {
+        this.flag = flag;
+    }
 
     public Customer() {
     }

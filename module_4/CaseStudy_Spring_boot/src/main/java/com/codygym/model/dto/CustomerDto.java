@@ -14,9 +14,18 @@ public class CustomerDto {
     private String email;
     private String address;
     private CustomerType customerType ;
+    private boolean flag = true;
 
     public CustomerDto(){
 
+    }
+
+    public boolean isFlag() {
+        return flag;
+    }
+
+    public void setFlag(boolean flag) {
+        this.flag = flag;
     }
 
     public Long getCustomerId() {

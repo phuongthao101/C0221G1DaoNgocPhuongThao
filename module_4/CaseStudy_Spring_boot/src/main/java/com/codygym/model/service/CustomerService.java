@@ -1,10 +1,10 @@
-package com.codygym.model.service.impl.customerService;
+package com.codygym.model.service;
 
 import com.codygym.model.entity.customer.Customer;
 import com.codygym.model.entity.customer.CustomerType;
 import com.codygym.model.repository.customer.ICustomerRepository;
 import com.codygym.model.repository.customer.ICustomerTypeRepository;
-import com.codygym.model.service.ICustomerService;
+import com.codygym.model.service.impl.ICustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -30,12 +30,13 @@ public class CustomerService implements ICustomerService {
     }
 
     @Override
-    public Page<Customer> findByName(String name, Pageable pageable) {
-        return customerRepository.findByName(name, pageable);
+    public Page<Customer> findByName(String keyword, Pageable pageable) {
+        return customerRepository.findByName(keyword, pageable);
     }
 
     @Override
     public void save(Customer customer) {
+        customer.setFlag(false);
         customerRepository.save(customer);
     }
 

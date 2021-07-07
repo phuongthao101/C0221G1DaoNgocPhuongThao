@@ -10,20 +10,20 @@ public class ServiceType {
     private String serviceTypeName;
 
     @OneToMany(mappedBy = "serviceType")
-    List<Service> serviceList;
+    List<Services> serviceList;
 
-    public List<Service> getServiceList() {
+    public List<Services> getServiceList() {
         return serviceList;
     }
 
-    public void setServiceList(List<Service> serviceList) {
+    public void setServiceList(List<Services> serviceList) {
         this.serviceList = serviceList;
     }
 
     public ServiceType() {
     }
 
-    public ServiceType(Long serviceTypeId, String serviceTypeName, List<Service> serviceList) {
+    public ServiceType(Long serviceTypeId, String serviceTypeName, List<Services> serviceList) {
         this.serviceTypeId = serviceTypeId;
         this.serviceTypeName = serviceTypeName;
         this.serviceList = serviceList;
@@ -35,5 +35,13 @@ public class ServiceType {
 
     public void setServiceTypeId(Long serviceTypeId) {
         this.serviceTypeId = serviceTypeId;
+    }
+
+    public String getServiceTypeName() {
+        return serviceTypeName;
+    }
+
+    public void setServiceTypeName(String serviceTypeName) {
+        this.serviceTypeName = serviceTypeName;
     }
 }

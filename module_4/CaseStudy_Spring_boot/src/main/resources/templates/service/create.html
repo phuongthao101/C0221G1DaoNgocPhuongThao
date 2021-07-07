@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 
-<head >
+<head>
     <div th:replace="home :: head"></div>
     <meta charset="UTF-8">
     <title>Danh sách khách hàng</title>
-    <link rel="stylesheet" href="../../static/css/bootstrap.css">
-    <script src="../../static/jquery/jquery-3.6.0.min.js"></script>
-    <script src="../../static/js/bootstrap.bundle.js"></script>
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <script src="/jquery/jquery-3.6.0.min.js"></script>
+    <script src="/js/bootstrap.bundle.js"></script>
 
 
 </head>
@@ -15,7 +15,8 @@
 <!--nav bar-->
 <nav class="navbar navbar-expand-lg  navbar-dark bg-success my-2 px-5 border border-info  sticky-top">
     <a class="navbar-brand mx-5" href="#">Home</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
 
@@ -41,11 +42,7 @@
     </div>
 </nav>
 <body>
-<p>
-    <a th:href="@{/service/list}">
-        Back to product list
-    </a>
-</p>
+
 <form th:action="@{/service/save}" th:object="${serviceDto}" method="post" novalidate="novalidate">
     <div class="container col-3"></div>
     <div class="container col-6">
@@ -56,71 +53,70 @@
             </div>
             <div class="form-group">
                 <label for="numberId"> Service ID</label>
-                <input type="hidden" class="form-control" id="numberId" aria-describedby="numberId">
+                <input type="hidden" class="form-control" id="numberId" aria-describedby="numberId" th:field="*{id}">
 
             </div>
             <div class="form-group">
                 <label for="numberId">Service Type </label>
-                <select  class="form-control" th:field="*{customerType}">
-                    <option th:each="customerType : ${customerTypes}" th:value="${customerType.customerTypeId}"
-                            th:text="${customerType.getCustomerTypeName()}"></option>
+                <select class="form-control" th:field="*{serviceType}" onchange="display()" id="serviceType">
+                    <option th:each="serviceType : ${serviceTypes}" th:value="${serviceType.serviceTypeId}"
+                            th:text="${serviceType.getServiceTypeName()}"></option>
 
                 </select>
 
             </div>
             <div class="form-group">
                 <label for="numberId">Rent Type </label>
-                <select  class="form-control" th:field="*{customerType}">
-                    <option th:each="customerType : ${customerTypes}" th:value="${customerType.customerTypeId}"
-                            th:text="${customerType.getCustomerTypeName()}"></option>
+                <select class="form-control" th:field="*{rentType}">
+                    <option th:each="rentType : ${rentTypes}" th:value="${rentType.rentTypeId}"
+                            th:text="${rentType.getRentTypeName()}"></option>
 
                 </select>
 
             </div>
             <div class="form-group">
-                <label for="numberId">Service Code</label>
-                <input type="text" class="form-control" th:field="*{service_name}"/>
+                <label>Service Code</label>
+                <input type="number" class="form-control" th:field="*{serviceCode}"/>
 
             </div>
             <div class="form-group">
-                <label for="numberId">Service Area </label>
-                <input type="text" class="form-control" th:field="*{service_name}"/>
+                <label>Service Area </label>
+                <input type="number" class="form-control" th:field="*{serviceArea}"/>
 
             </div>
             <div class="form-group">
-                <label for="numberId">Service Cost</label>
-                <input type="text" class="form-control" th:field="*{service_name}"/>
+                <label>Service Cost</label>
+                <input type="number" class="form-control" th:field="*{serviceCost}"/>
 
             </div>
             <div class="form-group">
-                <label for="numberId">Service Max People</label>
-                <input type="text" class="form-control" th:field="*{service_name}"/>
+                <label>Service Max People</label>
+                <input type="number" class="form-control" th:field="*{serviceMaxPeople}"/>
 
             </div>
-            <div class="form-group">
-                <label for="numberId">Standard Room</label>
-                <input type="text" class="form-control" th:field="*{service_name}"/>
+            <div class="form-group" id="standardRoom">
+                <label>Standard Room: </label>
+                <input  type="text" class="form-control" placeholder="Enter standard room..."
+                       th:field="*{standardRoom}">
+            </div>
+            <div class="form-group" id="description">
+                <label>Description Other Convenience: </label>
+                <input  type="text" class="form-control"
+                       placeholder="Enter description..." th:field="*{descriptionOtherConvenience}">
+            </div>
+            <div class="form-group" id="poolArea">
+                <label>Pool Area: </label>
+                <input  type="number" class="form-control" placeholder="Enter pool area... "
+                       th:field="*{poolArea}">
+            </div>
+            <div class="form-group" id="floors">
+                <label>Number Of Floors: </label>
+                <input  type="number" class="form-control"
+                       placeholder="Enter number of floors... " th:field="*{numberOfFloors}">
 
             </div>
-            <div class="form-group">
-                <label for="numberId">Other Convenience</label>
-                <input type="text" class="form-control" th:field="*{service_name}"/>
-
-            </div>
-            <div class="form-group">
-                <label for="numberId">Standard Room</label>
-                <input type="text" class="form-control" th:field="*{service_name}"/>
-
-            </div>
-            <div class="form-group">
-                <label for="numberId">Pool Area</label>
-                <input type="text" class="form-control" th:field="*{service_name}"/>
-
-            </div>
-            <div class="form-group">
-                <label for="numberId">Number of floor</label>
-                <input type="text" class="form-control" th:field="*{service_name}"/>
-
+            <div class="d-flex justify-content-center ">
+                <button type="submit" class="btn btn-primary mb-3">Create</button>
             </div>
 
             <div class="container col-3"></div>
@@ -129,6 +125,29 @@
 </form>
 
 <footer th:replace="/home :: footer"></footer>
+<script>
+    function display(){
+        let id=document.getElementById('serviceType').value;
+        if (id==1){
+            document.getElementById("standardRoom").style.display='block';
+            document.getElementById("description").style.display='block';
+            document.getElementById("poolArea").style.display='block';
+            document.getElementById("floors").style.display='block';
+        }else if (id==2){
+            document.getElementById("standardRoom").style.display='block';
+            document.getElementById("description").style.display='block';
+            document.getElementById("poolArea").style.display='none';
+            document.getElementById("floors").style.display='block';
+        }else {
+            document.getElementById("standardRoom").style.display='none';
+            document.getElementById("description").style.display='none';
+            document.getElementById("poolArea").style.display='none';
+            document.getElementById("floors").style.display='none';
+        }
 
+
+
+    }
+</script>
 </body>
 </html>

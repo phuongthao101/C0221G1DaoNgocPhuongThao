@@ -11,17 +11,17 @@ public class RentType {
     private Double rentTypeCost;
 
     @OneToMany(mappedBy = "rentType")
-    List<Service> serviceList;
+    List<Services> serviceList;
 
-    public List<Service> getServiceList() {
+    public List<Services> getServiceList() {
         return serviceList;
     }
 
-    public void setServiceList(List<Service> serviceList) {
+    public void setServiceList(List<Services> serviceList) {
         this.serviceList = serviceList;
     }
 
-    public RentType(Long rentTypeId, String rentTypeName, Double rentTypeCost, List<Service> serviceList) {
+    public RentType(Long rentTypeId, String rentTypeName, Double rentTypeCost, List<Services> serviceList) {
         this.rentTypeId = rentTypeId;
         this.rentTypeName = rentTypeName;
         this.rentTypeCost = rentTypeCost;
