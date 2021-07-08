@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="home :: head">
+    <meta charset="UTF-8">
+    <title>Danh sách khách hàng</title>
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <script src="/jquery/jquery-3.6.0.min.js"></script>
+    <script src="/js/bootstrap.js"></script>
+</head>
+
+<!--nav bar-->
+<nav class="navbar navbar-expand-lg  navbar-dark bg-success my-2 px-5 border border-info  sticky-top">
+    <a class="navbar-brand mx-5" href="#">Home</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item mr-5">
+                <a class="navbar-brand mr-0" href="/employees">Employee <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item  mr-5">
+                <a class="navbar-brand mr-0" href="/customers">Customer <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item mr-5 ">
+                <a class="navbar-brand mr-0" href="/service/create">Service <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item mr-5 ">
+                <a class="navbar-brand mr-0" href="contract/create">Contract <span class="sr-only">(current)</span></a>
+            </li>
+        </ul>
+
+    </div>
+</nav>
+<body>
+
+<form th:action="@{/contracts/save}" th:object="${contractDto}" method="post" >
+    <div class="container col-3"></div>
+    <div class="container col-6">
+        <div class="container mt-3 ">
+            <div class="alert alert-primary " role="alert" STYLE="text-align: center">
+                <h3>CREATE CONTRACT INFORMATION</h3>
+            </div>
+
+
+            <div class="form-group">
+                <label>Start Date:</label>
+                <input type="date" class="form-control" th:field="*{contractStartDate}">
+                <span style="color: red" th:if="${#fields.hasErrors('contractStartDate')}" th:errors="*{contractStartDate}"></span>
+            </div>
+
+            <div class="form-group">
+                <label>End Date:</label>
+                <input type="date" class="form-control" th:field="*{contractEndDate}">
+                <span style="color: red" th:if="${#fields.hasErrors('contractEndDate')}" th:errors="*{contractEndDate}"></span>
+            </div>
+            <div class="form-group">
+                <label>Deposit:</label>
+                <input type="number" class="form-control" placeholder="Enter deposit... "  th:field="*{contractDeposit}">
+                <span style="color: red" th:if="${#fields.hasErrors('contractDeposit')}" th:errors="*{contractDeposit}"></span>
+            </div>
+            <div class="form-group">
+                <label>Customer: </label>
+                <select class="form-control" th:field="*{customer}">
+                    <option th:each="customer :${customers}" th:value="${customer.customerId}" th:text="${customer.name}"></option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Employee: </label>
+                <select class="form-control" th:field="*{employee}">
+                    <option th:each="employee :${employees}" th:value="${employee.id}" th:text="${employee.employeeName}"></option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Service: </label>
+                <select class="form-control" th:field="*{services}">
+                    <option th:each="service :${services}" th:value="${service.id}" th:text="${service.serviceName}"></option>
+                </select>
+            </div>
+            <div class="d-flex justify-content-center ">
+                <button type="submit" class="btn btn-primary mb-3">Create</button>
+            </div>
+
+            <div class="container col-3"></div>
+
+        </div>
+    </div>
+</form>
+
+<footer th:replace="/home :: footer"></footer>
+
+</body>
+</html>

@@ -3,12 +3,11 @@ package com.codygym.controller;
 import com.codygym.model.dto.CustomerDto;
 import com.codygym.model.dto.EmployeeDto;
 import com.codygym.model.entity.customer.Customer;
-import com.codygym.model.entity.customer.CustomerType;
 import com.codygym.model.entity.employee.Division;
 import com.codygym.model.entity.employee.EducationDegree;
 import com.codygym.model.entity.employee.Employee;
 import com.codygym.model.entity.employee.Position;
-import com.codygym.model.service.impl.IEmployeeService;
+import com.codygym.model.service.IEmployeeService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -25,7 +24,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Controller
-@RequestMapping(value = "/employee")
+@RequestMapping(value = "/employees")
 public class EmployeeController {
     @Autowired
     IEmployeeService employeeService;
@@ -58,10 +57,10 @@ public class EmployeeController {
         BeanUtils.copyProperties(employeeDto, employee);
         this.employeeService.save(employee);
         redirectAttributes.addFlashAttribute("success", "Create employee successfully");
-        return "redirect:/employee/list";
+        return "redirect:/employees";
     }
 
-    @GetMapping(value = "/list")
+    @GetMapping(value = "")
     public String showListEmployee(Model model,
                                    @PageableDefault(size = 2) Pageable pageable,
                                    @RequestParam Optional<String> keyword) {
@@ -72,35 +71,31 @@ public class EmployeeController {
 
     }
 
-    @GetMapping(value = "delete")
-    public String showDeleteEmployee(@RequestParam Long id, Model model) {
-        model.addAttribute("employee", employeeService.findById(id));
-        return "/employee/delete";
-
-    }
-
     @PostMapping(value = "delete")
     public String deleteEmployee(@RequestParam Long id, RedirectAttributes redirectAttributes) {
         employeeService.remove(id);
-        redirectAttributes.addFlashAttribute("success", "Removed product successfully!");
-        return "redirect:/list";
+        redirectAttributes.addFlashAttribute("success", "Removed employee successfully!");
+        return "redirect:/employees";
     }
 
     @GetMapping("/edit")
     public String showEditForm(@RequestParam Long id, Model model) {
-        model.addAttribute("employee", employeeService.findById(id));
+        Employee employee = employeeService.findById(id);
+        EmployeeDto employeeDto = new EmployeeDto();
+        BeanUtils.copyProperties(employee,employeeDto);
+        model.addAttribute("employeeDto", employeeDto);
         return "/employee/edit";
     }
 
-    @PostMapping("/update")
+    @PostMapping("/edit")
     public String updateEmployee(@ModelAttribute EmployeeDto employeeDto,
                                  RedirectAttributes redirect) {
         Employee employee = new Employee();
         BeanUtils.copyProperties(employeeDto, employee);
         this.employeeService.save(employee);
 
-        redirect.addFlashAttribute("success", "Updated product information successfully!");
-        return "redirect:/list";
+        redirect.addFlashAttribute("success", "Updated employee information successfully!");
+        return "redirect:/employees";
     }
 
 }

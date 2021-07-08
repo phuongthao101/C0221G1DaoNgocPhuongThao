@@ -3,7 +3,7 @@ package com.codygym.controller;
 import com.codygym.model.dto.CustomerDto;
 import com.codygym.model.entity.customer.Customer;
 import com.codygym.model.entity.customer.CustomerType;
-import com.codygym.model.service.impl.ICustomerService;
+import com.codygym.model.service.ICustomerService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -20,7 +20,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Controller
-@RequestMapping(value = {"/","/customer"})
+@RequestMapping(value = {"/customers"})
 public class CustomerController {
     @Autowired
     ICustomerService customerService;
@@ -45,10 +45,10 @@ public class CustomerController {
         BeanUtils.copyProperties(customerDto, customer);
         this.customerService.save(customer);
         redirectAttributes.addFlashAttribute("success", "Create customer successfully");
-        return "redirect:/list";
+        return "redirect:/customers";
     }
 
-    @GetMapping(value = "/list")
+    @GetMapping(value = "")
     public String showListCustomer(Model model,
                                    @PageableDefault(size = 2) Pageable pageable,
                                    @RequestParam Optional<String> keyword) {
@@ -59,35 +59,33 @@ public class CustomerController {
 
     }
 
-    @GetMapping(value = "delete")
-    public String showDeleteCustomer(@RequestParam Long id, Model model) {
-        model.addAttribute("customer", customerService.findById(id));
-        return "/customer/delete";
-
-    }
 
     @PostMapping(value = "delete")
     public String deleteCustomer(@RequestParam Long id, RedirectAttributes redirectAttributes) {
         customerService.remove(id);
         redirectAttributes.addFlashAttribute("success", "Removed product successfully!");
-        return "redirect:/list";
+        return "redirect:/customers";
     }
 
     @GetMapping("/edit")
     public String showEditForm(@RequestParam Long id, Model model) {
-        model.addAttribute("customer", customerService.findById(id));
+
+        Customer customer = customerService.findById(id);
+        CustomerDto customerDto = new CustomerDto();
+        BeanUtils.copyProperties(customerDto,customer);
+        model.addAttribute("customerDto",customerDto);
         return "/customer/edit";
     }
 
-    @PostMapping("/update")
+    @PostMapping("/edit")
     public String updateCustomer(@ModelAttribute CustomerDto customerDto,
                                 RedirectAttributes redirect) {
         Customer customer = new Customer();
         BeanUtils.copyProperties(customerDto, customer);
         this.customerService.save(customer);
 
-        redirect.addFlashAttribute("success", "Updated product information successfully!");
-        return "redirect:/list";
+        redirect.addFlashAttribute("success", "Updated customer information successfully!");
+        return "redirect:/customers";
     }
 
 }

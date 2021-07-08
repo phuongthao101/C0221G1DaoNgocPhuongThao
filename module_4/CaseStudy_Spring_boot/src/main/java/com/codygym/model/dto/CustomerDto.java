@@ -1,17 +1,34 @@
 package com.codygym.model.dto;
 
 import com.codygym.model.entity.customer.CustomerType;
+import org.springframework.validation.Errors;
+import org.springframework.validation.Validator;
 
-public class CustomerDto {
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
+
+import static sun.security.x509.InvalidityDateExtension.DATE;
+
+public class CustomerDto implements Validator {
+    public final String DATE="^((2000|2400|2800|(19|2[0-9](0[48]|[2468][048]|[13579][26])))-02-29)$"
+            + "|^(((19|2[0-9])[0-9]{2})-02-(0[1-9]|1[0-9]|2[0-8]))$"
+            + "|^(((19|2[0-9])[0-9]{2})-(0[13578]|10|12)-(0[1-9]|[12][0-9]|3[01]))$"
+            + "|^(((19|2[0-9])[0-9]{2})-(0[469]|11)-(0[1-9]|[12][0-9]|30))$";
     private Long customerId;
     private String customerNumber;
-
+    @NotBlank(message = "Please input name")
     private String name;
+    @NotBlank
     private String birthday;
+    @NotBlank
     private String gender;
+    @NotBlank
     private String idCard;
+    @NotBlank
     private String phone;
+    @Email
     private String email;
+
     private String address;
     private CustomerType customerType ;
     private boolean flag = true;
@@ -108,4 +125,30 @@ public class CustomerDto {
     public void setCustomerType(CustomerType customerType) {
         this.customerType = customerType;
     }
+
+    @Override
+    public boolean supports(Class<?> clazz) {
+        return false;
+    }
+
+    @Override
+    public void validate(Object target, Errors errors) {
+        CustomerDto customerDto = (CustomerDto) target;
+        if (!customerDto.customerNumber.matches("^KH-[0-9]{4}$")){
+            errors.rejectValue("customerCode", "customerCode.format");
+        }
+        if (!customerDto.phone.matches("^[0][0-9]{9,11}$")){
+            errors.rejectValue("customerPhone", "customerPhone.format");
+        }
+        if (!customerDto.birthday.matches("^[\\p{L} .'-]+$")){
+            errors.rejectValue("customerBirthday", "customerBirthday.format");
+        }
+        if (!customerDto.idCard.matches(DATE)){
+            errors.rejectValue("customerIdCard", "customerIdCard.format");
+        }
+        if (!customerDto.name.matches("^[\\p{L} .'-]+$")){
+            errors.rejectValue("customerName", "customerName.format");
+        }
+    }
+
 }

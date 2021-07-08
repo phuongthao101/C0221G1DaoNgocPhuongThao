@@ -20,16 +20,16 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item mr-5">
-                <a class="navbar-brand mr-0" href="/employee/list">Employee <span class="sr-only">(current)</span></a>
+                <a class="navbar-brand mr-0" href="/employees">Employee <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item  mr-5">
-                <a class="navbar-brand mr-0" href="/customer/list">Customer <span class="sr-only">(current)</span></a>
+                <a class="navbar-brand mr-0" href="/customers">Customer <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item mr-5 ">
-                <a class="navbar-brand mr-0" href="/service/list">Service <span class="sr-only">(current)</span></a>
+                <a class="navbar-brand mr-0" href="/service/create">Service <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item mr-5 ">
-                <a class="navbar-brand mr-0" href="#">Contract <span class="sr-only">(current)</span></a>
+                <a class="navbar-brand mr-0" href="contract/create">Contract <span class="sr-only">(current)</span></a>
             </li>
         </ul>
         <!--    <form class="form-inline my-2 my-lg-0">-->
@@ -40,11 +40,11 @@
 </nav>
 <body>
 <p>
-    <a th:href="@{/employee/list}">
+    <a th:href="@{/employees}">
         Back to employee list
     </a>
 </p>
-<form th:action="@{/employee/save}" th:object="${employeeDto}" method="post" >
+<form th:action="@{/employees/save}" th:object="${employeeDto}" method="post" >
     <div class="container col-3"></div>
     <div class="container col-6">
         <div class="container mt-3 ">

@@ -1,4 +1,4 @@
-package com.codygym.model.service;
+package com.codygym.model.service.impl;
 
 import com.codygym.model.entity.service.RentType;
 import com.codygym.model.entity.service.ServiceType;
@@ -6,7 +6,7 @@ import com.codygym.model.entity.service.Services;
 import com.codygym.model.repository.service.IRentTypeRepository;
 import com.codygym.model.repository.service.IServiceRepository;
 import com.codygym.model.repository.service.IServiceTypeRepository;
-import com.codygym.model.service.impl.IServiceService;
+import com.codygym.model.service.IServiceService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -24,8 +24,8 @@ public class ServiceService implements IServiceService {
     IServiceTypeRepository serviceTypeRepository;
 
     @Override
-    public void save(Services service) {
-      serviceRepository.save(service);
+    public void save(Services services) {
+      serviceRepository.save(services);
 
     }
 

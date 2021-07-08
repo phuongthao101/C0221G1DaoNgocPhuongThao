@@ -1,4 +1,4 @@
-package com.codygym.model.service.impl;
+package com.codygym.model.service;
 
 import com.codygym.model.entity.service.RentType;
 import com.codygym.model.entity.service.Services;

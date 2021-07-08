@@ -1,4 +1,4 @@
-package com.codygym.model.service.impl;
+package com.codygym.model.service;
 
 import com.codygym.model.entity.customer.Customer;
 import com.codygym.model.entity.customer.CustomerType;

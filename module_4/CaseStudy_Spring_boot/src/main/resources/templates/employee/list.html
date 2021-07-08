@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 
-<head >
+<head>
     <div th:replace="home :: head"></div>
     <meta charset="UTF-8">
     <title>Danh sách nhân viên</title>
@@ -14,26 +14,27 @@
 <!--nav bar-->
 <nav class="navbar navbar-expand-lg  navbar-dark bg-success my-2 px-5 border border-info  sticky-top">
     <a class="navbar-brand mx-5" href="#">Home</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item mr-5">
-                <a class="navbar-brand mr-0" href="/employee">Employee <span class="sr-only">(current)</span></a>
+                <a class="navbar-brand mr-0" href="/employees">Employee <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item  mr-5">
-                <a class="navbar-brand mr-0" href="/customer/list">Customer <span class="sr-only">(current)</span></a>
+                <a class="navbar-brand mr-0" href="/customers">Customer <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item mr-5 ">
-                <a class="navbar-brand mr-0" href="/service">Service <span class="sr-only">(current)</span></a>
+                <a class="navbar-brand mr-0" href="/services">Service <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item mr-5 ">
                 <a class="navbar-brand mr-0" href="#">Contract <span class="sr-only">(current)</span></a>
             </li>
         </ul>
-        <form class="form-inline my-2 my-lg-0" action="/customer/list">
+        <form class="form-inline my-2 my-lg-0" action="/employees">
             <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="keyword">
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit" style="color: white">Search</button>
         </form>
@@ -47,7 +48,7 @@
         </div>
     </div>
     <p>
-        <a th:href="@{/employee/create}">
+        <a th:href="@{/employees/create}">
             Add New Employee
         </a>
     </p>
@@ -94,31 +95,37 @@
                 <td th:text="${employee.division.divisionName}"></td>
                 <td th:text="${employee.username}"></td>
 
-                <td><a class="btn btn-primary" th:href="@{/edit(id=${employee.getId()})}">edit</a></td>
+                <td><a class="btn btn-primary" th:href="@{/employees/edit(id=${employee.getId()})}">Edit</a></td>
 
-                <td><button  class="btn btn-primary" data-toggle="modal" data-target="#myModal"
-                             th:data-parameter1="${employee.id}"  th:data-parameter2="${employee.getEmployeeName()}"
-                             onclick ="showModal(this.getAttribute('data-parameter1'),this.getAttribute('data-parameter2'))" >Delete
-                </button></td>
 
-                <td><a th:href="@{view(id=${employee.getId()})}">view</a></td>
+                <td>
+                    <button class="btn btn-primary" data-toggle="modal" data-target="#myModal"
+                            th:data-parameter1="${employee.id}" th:data-parameter2="${employee.getEmployeeName()}"
+                            onclick="showModal(this.getAttribute('data-parameter1'),this.getAttribute('data-parameter2'))">
+                        Delete
+                    </button>
+                </td>
             </tr>
 
             </tbody>
         </table>
 
         <div>
-            <a th:href="@{'/employee/list'(page=${employees.number - 1},keyword=${keyword})}" th:if="${employees.hasPrevious()}">Previous</a>
+
+            <a th:href="@{'/employees'(page=${employees.number - 1},keyword=${keyword})}"
+               th:if="${employees.hasPrevious()}">Previous</a>
             <span th:text="${employees.number+1}"></span>/<span th:text="${employees.totalPages}"></span>
-            <a th:href="@{'/employee/list'(page=${employees.number + 1},keyword=${keyword})}" th:if="${employees.hasNext()}">Next</a>
+            <a th:href="@{'/employees'(page=${employees.number + 1},keyword=${keyword})}"
+               th:if="${employees.hasNext()}">Next</a>
         </div>
 
     </div>
 
 </div>
+
 <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
-        <form th:action="@{/delete}" method="post">
+        <form th:action="@{/employees/delete}" method="post">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="myModalLabel">Accept delete employee</h5>
@@ -127,7 +134,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    Do you want to delete this employee name: <span style="color: red" id="employeeName" ></span>???
+                    Do you want to delete this employee name: <span style="color: red" id="employeeName"></span>???
                 </div>
                 <div class="modal-footer">
                     <input type="button" class="btn btn-secondary" data-dismiss="modal" value="Cancel">
@@ -142,7 +149,7 @@
 <footer th:replace="/home :: footer"></footer>
 
 <script type="text/javascript">
-    function showModal(id,name){
+    function showModal(id, name) {
         document.getElementById("employee_id").value = id;
         document.getElementById("employeeName").innerText = name;
     }

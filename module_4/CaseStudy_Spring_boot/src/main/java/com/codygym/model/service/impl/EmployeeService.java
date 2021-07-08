@@ -1,4 +1,4 @@
-package com.codygym.model.service;
+package com.codygym.model.service.impl;
 
 import com.codygym.model.entity.employee.Division;
 import com.codygym.model.entity.employee.EducationDegree;
@@ -8,7 +8,7 @@ import com.codygym.model.repository.employee.IDivisionRepository;
 import com.codygym.model.repository.employee.IEducationDegreeRepository;
 import com.codygym.model.repository.employee.IEmployeeRepository;
 import com.codygym.model.repository.employee.IPositionRepository;
-import com.codygym.model.service.impl.IEmployeeService;
+import com.codygym.model.service.IEmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -47,7 +47,10 @@ employeeRepository.save(employee);
 
     @Override
     public void remove(Long id) {
-employeeRepository.deleteById(id);
+
+        Employee employee=this.findById(id);
+        employee.setFlag(false);
+        save(employee);
     }
 
     @Override

@@ -2,84 +2,50 @@ package com.codygym.model.dto;
 
 import com.codygym.model.entity.service.RentType;
 import com.codygym.model.entity.service.ServiceType;
+import lombok.*;
+import org.springframework.validation.Errors;
+import org.springframework.validation.Validator;
 
-public class ServiceDto {
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
+
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+public class ServiceDto implements Validator {
     private  Long id;
     private  String serviceName;
+    @Pattern(regexp = "^DV-[0-9]{4}")
     private  String serviceCode;
+    @Min(10)
     private int serviceArea;
+    @Min(1)
     private double serviceCost;
+    @Min(1)
     private int serviceMaxPeople;
     private String standardRoom;
     private String descriptionOtherConvenience;
+    @Min(10)
+    @NotNull
     private  double poolArea;
+    @Min(1)
     private int numberOfFloors;
     private ServiceType serviceType;
     private RentType rentType;
 
-    public ServiceDto() {
+
+    @Override
+    public boolean supports(Class<?> clazz) {
+        return false;
     }
 
-    public ServiceDto(Long id, String serviceName, String serviceCode, int serviceArea, double serviceCost, int serviceMaxPeople, String standardRoom, String descriptionOtherConvenience, double poolArea, int numberOfFloors, ServiceType serviceType, RentType rentType) {
-        this.id = id;
-        this.serviceName = serviceName;
-        this.serviceCode = serviceCode;
-        this.serviceArea = serviceArea;
-        this.serviceCost = serviceCost;
-        this.serviceMaxPeople = serviceMaxPeople;
-        this.standardRoom = standardRoom;
-        this.descriptionOtherConvenience = descriptionOtherConvenience;
-        this.poolArea = poolArea;
-        this.numberOfFloors = numberOfFloors;
-        this.serviceType = serviceType;
-        this.rentType = rentType;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public String getServiceName() {
-        return serviceName;
-    }
-
-    public String getServiceCode() {
-        return serviceCode;
-    }
-
-    public int getServiceArea() {
-        return serviceArea;
-    }
-
-    public double getServiceCost() {
-        return serviceCost;
-    }
-
-    public int getServiceMaxPeople() {
-        return serviceMaxPeople;
-    }
-
-    public String getStandardRoom() {
-        return standardRoom;
-    }
-
-    public String getDescriptionOtherConvenience() {
-        return descriptionOtherConvenience;
-    }
-
-    public double getPoolArea() {
-        return poolArea;
-    }
-
-    public int getNumberOfFloors() {
-        return numberOfFloors;
-    }
-
-    public ServiceType getServiceType() {
-        return serviceType;
-    }
-
-    public RentType getRentType() {
-        return rentType;
+    @Override
+    public void validate(Object target, Errors errors) {
+        ServiceDto serviceDto = (ServiceDto) target;
+        if (!serviceDto.serviceCode.matches("^(DV-)[0-9]{4}$")){
+            errors.rejectValue("serviceCode", "Code.format");
+        }
     }
 }

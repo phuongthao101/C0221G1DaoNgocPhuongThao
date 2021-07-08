@@ -3,25 +3,34 @@ package com.codygym.model.dto;
 import com.codygym.model.entity.employee.Division;
 import com.codygym.model.entity.employee.EducationDegree;
 import com.codygym.model.entity.employee.Position;
+import lombok.Getter;
+import lombok.Setter;
+import org.springframework.validation.Errors;
+import org.springframework.validation.Validator;
 
 import javax.validation.constraints.Email;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
 import java.util.Date;
 
-public class EmployeeDto {
+@Getter
+@Setter
+public class EmployeeDto implements Validator {
     private Long id;
-
+    @NotBlank
     private String employeeName;
-
+    @NotBlank
     private String employeeBirthday;
-
+    @NotBlank
     private String employeeIdCard;
-
+    @NotBlank
+    @Min(1)
     private String employeeSalary;
-
+    @NotBlank
     private String employeePhone;
-
+    @Email
     private String employeeEmail;
+
     private String employeeAddress;
 
     private String username;
@@ -33,109 +42,16 @@ public class EmployeeDto {
     public EmployeeDto() {
     }
 
-
-
-    public Long getId() {
-        return id;
+    @Override
+    public boolean supports(Class<?> clazz) {
+        return false;
     }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getEmployeeName() {
-        return employeeName;
-    }
-
-    public void setEmployeeName(String employeeName) {
-        this.employeeName = employeeName;
-    }
-
-    public String getEmployeeBirthday() {
-        return employeeBirthday;
-    }
-
-    public void setEmployeeBirthday(String employeeBirthday) {
-        this.employeeBirthday = employeeBirthday;
-    }
-
-    public String getEmployeeIdCard() {
-        return employeeIdCard;
-    }
-
-    public void setEmployeeIdCard(String employeeIdCard) {
-        this.employeeIdCard = employeeIdCard;
-    }
-
-    public String getEmployeeSalary() {
-        return employeeSalary;
-    }
-
-    public void setEmployeeSalary(String employeeSalary) {
-        this.employeeSalary = employeeSalary;
-    }
-
-    public String getEmployeePhone() {
-        return employeePhone;
-    }
-
-    public void setEmployeePhone(String employeePhone) {
-        this.employeePhone = employeePhone;
-    }
-
-    public String getEmployeeEmail() {
-        return employeeEmail;
-    }
-
-    public void setEmployeeEmail(String employeeEmail) {
-        this.employeeEmail = employeeEmail;
-    }
-
-    public String getEmployeeAddress() {
-        return employeeAddress;
-    }
-
-    public void setEmployeeAddress(String employeeAddress) {
-        this.employeeAddress = employeeAddress;
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    public Position getPosition() {
-        return position;
-    }
-
-    public void setPosition(Position position) {
-        this.position = position;
-    }
-
-    public Division getDivision() {
-        return division;
-    }
-
-    public void setDivision(Division division) {
-        this.division = division;
-    }
-
-    public EducationDegree getEducationDegree() {
-        return educationDegree;
-    }
-
-    public void setEducationDegree(EducationDegree educationDegree) {
-        this.educationDegree = educationDegree;
-    }
-
-    public boolean isFlag() {
-        return flag;
-    }
-
-    public void setFlag(boolean flag) {
-        this.flag = flag;
+    @Override
+    public void validate(Object target, Errors errors) {
+        EmployeeDto employeeDto = (EmployeeDto) target;
+        if (!employeeDto.employeePhone.matches("^(090|091|(\\(84\\)\\+90)|(\\(84\\)\\+91))[0-9]{7}$")){
+            errors.rejectValue("phone", "phone.format");
+        }
     }
 }

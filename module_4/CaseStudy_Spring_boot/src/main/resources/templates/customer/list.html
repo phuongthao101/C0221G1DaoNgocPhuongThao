@@ -33,7 +33,7 @@
                 <a class="navbar-brand mr-0" href="#">Contract <span class="sr-only">(current)</span></a>
             </li>
         </ul>
-        <form class="form-inline my-2 my-lg-0" action="/customer/list">
+        <form class="form-inline my-2 my-lg-0" action="/customers">
             <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="keyword">
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit" style="color: white">Search</button>
         </form>
@@ -47,7 +47,7 @@
         </div>
     </div>
     <p>
-        <a th:href="@{/customer/create}">
+        <a th:href="@{/customers/create}">
             Add New Customer
         </a>
     </p>
@@ -75,7 +75,6 @@
                 <th>Address</th>
                 <th>Edit</th>
                 <th>Delete</th>
-                <th>View</th>
 
             </tr>
             </thead>
@@ -93,7 +92,7 @@
                 <td th:text="${customer.email}"></td>
                 <td th:text="${customer.address}"></td>
 
-                <td><a class="btn btn-primary" th:href="@{/edit(id=${customer.getCustomerId()})}">edit</a></td>
+                <td><a class="btn btn-primary" th:href="@{/customers/edit(id=${customer.getCustomerId()})}">Edit</a></td>
 
                 <td><button  class="btn btn-primary" data-toggle="modal" data-target="#myModal"
                              th:data-parameter1="${customer.customerId}"  th:data-parameter2="${customer.getName()}"
@@ -106,9 +105,9 @@
         </table>
 
         <div>
-            <a th:href="@{'/customer/list'(page=${customers.number - 1},keyword=${keyword})}" th:if="${customers.hasPrevious()}">Previous</a>
+            <a th:href="@{'/customers'(page=${customers.number - 1},keyword=${keyword})}" th:if="${customers.hasPrevious()}">Previous</a>
             <span th:text="${customers.number+1}"></span>/<span th:text="${customers.totalPages}"></span>
-            <a th:href="@{'/customer/list'(page=${customers.number + 1},keyword=${keyword})}" th:if="${customers.hasNext()}">Next</a>
+            <a th:href="@{'/customers'(page=${customers.number + 1},keyword=${keyword})}" th:if="${customers.hasNext()}">Next</a>
         </div>
 
     </div>
@@ -116,7 +115,7 @@
 </div>
 <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
-        <form th:action="@{/delete}" method="post">
+        <form th:action="@{/customers/delete}" method="post">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="myModalLabel">Accept delete customer</h5>

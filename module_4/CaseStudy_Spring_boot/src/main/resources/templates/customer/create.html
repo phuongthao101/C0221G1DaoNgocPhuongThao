@@ -40,11 +40,11 @@
 </nav>
 <body>
 <p>
-    <a th:href="@{/customer/list}">
+    <a th:href="@{/customer}">
         Back to customer list
     </a>
 </p>
-<form th:action="@{/customer/save}" th:object="${customerDto}" method="post" novalidate="novalidate">
+<form th:action="@{/customers/save}" th:object="${customerDto}" method="post" novalidate="novalidate">
     <div class="container col-3"></div>
     <div class="container col-6">
         <div class="container mt-3 ">
