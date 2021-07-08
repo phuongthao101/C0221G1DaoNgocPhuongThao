@@ -55,6 +55,7 @@
                 <label>Service Name</label>
                 <input type="number" class="form-control" th:field="*{serviceName}"/>
 
+
             </div>
 
             <div class="form-group">
@@ -78,17 +79,17 @@
             <div class="form-group">
                 <label>Service Code</label>
                 <input type="number" class="form-control" th:field="*{serviceCode}"/>
-
+                <span style="color: red" th:if="${#fields.hasErrors('serviceCode')}" th:errors="*{serviceCode}"></span>
             </div>
             <div class="form-group">
                 <label>Service Area </label>
                 <input type="number" class="form-control" th:field="*{serviceArea}"/>
-
+                <span style="color: red" th:if="${#fields.hasErrors('serviceArea')}" th:errors="*{serviceArea}"></span>
             </div>
             <div class="form-group">
                 <label>Service Cost</label>
                 <input type="number" class="form-control" th:field="*{serviceCost}"/>
-
+                <span style="color: red" th:if="${#fields.hasErrors('serviceCost')}" th:errors="*{serviceCost}"></span>
             </div>
             <div class="form-group">
                 <label>Service Max People</label>
@@ -114,7 +115,7 @@
                 <label>Number Of Floors: </label>
                 <input  type="number" class="form-control"
                        placeholder="Enter number of floors... " th:field="*{numberOfFloors}">
-
+                <span style="color: red" th:if="${#fields.hasErrors('numberOfFloors')}" th:errors="*{numberOfFloors}"></span>
             </div>
             <div class="d-flex justify-content-center ">
                 <button type="submit" class="btn btn-primary mb-3">Create</button>

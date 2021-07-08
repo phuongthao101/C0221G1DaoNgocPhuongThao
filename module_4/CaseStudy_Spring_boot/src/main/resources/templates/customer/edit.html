@@ -44,24 +44,24 @@
             <div class="form-group">
                 <label for="numberId">Customer Number</label>
                 <input type="text" class="form-control" th:field="*{customerNumber}"/>
-
+                <span style="color: red" th:if="${#fields.hasErrors('customerNumer')}" th:errors="*{customerNumber}"></span>
 
             </div>
             <div class="form-group">
                 <label for="numberId">Customer Name</label>
                 <input type="text" class="form-control" th:field="*{name}"/>
-
+                <span style="color: red" th:if="${#fields.hasErrors('customerName')}" th:errors="*{name}"></span>
 
             </div>
 
             <div class="form-group ">
                 <label  >Birthday</label>
                 <input type="date" class="form-control" th:field="*{birthday}"/>
-
+                <span style="color: red" th:if="${#fields.hasErrors('customerBirthday')}" th:errors="*{birthday}"></span>
             </div>
             <div>
                 <label >Gender</label>
-                <!--        <input type="text" class="form-control" th:field="*{gender}"/>-->
+
                 <select th:field="*{gender}" class="form-control" id="validationDefault04" required>
                     <option selected disabled value="">Choose...</option>
                     <option value="Male">Male</option>
@@ -72,16 +72,17 @@
                 <div class="form-group">
                     <label for="numberId">Id Card</label>
                     <input type="text" class="form-control" th:field="*{idCard}"/>
-
+                    <span style="color: red" th:if="${#fields.hasErrors('customeridCard')}" th:errors="*{idCard}"></span>
                 </div>
                 <div class="form-group">
                     <label for="numberId">Phone Number</label>
                     <input type="text" class="form-control" th:field="*{phone}"/>
-
+                    <span style="color: red" th:if="${#fields.hasErrors('customerPhone')}" th:errors="*{phone}"></span>
                 </div>
                 <div class="form-group ">
                     <label >Email</label>
                     <input type="text" class="form-control" th:field="*{email}"/>
+                    <span style="color: red" th:if="${#fields.hasErrors('customerEmail')}" th:errors="*{email}"></span>
                 </div>
                 <div class="form-group">
                     <label >Address</label>
